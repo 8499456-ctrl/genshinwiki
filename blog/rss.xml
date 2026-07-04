@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Genshin Guide Blog</title>
+    <link>https://genshin-wiki.pages.dev/blog/</link>
+    <description>Latest Genshin Impact guides, builds, and team recommendations</description>
+    <language>en</language>
+    <lastBuildDate>Fri, 03 Jul 2026 00:00:00 +0800</lastBuildDate>
+    <atom:link href="https://genshin-wiki.pages.dev/blog/rss.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>🚀 Game Accelerator Free Trial — 50 Hours Low-Ping Gaming</title>
+      <link>https://genshin-wiki.pages.dev/blog/game-accelerator-free-50h.html</link>
+      <description>Claim 50 hours of free game accelerator time. Reduce Genshin Impact ping from 200ms to 30-50ms on EU/NA servers.</description>
+      <pubDate>Fri, 03 Jul 2026 00:00:00 +0800</pubDate>
+      <guid>https://genshin-wiki.pages.dev/blog/game-accelerator-free-50h.html</guid>
+    </item>
+    <item>
+      <title>🔥 Mavuika Build Guide — Best Weapons, Artifacts & Teams (v6.3)</title>
+      <link>https://genshin-wiki.pages.dev/blog/mavuika-build.html</link>
+      <description>Complete Mavuika build guide for v6.3. Best weapons, artifacts, teams, and constellation analysis for the Pyro Archon.</description>
+      <pubDate>Fri, 03 Jul 2026 00:00:00 +0800</pubDate>
+      <guid>https://genshin-wiki.pages.dev/blog/mavuika-build.html</guid>
+    </item>
+    <item>
+      <title>⭐ Top 10 Must-Build 4-Star Characters (2026 Edition)</title>
+      <link>https://genshin-wiki.pages.dev/blog/top-10-4-star-characters.html</link>
+      <description>The best 4-star characters worth building in Genshin Impact v6.3 — ranked by impact and team flexibility.</description>
+      <pubDate>Fri, 03 Jul 2026 00:00:00 +0800</pubDate>
+      <guid>https://genshin-wiki.pages.dev/blog/top-10-4-star-characters.html</guid>
+    </item>
+    <item>
+      <title>Top 10 Genshin Impact Gifts — Perfect for Any Traveler in 2026</title>
+      <link>https://genshin-wiki.pages.dev/blog/genshin-gift-guide-2026.html</link>
+      <description>The ultimate Genshin Impact gift guide for 2026. Official merch, digital codes, and gaming gear for every budget.</description>
+      <pubDate>Fri, 03 Jul 2026 00:00:00 +0800</pubDate>
+      <guid>https://genshin-wiki.pages.dev/blog/genshin-gift-guide-2026.html</guid>
+    </item>
+    <item>
+      <title>Best Teams for Spiral Abyss v6.3 — 36-Star Guide</title>
+      <link>https://genshin-wiki.pages.dev/blog/abyss-v63-teams.html</link>
+      <description>Complete Spiral Abyss v6.3 team guide with enemy lineups, F2P alternatives, and pro tips for 36 stars.</description>
+      <pubDate>Fri, 03 Jul 2026 00:00:00 +0800</pubDate>
+      <guid>https://genshin-wiki.pages.dev/blog/abyss-v63-teams.html</guid>
+    </item>
+    <item>
+      <title>Mavuika Build Guide — Best Weapons, Artifacts & Teams</title>
+      <link>https://genshin-wiki.pages.dev/blog/mavuika-build.html</link>
+      <description>Complete Mavuika build guide for v6.3. Best artifacts, weapons, team comps, and rotation tips.</description>
+      <pubDate>Thu, 02 Jul 2026 00:00:00 +0800</pubDate>
+      <guid>https://genshin-wiki.pages.dev/blog/mavuika-build.html</guid>
+    </item>
+    <item>
+      <title>How to 36-Star Spiral Abyss as a Free-to-Play Player</title>
+      <link>https://genshin-wiki.pages.dev/blog/f2p-36-star.html</link>
+      <description>F2P-friendly guide to clearing Spiral Abyss. Budget teams, ER thresholds, and resource planning.</description>
+      <pubDate>Wed, 01 Jul 2026 00:00:00 +0800</pubDate>
+      <guid>https://genshin-wiki.pages.dev/blog/f2p-36-star.html</guid>
+    </item>
+    <item>
+      <title>Natlan Meta Shift — How New Characters Changed the Game</title>
+      <link>https://genshin-wiki.pages.dev/blog/natlan-meta-shift.html</link>
+      <description>Deep analysis of how Natlan characters reshaped the Genshin Impact meta.</description>
+      <pubDate>Tue, 30 Jun 2026 00:00:00 +0800</pubDate>
+      <guid>https://genshin-wiki.pages.dev/blog/natlan-meta-shift.html</guid>
+    </item>
+    <item>
+      <title>v6.3 Banner Guide — Who to Pull For</title>
+      <link>https://genshin-wiki.pages.dev/blog/v63-banner-guide.html</link>
+      <description>Analysis of Mavuika, Citlali banners and reruns. Pull recommendations for every account type.</description>
+      <pubDate>Sun, 28 Jun 2026 00:00:00 +0800</pubDate>
+      <guid>https://genshin-wiki.pages.dev/blog/v63-banner-guide.html</guid>
+    </item>
+  </channel>
+</rss>
