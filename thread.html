@@ -228,23 +228,28 @@ const FORUM_THREADS = [
   html += '<button class="breply-btn" onclick="alert(\'Reply feature coming soon — use the comments below for now!\')">💬 Reply to this post</button>';
   html += '</div>';
 
-  // Comments section placeholder
-  html += '<div id="thread-comments" style="margin-top:20px;"></div>';
+  // Comments section placeholder — Giscus
+  html += '<div id="giscus-thread-comments" style="margin-top:20px;"></div>';
 
   container.innerHTML = html;
 
-  // Mount comments for this thread
-  if (window.CommentEmbed) {
-    CommentEmbed.mount('thread-comments', { page: 'thread_' + thread.id, title: '💬 Comments on this post', subtitle: 'Share your thoughts!' });
-  } else {
-    // Load comment embed and then mount
-    const script = document.createElement('script');
-    script.src = 'comment-embed.js';
-    script.onload = function() {
-      CommentEmbed.mount('thread-comments', { page: 'thread_' + thread.id, title: '💬 Comments on this post', subtitle: 'Share your thoughts!' });
-    };
-    document.body.appendChild(script);
-  }
+  // Giscus — reload on thread change
+  const giscusScript = document.createElement('script');
+  giscusScript.src = 'https://giscus.app/client.js';
+  giscusScript.setAttribute('data-repo', '8499456-ctrl/genshinwiki');
+  giscusScript.setAttribute('data-repo-id', 'R_kgDOTNHtZQ');
+  giscusScript.setAttribute('data-category', 'Announcements');
+  giscusScript.setAttribute('data-category-id', 'DIC_kwDOTNHtZc4DA8bQ');
+  giscusScript.setAttribute('data-mapping', 'pathname');
+  giscusScript.setAttribute('data-strict', '0');
+  giscusScript.setAttribute('data-reactions-enabled', '1');
+  giscusScript.setAttribute('data-emit-metadata', '0');
+  giscusScript.setAttribute('data-input-position', 'top');
+  giscusScript.setAttribute('data-theme', 'noborder_light');
+  giscusScript.setAttribute('data-lang', 'en');
+  giscusScript.setAttribute('crossorigin', 'anonymous');
+  giscusScript.async = true;
+  document.body.appendChild(giscusScript);
 })();
 </script>
     <script>
