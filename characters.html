@@ -30,6 +30,9 @@ body{background:#0d1117;color:#e6e6e6}
 <body>
 <div class="header">
 <a href=index.html style="color:#d4a84b;text-decoration:none">&larr; Home</a>
+<span style="float:right;margin-right:16px">
+  <button onclick="document.getElementById('wish-modal').style.display='flex'" style="background:linear-gradient(135deg,#d4a84b,#f0d68a);color:#1a1a2e;border:none;border-radius:20px;padding:6px 20px;font-size:14px;cursor:pointer;font-weight:600;box-shadow:0 2px 8px rgba(212,168,75,.4)">🎯 Wish Simulator</button>
+</span>
 <h1>Genshin Impact Characters</h1>
 <p>90 characters &middot; Best builds, teams &amp; materials</p>
 </div>
@@ -66,5 +69,240 @@ document.getElementById('rarityFilter').onchange=f;
 document.getElementById('searchInput').oninput=f;
 render({});
 </script>
+<!-- ====== Wish Simulator Modal ====== -->
+<div id="wish-modal" class="wish-overlay" style="display:none">
+  <div class="wish-panel">
+    <div class="wish-header">
+      <h2>🎯 Wish Simulator</h2>
+      <span onclick="document.getElementById('wish-modal').style.display='none'" style="cursor:pointer;font-size:20px;color:#888">&times;</span>
+    </div>
+    <div class="wish-stats" id="wish-stats">
+      <span>✨ Primogems: <b id="wish-gems">1600</b></span>
+      <span>🎫 Wishes: <b id="wish-count">10</b></span>
+      <span>⭐ 5★: <b id="wish-5star">0</b></span>
+      <span>🟣 4★: <b id="wish-4star">0</b></span>
+      <span>🔄 Pity: <b id="wish-pity">0</b></span>
+    </div>
+    <div id="wish-result" class="wish-result"></div>
+    <div class="wish-btns">
+      <button onclick="doWish(1)" class="wbtn wbtn-gold">✨ Wish ×1 <small>(160 gems)</small></button>
+      <button onclick="doWish(10)" class="wbtn wbtn-purple">🌟 Wish ×10 <small>(1600 gems)</small></button>
+      <button onclick="resetWish()" class="wbtn wbtn-gray">🔄 Reset</button>
+    </div>
+    <div class="wish-history" id="wish-history">
+      <details>
+        <summary style="cursor:pointer;color:#888;font-size:13px">📜 History</summary>
+        <div id="wish-log" style="max-height:120px;overflow-y:auto;font-size:12px;margin-top:6px"></div>
+      </details>
+    </div>
+  </div>
+</div>
+
+<!-- ====== Wish Simulator CSS ====== -->
+<style>
+.wish-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:9999;display:none;align-items:center;justify-content:center}
+.wish-panel{background:#1e1e36;border-radius:16px;width:90%;max-width:540px;max-height:85vh;overflow-y:auto;padding:20px;box-shadow:0 8px 40px rgba(0,0,0,.5)}
+.wish-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+.wish-header h2{margin:0;color:#d4a84b;font-size:20px}
+.wish-stats{display:flex;flex-wrap:wrap;gap:6px 16px;background:#16162e;border-radius:10px;padding:10px 14px;margin-bottom:14px;font-size:13px;color:#ccc}
+.wish-result{display:flex;flex-wrap:wrap;gap:8px;min-height:80px;padding:10px;background:#16162e;border-radius:10px;margin-bottom:12px;justify-content:center}
+.wish-card{width:60px;text-align:center;background:#25254a;border-radius:8px;padding:6px 2px;animation:fadeIn .3s;border:1px solid transparent}
+.wish-card.s5{border-color:#d4a84b;background:linear-gradient(135deg,#2a253a,#25254a)}
+.wish-card.s4{border-color:#a855f7;background:linear-gradient(135deg,#2a153a,#25254a)}
+.wish-card.s3{border-color:#3b82f6}
+.wish-card img{width:42px;height:42px;border-radius:6px;display:block;margin:0 auto}
+.wish-card .wname{font-size:10px;color:#ddd;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:56px}
+.wish-card .wstar{font-size:9px;display:block}
+.wish-card.s5 .wstar{color:#d4a84b}
+.wish-card.s4 .wstar{color:#a855f7}
+.wish-card.s3 .wstar{color:#3b82f6}
+.wish-btns{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:10px}
+.wbtn{border:none;border-radius:20px;padding:8px 20px;cursor:pointer;font-weight:600;font-size:13px;transition:transform .15s}
+.wbtn:hover{transform:scale(1.05)}
+.wbtn-gold{background:linear-gradient(135deg,#d4a84b,#f0d68a);color:#1a1a2e}
+.wbtn-purple{background:linear-gradient(135deg,#a855f7,#c084fc);color:#fff}
+.wbtn-gray{background:#333;color:#aaa}
+.wbtn small{font-weight:400;opacity:.7}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+</style>
+
+<!-- ====== Wish Simulator JS ====== -->
+<script>
+// 角色池
+const WISH_POOL = [];
+(function(){
+  const pool = [
+    {n:'Diluc',id:'diluc',star:5,t:'Pyro'},
+    {n:'Jean',id:'jean',star:5,t:'Anemo'},
+    {n:'Keqing',id:'keqing',star:5,t:'Electro'},
+    {n:'Mona',id:'mona',star:5,t:'Hydro'},
+    {n:'Qiqi',id:'qiqi',star:5,t:'Cryo'},
+    {n:'Tighnari',id:'tighnari',star:5,t:'Dendro'},
+    {n:'Dehya',id:'dehya',star:5,t:'Pyro'},
+    {n:'Albedo',id:'albedo',star:5,t:'Geo'},
+    {n:'Eula',id:'eula',star:5,t:'Cryo'},
+    {n:'Klee',id:'klee',star:5,t:'Pyro'},
+    {n:'Venti',id:'venti',star:5,t:'Anemo'},
+    {n:'Zhongli',id:'zhongli',star:5,t:'Geo'},
+    {n:'Ganyu',id:'ganyu',star:5,t:'Cryo'},
+    {n:'Xiao',id:'xiao',star:5,t:'Anemo'},
+    {n:'Hu Tao',id:'hutao',star:5,t:'Pyro'},
+    {n:'Raiden',id:'raiden',star:5,t:'Electro'},
+    {n:'Ayaka',id:'ayaka',star:5,t:'Cryo'},
+    {n:'Yoimiya',id:'yoimiya',star:5,t:'Pyro'},
+    {n:'Ayato',id:'ayato',star:5,t:'Hydro'},
+    {n:'Yae Miko',id:'yaemiko',star:5,t:'Electro'},
+    {n:'Itto',id:'itto',star:5,t:'Geo'},
+    {n:'Shenhe',id:'shenhe',star:5,t:'Cryo'},
+    {n:'Yelan',id:'yelan',star:5,t:'Hydro'},
+    {n:'Cyno',id:'cyno',star:5,t:'Electro'},
+    {n:'Nilou',id:'nilou',star:5,t:'Hydro'},
+    {n:'Nahida',id:'nahida',star:5,t:'Dendro'},
+    {n:'Wanderer',id:'wanderer',star:5,t:'Anemo'},
+    {n:'Baizhu',id:'baizhu',star:5,t:'Dendro'},
+    {n:'Lyney',id:'lyney',star:5,t:'Pyro'},
+    {n:'Neuvillette',id:'neuvillette',star:5,t:'Hydro'},
+    {n:'Furina',id:'furina',star:5,t:'Hydro'},
+    {n:'Navia',id:'navia',star:5,t:'Geo'},
+    {n:'Xianyun',id:'xianyun',star:5,t:'Anemo'},
+  ];
+  // 4★ characters
+  const pool4 = [
+    {n:'Amber',id:'amber',star:4,t:'Pyro'},
+    {n:'Barbara',id:'barbara',star:4,t:'Hydro'},
+    {n:'Bennett',id:'bennett',star:4,t:'Pyro'},
+    {n:'Chongyun',id:'chongyun',star:4,t:'Cryo'},
+    {n:'Collei',id:'collei',star:4,t:'Dendro'},
+    {n:'Diona',id:'diona',star:4,t:'Cryo'},
+    {n:'Fischl',id:'fischl',star:4,t:'Electro'},
+    {n:'Gorou',id:'gorou',star:4,t:'Geo'},
+    {n:'Heizou',id:'heizou',star:4,t:'Anemo'},
+    {n:'Kuki',id:'kuki',star:4,t:'Electro'},
+    {n:'Layla',id:'layla',star:4,t:'Cryo'},
+    {n:'Lisa',id:'lisa',star:4,t:'Electro'},
+    {n:'Mika',id:'mika',star:4,t:'Cryo'},
+    {n:'Noelle',id:'noelle',star:4,t:'Geo'},
+    {n:'Razor',id:'razor',star:4,t:'Electro'},
+    {n:'Rosaria',id:'rosaria',star:4,t:'Cryo'},
+    {n:'Sucrose',id:'sucrose',star:4,t:'Anemo'},
+    {n:'Xiangling',id:'xiangling',star:4,t:'Pyro'},
+    {n:'Xingqiu',id:'xingqiu',star:4,t:'Hydro'},
+    {n:'Yanfei',id:'yanfei',star:4,t:'Pyro'},
+    {n:'Yao Yao',id:'yaoyao',star:4,t:'Dendro'},
+    {n:'Kirara',id:'kirara',star:4,t:'Dendro'},
+    {n:'Charlotte',id:'charlotte',star:4,t:'Cryo'},
+    {n:'Chevreuse',id:'chevreuse',star:4,t:'Pyro'},
+    {n:'Gaming',id:'gaming',star:4,t:'Pyro'},
+    {n:'Kachina',id:'kachina',star:4,t:'Geo'},
+    {n:'Ororon',id:'ororon',star:4,t:'Electro'},
+  ];
+  // 3★ weapons (fillers)
+  const pool3 = [
+    {n:'Skyrider Sword',id:'sword',star:3,t:'Sword'},
+    {n:'Ferrous Shadow',id:'claymore',star:3,t:'Claymore'},
+    {n:'Magic Guide',id:'catalyst',star:3,t:'Catalyst'},
+    {n:'Sharpshooter\'s Oath',id:'bow',star:3,t:'Bow'},
+    {n:'Black Tassel',id:'polearm',star:3,t:'Polearm'},
+  ];
+  pool.forEach(c => WISH_POOL.push(c));
+  pool4.forEach(c => WISH_POOL.push(c));
+  pool3.forEach(c => WISH_POOL.push(c));
+})();
+
+// Avatar URL
+function avatarURL(id){
+  return 'https://enka.network/ui/UI_AvatarIcon_'+id.charAt(0).toUpperCase()+id.slice(1)+'.png';
+}
+
+// State
+let wishSt = (function(){
+  try{ return JSON.parse(localStorage.getItem('wish_state')) || {pity:0,gem:1600,wish:10,s5:0,s4:0,mode:'standard',log:[]}; }
+  catch(e){ return {pity:0,gem:1600,wish:10,s5:0,s4:0,mode:'standard',log:[]}; }
+})();
+
+function saveSt(){
+  try{ localStorage.setItem('wish_state', JSON.stringify(wishSt)); }catch(e){}
+}
+
+function updateUI(){
+  document.getElementById('wish-gems').textContent = wishSt.gem;
+  document.getElementById('wish-count').textContent = wishSt.wish;
+  document.getElementById('wish-5star').textContent = wishSt.s5;
+  document.getElementById('wish-4star').textContent = wishSt.s4;
+  document.getElementById('wish-pity').textContent = wishSt.pity;
+}
+
+function rollOne(){
+  wishSt.pity++;
+  // 5★: base 0.6%, soft pity from 73
+  let rate5 = 0.006;
+  if(wishSt.pity >= 73) rate5 = 0.006 + 0.06 * (wishSt.pity - 72);
+  if(wishSt.pity >= 90) rate5 = 1;
+
+  const r = Math.random();
+  if(r < rate5){
+    // 5★
+    wishSt.s5++;
+    wishSt.pity = 0;
+    const pool5 = WISH_POOL.filter(c => c.star === 5);
+    const c = pool5[Math.floor(Math.random() * pool5.length)];
+    return c;
+  } else if(r < 0.057 + 0.006){
+    // 4★ (~5.1%)
+    wishSt.s4++;
+    const pool4 = WISH_POOL.filter(c => c.star === 4);
+    const c = pool4[Math.floor(Math.random() * pool4.length)];
+    return c;
+  } else {
+    // 3★ weapon
+    const pool3 = WISH_POOL.filter(c => c.star === 3);
+    const c = pool3[Math.floor(Math.random() * pool3.length)];
+    return c;
+  }
+}
+
+function doWish(n){
+  const cost = n * 160;
+  if(wishSt.gem < cost){
+    document.getElementById('wish-result').innerHTML = '<div style="color:#f66;padding:20px;text-align:center">Not enough Primogems! Click Reset to refill.</div>';
+    return;
+  }
+  wishSt.gem -= cost;
+  wishSt.wish += n;
+
+  const resultEl = document.getElementById('wish-result');
+  resultEl.innerHTML = '';
+  const logEl = document.getElementById('wish-log');
+
+  for(let i=0; i<n; i++){
+    const c = rollOne();
+    const starStr = '★'.repeat(c.star);
+    const card = document.createElement('div');
+    card.className = 'wish-card s' + c.star;
+    card.innerHTML = '<img src="'+avatarURL(c.id)+'" alt="'+c.n+'" loading="lazy"><span class="wname">'+c.n+'</span><span class="wstar">'+starStr+'</span>';
+    resultEl.appendChild(card);
+
+    // Log
+    const entry = document.createElement('div');
+    entry.textContent = '#' + (wishSt.log.length + 1) + ' ' + c.n + ' ('+starStr+')';
+    if(c.star === 5) entry.style.color = '#d4a84b';
+    else if(c.star === 4) entry.style.color = '#a855f7';
+    logEl.appendChild(entry);
+    wishSt.log.push(c.n + ' ★'+c.star);
+  }
+
+  updateUI();
+  saveSt();
+}
+
+function resetWish(){
+  wishSt = {pity:0,gem:1600,wish:10,s5:0,s4:0,mode:'standard',log:[]};
+  document.getElementById('wish-result').innerHTML = '';
+  document.getElementById('wish-log').innerHTML = '';
+  updateUI();
+  saveSt();
+}
+</script>
+
 </body>
 </html>
