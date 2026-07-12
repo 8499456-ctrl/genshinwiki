@@ -125,7 +125,7 @@
       margin: 6px 0;
     }
     /* Push main content right */
-    .hero, section, .ad-wrap, #home-comments, footer {
+    .hero, section, .ad-wrap, footer {
       margin-left: 180px;
     }
     footer { margin-left: 180px; }
@@ -402,7 +402,7 @@
       .sidebar { display: none; }
       .nav-toggle { display: flex; }
       .nav-search { display: none; }
-      .hero, section, .ad-wrap, #home-comments, footer { margin-left: 0; }
+      .hero, section, .ad-wrap, footer { margin-left: 0; }
       footer { margin-left: 0; }
       nav ul {
         display: none;
@@ -667,14 +667,14 @@
 
   <!-- ============ Ad Banner ============ -->
   <div class="container ad-wrap">
-    <a href="https://gearup.sjv.io/c/7462059/3204502/40222" class="ad-banner" target="_blank" rel="noopener nofollow">
-      <span class="icon-ad">🚀</span>
+    <div class="ad-banner" style="cursor:default;">
+      <span class="icon-ad">📢</span>
       <div class="text-ad">
-        <div class="title-ad">GearUP Booster — Low Ping, Less Lag</div>
-        <div class="desc-ad">Playing Genshin from Asia? GearUP cuts ping and packet loss. Try it free.</div>
+        <div class="title-ad">Ad Space · Google AdSense</div>
+        <div class="desc-ad">Support this site — game recommendations and more. Ad space pending approval.</div>
       </div>
       <span class="ad-tag">Ad</span>
-    </a>
+    </div>
   </div>
 
   <!-- ============ Featured Guides ============ -->
@@ -715,8 +715,6 @@
     </div>
   </section>
 
-  <!-- ============ Comment Section (Giscus) ============ -->
-  <div id="home-comments" style="border-top:1px solid var(--border);"></div>
   <script src="https://giscus.app/client.js"
     data-repo="8499456-ctrl/genshinwiki"
     data-repo-id="R_kgDOTNHtZQ"
@@ -1130,7 +1128,6 @@ window.CommentEmbed = {
 // Auto-mount — retry until element exists in DOM
 (function autoMount() {
   var mounts = [
-    { id: 'home-comments', opts: { page: 'home', title: 'Comments', subtitle: 'Help us improve - share your thoughts!' } },
     { id: 'forum-comments', opts: { page: 'forum', title: '💬 Forum Comments', subtitle: 'Discuss Genshin Impact!' } },
   ];
   var allDone = true;
@@ -1145,23 +1142,6 @@ window.CommentEmbed = {
   if (!allDone) setTimeout(autoMount, 300);
 })();
 
-// === SIMPLE AUTO-MOUNT ===
-(function() {
-  function tryMount() {
-    var el = document.getElementById("home-comments");
-    var ce = window.CommentEmbed;
-    if (el && ce && typeof ce.mount === "function") {
-      if (!el.getAttribute("data-mounted")) {
-        el.setAttribute("data-mounted", "1");
-        ce.mount("home-comments", { page: "home", title: "Comments", subtitle: "Help us improve - share your thoughts!" });
-      }
-      return true;
-    }
-    return false;
-  }
-  if (!tryMount()) setTimeout(tryMount, 200);
-  if (!tryMount()) setTimeout(tryMount, 500);
-  if (!tryMount()) setTimeout(tryMount, 1000);
   <script src="site-comments.js"></script>
   <!-- Cloudflare Web Analytics -->
 <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "d8e6f9bb41564ccead265168e47540c9"}'></script>
