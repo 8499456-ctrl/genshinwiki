@@ -40,6 +40,15 @@
     const color = elementColors[element] || '#d4a84b';
     const icon = elementIcons[element] || '🌟';
     const name = char.name;
+    // Dynamic SEO
+document.title = `${name} Build Guide | Best Weapons, Artifacts & Teams | Genshin Wiki`;
+
+const metaDescription = document.querySelector('meta[name="description"]');
+
+if (metaDescription) {
+    metaDescription.content =
+    `Complete ${name} build guide for Genshin Impact. Find the best weapons, artifacts, teams, talents and materials for ${name}.`;
+}
     const rarity = char.rarity;
     const region = char.region || 'Teyvat';
     const weaponType = info.weapon || 'Unknown';
@@ -66,7 +75,7 @@
 
     // Info
     html += '<div style="flex:1;min-width:200px;">';
-    html += '<h1 style="font-size:clamp(28px,5vw,48px);font-weight:800;margin-bottom:4px;">' + name + '</h1>';
+    html += '<h1 style="font-size:clamp(28px,5vw,48px);font-weight:800;margin-bottom:4px;">' + name + ' Build Guide''</h1>';
     html += '<div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:8px;">';
     html += '<span style="padding:4px 12px;border-radius:16px;background:' + color + '22;color:' + color + ';font-size:12px;font-weight:600;">' + icon + ' ' + element.charAt(0).toUpperCase() + element.slice(1) + '</span>';
     html += '<span style="padding:4px 12px;border-radius:16px;background:var(--bg-card);border:1px solid var(--border);font-size:12px;">' + weaponType + '</span>';
