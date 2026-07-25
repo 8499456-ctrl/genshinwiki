@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://genshin-wiki.pages.dev/sitemap.xml
