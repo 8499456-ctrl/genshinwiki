@@ -971,7 +971,29 @@
     </div>
   </section>
   <!-- ============ Footer ============ -->
-  <footer style="position:relative;">
+    <section class="recent-updates">
+    <h2>Recently Updated</h2>
+    <p class="section-sub">Fresh Genshin Impact guides and tools updated for easier planning.</p>
+    <div class="update-list">
+      <a class="update-card" href="premium/best-builds.html">
+        <strong>Best Builds Guide</strong>
+        <span>Weapons, artifacts, stats, and team-building priorities.</span>
+      </a>
+      <a class="update-card" href="premium/abyss-strategy.html">
+        <strong>Spiral Abyss Strategy</strong>
+        <span>Team planning, rotations, shield checks, and clear tips.</span>
+      </a>
+      <a class="update-card" href="materials.html">
+        <strong>Character Materials</strong>
+        <span>Plan ascension and talent farming more efficiently.</span>
+      </a>
+      <a class="update-card" href="codes.html">
+        <strong>Genshin Codes</strong>
+        <span>Check redemption codes and reward updates.</span>
+      </a>
+    </div>
+  </section>
+<footer style="position:relative;">
     <div class="age-badge">
       <img src="images/age_rating_12plus.png" alt="Ages 12+">
     </div>
