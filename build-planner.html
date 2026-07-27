@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Genshin Impact Build Planner — Character Ascension & Resin Calculator</title>
+<meta name="description" content="Free Genshin Impact build planner. Estimate resin, farming days, talent books, boss runs, Mora, Hero's Wit, and weapon materials for your next character build.">
+<link rel="icon" type="image/png" href="favicon.png">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0d1117;--panel:#151b23;--panel2:#1c2333;--border:#30363d;--gold:#d4a84b;--gold2:#f0d78c;--teal:#4bc4b3;--blue:#4a9dd6;--red:#d9604a;--text:#e6edf3;--dim:#9aa4b2;--muted:#667085}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;line-height:1.65}
+a{color:var(--gold);text-decoration:none}a:hover{color:var(--gold2)}
+nav{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:12px 24px;background:rgba(13,17,23,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.logo{font-size:18px;font-weight:800}.logo span{color:var(--gold2)}
+nav ul{display:flex;gap:10px;list-style:none;flex-wrap:wrap;justify-content:flex-end}
+nav a{display:inline-flex;align-items:center;gap:4px;padding:6px 10px;border-radius:8px;color:var(--dim);font-size:13px}
+nav a:hover,nav a.active{background:rgba(212,168,75,.1);color:var(--gold2)}
+.hero{padding:54px 20px 30px;text-align:center;background:linear-gradient(135deg,rgba(212,168,75,.12),rgba(75,196,179,.08),rgba(74,157,214,.1)),url('images/hero.jpg') center/cover no-repeat;position:relative}
+.hero:before{content:"";position:absolute;inset:0;background:rgba(13,17,23,.72)}
+.hero>*{position:relative}.hero h1{font-size:34px;line-height:1.15;color:var(--gold2);margin-bottom:10px}.hero p{max-width:760px;margin:0 auto;color:var(--dim);font-size:15px}
+.wrap{max-width:1100px;margin:0 auto;padding:24px 18px 50px}
+.layout{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(320px,.95fr);gap:18px;align-items:start}
+.panel{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:18px;box-shadow:0 14px 42px rgba(0,0,0,.16)}
+.panel h2{font-size:20px;color:var(--gold2);margin-bottom:6px}.panel p{color:var(--dim);font-size:13px;margin-bottom:12px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.field{display:flex;flex-direction:column;gap:6px}.field label{font-size:12px;color:var(--dim);font-weight:700}
+select,input{width:100%;border:1px solid var(--border);background:#0f141d;color:var(--text);border-radius:10px;padding:10px 11px;font-size:14px;outline:none}
+select:focus,input:focus{border-color:var(--gold)}
+.slider-row{display:grid;grid-template-columns:1fr 56px;gap:10px;align-items:center}
+input[type=range]{padding:0;accent-color:var(--gold);height:30px}
+.btn-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+button{border:0;border-radius:10px;padding:10px 14px;font-weight:800;cursor:pointer;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#10141c}
+button.secondary{background:var(--panel2);border:1px solid var(--border);color:var(--text)}
+.result-top{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:14px}
+.metric{background:linear-gradient(135deg,rgba(212,168,75,.1),rgba(75,196,179,.05));border:1px solid var(--border);border-radius:12px;padding:13px}
+.metric .label{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}.metric .value{font-size:24px;font-weight:900;color:var(--gold2);line-height:1.2}.metric .sub{font-size:12px;color:var(--dim);margin-top:2px}
+.bars{display:grid;gap:10px}.barline{display:grid;grid-template-columns:120px 1fr 58px;gap:10px;align-items:center;font-size:13px;color:var(--dim)}
+.bar{height:10px;background:#0f141d;border-radius:999px;overflow:hidden;border:1px solid var(--border)}.fill{height:100%;background:linear-gradient(90deg,var(--teal),var(--gold2));width:0%}
+.plan{margin-top:16px;display:grid;gap:10px}.step{display:flex;gap:10px;align-items:flex-start;background:#0f141d;border:1px solid var(--border);border-radius:12px;padding:12px}.step b{color:var(--gold2)}.step span{font-size:13px;color:var(--dim)}
+.quick{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px}.quick a{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:14px;color:var(--text)}.quick strong{display:block;color:var(--gold2);font-size:14px}.quick span{display:block;color:var(--dim);font-size:12px;margin-top:4px}
+.note{margin-top:16px;padding:12px 14px;background:rgba(74,157,214,.08);border:1px solid rgba(74,157,214,.25);border-radius:12px;color:var(--dim);font-size:13px}
+footer{border-top:1px solid var(--border);padding:28px 16px;text-align:center;color:var(--dim);font-size:13px}.links{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-bottom:10px}.links a{color:var(--dim)}
+@media(max-width:820px){.layout{grid-template-columns:1fr}.hero h1{font-size:27px}.result-top,.quick{grid-template-columns:1fr}.barline{grid-template-columns:92px 1fr 46px}nav{align-items:flex-start;flex-direction:column}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="logo"><a href="index.html"><span>Genshin</span> Guide</a></div>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="characters.html">Characters</a></li>
+    <li><a href="materials.html">Materials</a></li>
+    <li><a href="resin-timer.html">Resin Timer</a></li>
+    <li><a href="build-planner.html" class="active">Build Planner</a></li>
+    <li><a href="forum.html">Forum</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <h1>Genshin Build Planner</h1>
+  <p>Plan one character before you spend resin. Estimate farming days, boss runs, Mora, EXP books, talent books, weapon domains, and the next best action.</p>
+</section>
+
+<main class="wrap">
+  <div class="layout">
+    <section class="panel">
+      <h2>Build Goal</h2>
+      <p>Set your current progress and target. The numbers are practical estimates for planning, not an inventory replacement.</p>
+      <div class="grid">
+        <div class="field">
+          <label for="charName">Character</label>
+          <input id="charName" value="Furina" maxlength="24">
+        </div>
+        <div class="field">
+          <label for="role">Role</label>
+          <select id="role">
+            <option value="carry">On-field DPS</option>
+            <option value="offfield" selected>Off-field DPS / Sub DPS</option>
+            <option value="support">Support / Healer</option>
+            <option value="new">New account carry</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Current Character Level</label>
+          <div class="slider-row"><input type="range" id="curLevel" min="1" max="90" value="70"><input id="curLevelNum" type="number" min="1" max="90" value="70"></div>
+        </div>
+        <div class="field">
+          <label>Target Character Level</label>
+          <div class="slider-row"><input type="range" id="targetLevel" min="20" max="90" value="90"><input id="targetLevelNum" type="number" min="20" max="90" value="90"></div>
+        </div>
+        <div class="field">
+          <label>Current Talent Average</label>
+          <div class="slider-row"><input type="range" id="curTalent" min="1" max="10" value="6"><input id="curTalentNum" type="number" min="1" max="10" value="6"></div>
+        </div>
+        <div class="field">
+          <label>Target Talent Average</label>
+          <div class="slider-row"><input type="range" id="targetTalent" min="1" max="10" value="9"><input id="targetTalentNum" type="number" min="1" max="10" value="9"></div>
+        </div>
+        <div class="field">
+          <label>Weapon Goal</label>
+          <select id="weaponGoal">
+            <option value="none">Skip weapon</option>
+            <option value="80">Weapon to 80</option>
+            <option value="90" selected>Weapon to 90</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Artifact Goal</label>
+          <select id="artifactGoal">
+            <option value="light">Basic usable set</option>
+            <option value="normal" selected>Good 4-piece set</option>
+            <option value="deep">Deep farm / min-max</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Current Original Resin</label>
+          <input id="currentResin" type="number" min="0" max="200" value="120">
+        </div>
+        <div class="field">
+          <label>Fragile / Transient Resin</label>
+          <input id="fragile" type="number" min="0" max="200" value="3">
+        </div>
+      </div>
+      <div class="btn-row">
+        <button onclick="calculate()">Calculate Plan</button>
+        <button class="secondary" onclick="preset('starter')">Starter Goal</button>
+        <button class="secondary" onclick="preset('abyss')">Abyss Ready</button>
+        <button class="secondary" onclick="preset('premium')">Full Build</button>
+      </div>
+      <div class="note">Tip: for most players, level 80/90 with key talents at 8 or 9 is a better first goal than forcing every character to triple-crown.</div>
+    </section>
+
+    <aside class="panel">
+      <h2 id="resultTitle">Furina Build Estimate</h2>
+      <p id="resultSub">Estimated with 180 natural resin per day and 60 resin per fragile resin.</p>
+      <div class="result-top">
+        <div class="metric"><div class="label">Resin Need</div><div class="value" id="resinNeed">0</div><div class="sub">after saved resin</div></div>
+        <div class="metric"><div class="label">Farming Days</div><div class="value" id="daysNeed">0</div><div class="sub">natural resin</div></div>
+        <div class="metric"><div class="label">Priority</div><div class="value" id="priority">Talents</div><div class="sub">next best spend</div></div>
+      </div>
+      <div class="bars">
+        <div class="barline"><span>EXP / Mora</span><div class="bar"><div class="fill" id="barExp"></div></div><strong id="expResin">0</strong></div>
+        <div class="barline"><span>Boss Runs</span><div class="bar"><div class="fill" id="barBoss"></div></div><strong id="bossRuns">0</strong></div>
+        <div class="barline"><span>Talent Books</span><div class="bar"><div class="fill" id="barTalent"></div></div><strong id="talentResin">0</strong></div>
+        <div class="barline"><span>Weapon Mats</span><div class="bar"><div class="fill" id="barWeapon"></div></div><strong id="weaponResin">0</strong></div>
+        <div class="barline"><span>Artifacts</span><div class="bar"><div class="fill" id="barArtifact"></div></div><strong id="artifactResin">0</strong></div>
+      </div>
+      <div class="plan" id="planSteps"></div>
+    </aside>
+  </div>
+
+  <section class="quick">
+    <a href="resin-timer.html"><strong>Resin Timer</strong><span>Check when your resin is full before farming.</span></a>
+    <a href="materials.html"><strong>Material Farming</strong><span>Find boss, talent, and ascension material routes.</span></a>
+    <a href="characters.html"><strong>Character Gallery</strong><span>Pick a character before planning a build.</span></a>
+  </section>
+</main>
+
+<footer>
+  <div class="links">
+    <a href="index.html">Home</a>
+    <a href="characters.html">Characters</a>
+    <a href="artifacts.html">Artifacts</a>
+    <a href="materials.html">Materials</a>
+    <a href="resin-timer.html">Resin Timer</a>
+    <a href="forum.html">Forum</a>
+    <a href="privacy.html">Privacy</a>
+  </div>
+  <p>This fan-made tool is not affiliated with miHoYo / HoYoverse. Use it as a planning estimate.</p>
+</footer>
+
+<script>
+const NATURAL_RESIN_PER_DAY = 180;
+const FRAGILE_VALUE = 60;
+const levelCost = [
+  {from:1,to:40,resin:120,mora:120000,wits:20,boss:0},
+  {from:40,to:50,resin:120,mora:160000,wits:18,boss:2},
+  {from:50,to:60,resin:160,mora:220000,wits:30,boss:4},
+  {from:60,to:70,resin:200,mora:320000,wits:45,boss:6},
+  {from:70,to:80,resin:260,mora:520000,wits:80,boss:8},
+  {from:80,to:90,resin:360,mora:680000,wits:172,boss:10}
+];
+const talentCost = {2:40,3:50,4:70,5:90,6:110,7:160,8:220,9:300,10:420};
+function clamp(n,min,max){return Math.max(min,Math.min(max,Number(n)||0))}
+function sync(a,b,min,max){
+  const left=document.getElementById(a), right=document.getElementById(b);
+  left.addEventListener('input',()=>{right.value=left.value;calculate()});
+  right.addEventListener('input',()=>{right.value=clamp(right.value,min,max);left.value=right.value;calculate()});
+}
+['role','weaponGoal','artifactGoal','currentResin','fragile','charName'].forEach(id=>document.getElementById(id).addEventListener('input',calculate));
+sync('curLevel','curLevelNum',1,90); sync('targetLevel','targetLevelNum',20,90); sync('curTalent','curTalentNum',1,10); sync('targetTalent','targetTalentNum',1,10);
+function levelEstimate(cur,target){
+  let resin=0,mora=0,wits=0,boss=0;
+  levelCost.forEach(row=>{
+    const overlap=Math.max(0,Math.min(target,row.to)-Math.max(cur,row.from));
+    const span=row.to-row.from;
+    if(overlap>0){const pct=overlap/span;resin+=row.resin*pct;mora+=row.mora*pct;wits+=row.wits*pct;boss+=row.boss*pct}
+  });
+  return {resin,mora,wits,boss:Math.ceil(boss)};
+}
+function talentEstimate(cur,target,role){
+  const talentCount = role === 'support' ? 2 : role === 'offfield' ? 2 : 3;
+  let resin=0;
+  for(let lvl=Math.max(2,cur+1); lvl<=target; lvl++) resin += (talentCost[lvl] || 0) * talentCount;
+  return {resin,talentCount};
+}
+function preset(type){
+  const vals = type==='starter' ? [60,80,4,6,'80','light'] : type==='abyss' ? [70,90,6,9,'90','normal'] : [80,90,8,10,'90','deep'];
+  ['curLevel','targetLevel','curTalent','targetTalent'].forEach((id,i)=>{document.getElementById(id).value=vals[i];document.getElementById(id+'Num').value=vals[i]});
+  document.getElementById('weaponGoal').value=vals[4]; document.getElementById('artifactGoal').value=vals[5]; calculate();
+}
+function setBar(id,val,max){document.getElementById(id).style.width=Math.min(100,Math.round(val/max*100))+'%'}
+function calculate(){
+  let cur=clamp(document.getElementById('curLevel').value,1,90), target=clamp(document.getElementById('targetLevel').value,20,90);
+  if(target<cur){target=cur;document.getElementById('targetLevel').value=target;document.getElementById('targetLevelNum').value=target}
+  let ct=clamp(document.getElementById('curTalent').value,1,10), tt=clamp(document.getElementById('targetTalent').value,1,10);
+  if(tt<ct){tt=ct;document.getElementById('targetTalent').value=tt;document.getElementById('targetTalentNum').value=tt}
+  const role=document.getElementById('role').value;
+  const level=levelEstimate(cur,target), talent=talentEstimate(ct,tt,role);
+  const weaponGoal=document.getElementById('weaponGoal').value;
+  const artifactGoal=document.getElementById('artifactGoal').value;
+  const weaponResin=weaponGoal==='90'?520:weaponGoal==='80'?300:0;
+  const artifactResin=artifactGoal==='deep'?1800:artifactGoal==='normal'?900:360;
+  const expResin=Math.round(level.resin), talentResin=Math.round(talent.resin);
+  const saved=clamp(document.getElementById('currentResin').value,0,200)+clamp(document.getElementById('fragile').value,0,200)*FRAGILE_VALUE;
+  const raw=expResin+level.boss*40+talentResin+weaponResin+artifactResin;
+  const need=Math.max(0,Math.round(raw-saved));
+  const days=Math.ceil(need/NATURAL_RESIN_PER_DAY);
+  const pieces=[['EXP / Mora',expResin],['Boss Runs',level.boss*40],['Talent Books',talentResin],['Weapon Mats',weaponResin],['Artifacts',artifactResin]].sort((a,b)=>b[1]-a[1]);
+  const priority=pieces[0][0].replace('EXP / Mora','EXP');
+  document.getElementById('resultTitle').textContent=(document.getElementById('charName').value||'Character')+' Build Estimate';
+  document.getElementById('resinNeed').textContent=need.toLocaleString();
+  document.getElementById('daysNeed').textContent=days;
+  document.getElementById('priority').textContent=priority;
+  document.getElementById('expResin').textContent=expResin;
+  document.getElementById('bossRuns').textContent=level.boss;
+  document.getElementById('talentResin').textContent=talentResin;
+  document.getElementById('weaponResin').textContent=weaponResin;
+  document.getElementById('artifactResin').textContent=artifactResin;
+  const max=Math.max(expResin,level.boss*40,talentResin,weaponResin,artifactResin,1);
+  setBar('barExp',expResin,max); setBar('barBoss',level.boss*40,max); setBar('barTalent',talentResin,max); setBar('barWeapon',weaponResin,max); setBar('barArtifact',artifactResin,max);
+  document.getElementById('planSteps').innerHTML=[
+    `<div class="step"><b>1</b><span>Spend today's resin on <b>${priority}</b>. This is currently the largest resin bucket in the plan.</span></div>`,
+    `<div class="step"><b>2</b><span>Prepare about <b>${Math.round(level.mora+talentResin*1800).toLocaleString()} Mora</b> and <b>${Math.round(level.wits)}</b> Hero's Wit before pushing levels.</span></div>`,
+    `<div class="step"><b>3</b><span>Expect around <b>${level.boss}</b> world boss reward claims for ascension gems and boss drops.</span></div>`,
+    `<div class="step"><b>4</b><span>After the build is usable, move leftover resin to artifacts. Stop when upgrades become tiny.</span></div>`
+  ].join('');
+}
+calculate();
+</script>
+</body>
+</html>
