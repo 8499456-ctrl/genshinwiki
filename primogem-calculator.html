@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Genshin Primogem Calculator: Wishes, Pity & Banner Savings | Genshin Wiki</title>
+<meta name="description" content="Free Genshin Impact Primogem Calculator for estimating wishes, pity, Welkin, daily commissions, Abyss, events, and how many pulls you can save before a banner.">
+<link rel="canonical" href="https://genshinwiki.cn/primogem-calculator.html">
+<link rel="icon" type="image/png" href="favicon.png">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0d1117;--panel:#151b23;--panel2:#0f141d;--border:#30363d;--gold:#d4a84b;--gold2:#f0d78c;--teal:#4bc4b3;--blue:#4a9dd6;--violet:#b47bd4;--text:#e6edf3;--dim:#9aa4b2;--muted:#667085}
+html{scroll-behavior:smooth}body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;line-height:1.65}a{color:var(--gold);text-decoration:none}a:hover{color:var(--gold2)}
+nav{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:12px 24px;background:rgba(13,17,23,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}.logo{font-size:18px;font-weight:800}.logo span{color:var(--gold2)}nav ul{display:flex;gap:10px;list-style:none;flex-wrap:wrap;justify-content:flex-end}nav a{display:inline-flex;padding:6px 10px;border-radius:8px;color:var(--dim);font-size:13px}nav a:hover{background:rgba(212,168,75,.1);color:var(--gold2)}
+.hero{padding:44px 20px 26px;text-align:center;background:linear-gradient(135deg,rgba(212,168,75,.16),rgba(75,196,179,.12),rgba(180,123,212,.12)),url('images/hero.jpg') center/cover no-repeat;position:relative}.hero:before{content:"";position:absolute;inset:0;background:rgba(13,17,23,.72)}.hero>*{position:relative}.eyebrow{color:var(--teal);font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}.hero h1{font-size:34px;line-height:1.15;color:var(--gold2);margin:8px 0 10px}.hero p{max-width:780px;margin:0 auto;color:var(--dim);font-size:15px}.meta{margin-top:12px;color:var(--dim);font-size:12px}
+.wrap{max-width:1120px;margin:0 auto;padding:22px 18px 48px}.layout{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(320px,.8fr);gap:16px;align-items:start}.card{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:14px;box-shadow:0 14px 42px rgba(0,0,0,.15)}.card h2{font-size:21px;color:var(--gold2);margin-bottom:8px}.card h3{font-size:16px;margin:14px 0 8px}.card p,.card li{color:var(--dim);font-size:14px}.quick{border-left:3px solid var(--teal);background:rgba(75,196,179,.08);padding:12px 14px;border-radius:10px;color:var(--dim);font-size:14px}.quick b{color:var(--gold2)}
+.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.field{background:var(--panel2);border:1px solid var(--border);border-radius:10px;padding:12px}.field label{display:flex;justify-content:space-between;gap:10px;color:var(--text);font-size:13px;font-weight:800;margin-bottom:7px}.field span{color:var(--muted);font-weight:600}.field input{width:100%;background:#090d13;border:1px solid var(--border);border-radius:8px;color:var(--text);font-size:16px;padding:10px}.field input:focus{outline:2px solid rgba(75,196,179,.35);border-color:var(--teal)}.check-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px;margin-top:12px}.toggle{display:flex;align-items:center;gap:10px;background:var(--panel2);border:1px solid var(--border);border-radius:10px;padding:12px;color:var(--dim);font-size:14px}.toggle input{width:18px;height:18px;accent-color:var(--teal)}
+.results{position:sticky;top:78px}.big{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0}.metric{background:linear-gradient(135deg,rgba(212,168,75,.14),rgba(75,196,179,.08));border:1px solid rgba(212,168,75,.25);border-radius:12px;padding:15px}.metric strong{display:block;color:var(--gold2);font-size:27px;line-height:1}.metric span{display:block;color:var(--dim);font-size:12px;margin-top:6px}.bar{height:12px;background:#090d13;border:1px solid var(--border);border-radius:99px;overflow:hidden;margin:10px 0}.fill{height:100%;width:0%;background:linear-gradient(90deg,var(--teal),var(--gold));transition:width .2s}.summary{display:grid;gap:8px;margin-top:10px}.summary div{display:flex;justify-content:space-between;gap:10px;background:var(--panel2);border:1px solid var(--border);border-radius:9px;padding:10px;color:var(--dim);font-size:13px}.summary b{color:var(--text)}.note{font-size:12px;color:var(--muted);margin-top:10px}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.tab{border:1px solid var(--border);background:var(--panel2);color:var(--dim);border-radius:8px;padding:9px 12px;cursor:pointer;font-weight:800}.tab.active{border-color:rgba(75,196,179,.55);color:var(--teal);background:rgba(75,196,179,.1)}
+.links{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px}.links a{display:block;background:var(--panel2);border:1px solid var(--border);border-radius:10px;padding:14px;color:var(--text);font-weight:800;font-size:14px}.links span{display:block;color:var(--dim);font-size:12px;font-weight:500;margin-top:4px}
+table{width:100%;border-collapse:collapse;margin-top:10px;font-size:14px}th{padding:10px;text-align:left;background:rgba(212,168,75,.14);color:var(--gold2)}td{padding:10px;color:var(--dim);border-bottom:1px solid var(--border)}footer{border-top:1px solid var(--border);padding:28px 16px;text-align:center;color:var(--dim);font-size:13px}.footer-links{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-bottom:10px}.footer-links a{color:var(--dim)}
+@media(max-width:860px){.layout{grid-template-columns:1fr}.results{position:static}.form-grid{grid-template-columns:1fr}.hero h1{font-size:28px}nav{align-items:flex-start;flex-direction:column}}
+</style>
+</head>
+<body>
+<nav><div class="logo"><a href="index.html"><span>Genshin</span> Guide</a></div><ul><li><a href="index.html">Home</a></li><li><a href="build-planner.html">Build Planner</a></li><li><a href="resin-timer.html">Resin Timer</a></li><li><a href="codes.html">Codes</a></li><li><a href="characters.html">Characters</a></li><li><a href="forum.html">Forum</a></li></ul></nav>
+<section class="hero"><div class="eyebrow">Genshin Tool</div><h1>Genshin Primogem Calculator</h1><p>Estimate how many wishes you can save before a banner, including Primogems, Intertwined Fates, pity, Welkin, daily commissions, Abyss, events, and custom rewards.</p><div class="meta">Updated by Genshin Wiki Team · Last updated: July 2026</div></section>
+<main class="wrap">
+  <section class="card">
+    <h2>Quick Answer</h2>
+    <div class="quick"><b>Use this when asking:</b> “Can I reach pity before the next banner?” Enter your current Primogems, Fates, pity, and days left. The calculator converts everything into wishes and shows how close you are to 90 and 180 pulls.</div>
+  </section>
+  <div class="layout">
+    <div>
+      <section class="card">
+        <h2>Your Current Savings</h2>
+        <div class="form-grid">
+          <div class="field"><label for="currentPrimogems">Current Primogems <span>160 = 1 wish</span></label><input id="currentPrimogems" type="number" min="0" value="0"></div>
+          <div class="field"><label for="currentFates">Intertwined Fates <span>limited banner</span></label><input id="currentFates" type="number" min="0" value="0"></div>
+          <div class="field"><label for="currentPity">Current Pity <span>0-89</span></label><input id="currentPity" type="number" min="0" max="89" value="0"></div>
+          <div class="field"><label for="daysLeft">Days Until Banner Ends <span>or target date</span></label><input id="daysLeft" type="number" min="0" value="21"></div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Daily and Monthly Income</h2>
+        <div class="form-grid">
+          <div class="field"><label for="dailyPrimos">Daily Commissions <span>per day</span></label><input id="dailyPrimos" type="number" min="0" value="60"></div>
+          <div class="field"><label for="welkinDaily">Welkin Moon <span>per day</span></label><input id="welkinDaily" type="number" min="0" value="0"></div>
+          <div class="field"><label for="abyssPrimos">Abyss / Theater <span>total before target</span></label><input id="abyssPrimos" type="number" min="0" value="800"></div>
+          <div class="field"><label for="eventPrimos">Events + Codes + Mail <span>custom estimate</span></label><input id="eventPrimos" type="number" min="0" value="1200"></div>
+        </div>
+        <div class="check-row">
+          <label class="toggle"><input id="includeWelkin" type="checkbox"> Include Welkin daily Primogems</label>
+          <label class="toggle"><input id="guaranteed" type="checkbox"> Next 5-star is guaranteed</label>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Extra Sources</h2>
+        <div class="form-grid">
+          <div class="field"><label for="shopFates">Shop / Battle Pass Fates <span>extra wishes</span></label><input id="shopFates" type="number" min="0" value="5"></div>
+          <div class="field"><label for="explorationPrimos">Exploration / Quests <span>custom</span></label><input id="explorationPrimos" type="number" min="0" value="0"></div>
+          <div class="field"><label for="starglitterFates">Starglitter Fates <span>extra wishes</span></label><input id="starglitterFates" type="number" min="0" value="0"></div>
+          <div class="field"><label for="paidCrystals">Genesis Crystals <span>if converting</span></label><input id="paidCrystals" type="number" min="0" value="0"></div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Fast Presets</h2>
+        <div class="tabs">
+          <button class="tab active" data-days="21" data-events="1200" data-abyss="800">3 Weeks</button>
+          <button class="tab" data-days="42" data-events="2400" data-abyss="1600">Full Patch</button>
+          <button class="tab" data-days="14" data-events="800" data-abyss="800">Last 2 Weeks</button>
+          <button class="tab" data-days="7" data-events="300" data-abyss="0">Emergency Week</button>
+        </div>
+        <p>Presets are only planning shortcuts. Adjust event, exploration, Abyss, and shop values to match your account.</p>
+      </section>
+    </div>
+
+    <aside class="results card">
+      <h2>Your Result</h2>
+      <div class="big">
+        <div class="metric"><strong id="totalWishes">0</strong><span>Total wishes</span></div>
+        <div class="metric"><strong id="totalPrimogems">0</strong><span>Total Primogems value</span></div>
+      </div>
+      <div>
+        <p>Progress to next 5-star</p>
+        <div class="bar"><div id="softFill" class="fill"></div></div>
+        <p id="nextFiveStarText" class="note">Enter savings to see your pity progress.</p>
+      </div>
+      <div>
+        <p>Progress to 180-wish hard guarantee</p>
+        <div class="bar"><div id="guaranteeFill" class="fill"></div></div>
+        <p id="guaranteeText" class="note">Hard guarantee assumes losing the 50/50 first.</p>
+      </div>
+      <div class="summary">
+        <div><span>Primogems from days left</span><b id="dailyTotal">0</b></div>
+        <div><span>Extra Primogems</span><b id="extraTotal">0</b></div>
+        <div><span>Extra Fates</span><b id="fateTotal">0</b></div>
+        <div><span>Wishes including pity</span><b id="withPity">0</b></div>
+        <div><span>50/50 status</span><b id="guaranteeStatus">Not guaranteed</b></div>
+      </div>
+    </aside>
+  </div>
+
+  <section class="card">
+    <h2>Common Wish Targets</h2>
+    <table>
+      <tr><th>Goal</th><th>What It Means</th><th>Useful When</th></tr>
+      <tr><td>75 wishes</td><td>Soft pity range starts around here.</td><td>You only need one 5-star attempt.</td></tr>
+      <tr><td>90 wishes</td><td>Hard pity for one 5-star.</td><td>You are counting the worst case for one 5-star.</td></tr>
+      <tr><td>180 wishes</td><td>Hard guarantee for featured character.</td><td>You are not guaranteed and want the safest plan.</td></tr>
+    </table>
+  </section>
+
+  <section class="card">
+    <h2>Plan Your Build After Pulling</h2>
+    <div class="links"><a href="build-planner.html">Build Planner<span>Estimate resin and materials after you pull.</span></a><a href="resin-timer.html">Resin Timer<span>Plan daily farming sessions.</span></a><a href="codes.html">Redeem Codes<span>Check quick Primogem sources.</span></a><a href="furina-build.html">Furina Build<span>Plan a high-value support.</span></a><a href="neuvillette-build.html">Neuvillette Build<span>Compare another top carry.</span></a><a href="raiden-build.html">Raiden Build<span>Choose Burst DPS or Hyperbloom.</span></a></div>
+  </section>
+</main>
+<footer><div class="footer-links"><a href="index.html">Home</a><a href="build-planner.html">Build Planner</a><a href="resin-timer.html">Resin Timer</a><a href="codes.html">Codes</a><a href="privacy.html">Privacy</a></div><p>This fan-made calculator is not affiliated with miHoYo / HoYoverse. Values are estimates; update inputs for your own account and current patch.</p></footer>
+<script>
+const ids=['currentPrimogems','currentFates','currentPity','daysLeft','dailyPrimos','welkinDaily','abyssPrimos','eventPrimos','shopFates','explorationPrimos','starglitterFates','paidCrystals'];
+const $=id=>document.getElementById(id);
+const num=id=>Math.max(0,Number($(id).value)||0);
+function clamp(n,min,max){return Math.min(max,Math.max(min,n));}
+function fmt(n){return Math.round(n).toLocaleString();}
+function calc(){
+  const currentPrimogems=num('currentPrimogems');
+  const currentFates=num('currentFates');
+  const pity=clamp(num('currentPity'),0,89);
+  $('currentPity').value=pity;
+  const days=num('daysLeft');
+  const daily=num('dailyPrimos');
+  const welkin=$('includeWelkin').checked?num('welkinDaily'):0;
+  const dailyTotal=(daily+welkin)*days;
+  const extraPrimos=num('abyssPrimos')+num('eventPrimos')+num('explorationPrimos')+num('paidCrystals');
+  const extraFates=num('shopFates')+num('starglitterFates');
+  const totalPrimogems=currentPrimogems+dailyTotal+extraPrimos;
+  const totalWishes=Math.floor(totalPrimogems/160)+currentFates+extraFates;
+  const withPity=totalWishes+pity;
+  const to90=Math.max(0,90-withPity);
+  const to180=Math.max(0,180-withPity);
+  $('totalWishes').textContent=fmt(totalWishes);
+  $('totalPrimogems').textContent=fmt(totalPrimogems);
+  $('dailyTotal').textContent=fmt(dailyTotal);
+  $('extraTotal').textContent=fmt(extraPrimos);
+  $('fateTotal').textContent=fmt(currentFates+extraFates);
+  $('withPity').textContent=fmt(withPity);
+  $('guaranteeStatus').textContent=$('guaranteed').checked?'Guaranteed':'Not guaranteed';
+  $('softFill').style.width=clamp((withPity/90)*100,0,100)+'%';
+  $('guaranteeFill').style.width=clamp((withPity/180)*100,0,100)+'%';
+  $('nextFiveStarText').textContent=to90===0?'You have enough wishes plus pity to reach one 5-star hard pity.':`You need about ${fmt(to90)} more wishes to reach 90 hard pity.`;
+  if($('guaranteed').checked){
+    $('guaranteeText').textContent=to90===0?'Because you are guaranteed, one 5-star hard pity is enough for the featured character.':`Guaranteed active: about ${fmt(to90)} more wishes to safely reach the featured 5-star.`;
+  }else{
+    $('guaranteeText').textContent=to180===0?'You have enough wishes plus pity to cover the 180-wish hard guarantee.':`Not guaranteed: about ${fmt(to180)} more wishes to cover the 180-wish hard guarantee.`;
+  }
+}
+ids.forEach(id=>$(id).addEventListener('input',calc));
+['includeWelkin','guaranteed'].forEach(id=>$(id).addEventListener('change',calc));
+document.querySelectorAll('.tab').forEach(btn=>btn.addEventListener('click',()=>{
+  document.querySelectorAll('.tab').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  $('daysLeft').value=btn.dataset.days;
+  $('eventPrimos').value=btn.dataset.events;
+  $('abyssPrimos').value=btn.dataset.abyss;
+  calc();
+}));
+calc();
+</script>
+</body>
+</html>
