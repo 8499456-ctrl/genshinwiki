@@ -13,6 +13,8 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Genshin Guide Blog — Builds, Teams & Tips (v6.3)</title>
 <meta name="description" content="Latest Genshin Impact guides, character builds, Spiral Abyss tips, and meta analysis. Updated regularly.">
+<link rel="canonical" href="https://genshinwiki.cn/blog/">
+<meta property="og:url" content="https://genshinwiki.cn/blog/">
 <link rel="icon" type="image/png" href="../favicon.png">
 <style>
 * { margin:0; padding:0; box-sizing:border-box; }
@@ -53,14 +55,14 @@ footer .links a:hover { color:var(--gold); }
 </head>
 <body>
 <nav>
-  <div class="logo"><a href="../index.html"><span>✦</span> Genshin Guide</a></div>
+  <div class="logo"><a href="../index"><span>✦</span> Genshin Guide</a></div>
   <ul>
-<li><a href="../index.html">Home</a></li>
-<li><a href="../characters.html">Characters</a></li>
-<li><a href="../abyss.html">Abyss</a></li>
-<li><a href="../forum.html">Forum</a></li>
-<li><a href="index.html" class="active">Blog</a></li>
-<li><a href="../login.html" style="color:var(--gold);">Login</a></li>
+<li><a href="../index">Home</a></li>
+<li><a href="../characters">Characters</a></li>
+<li><a href="../abyss">Abyss</a></li>
+<li><a href="../forum">Forum</a></li>
+<li><a href="index" class="active">Blog</a></li>
+<li><a href="../login" style="color:var(--gold);">Login</a></li>
       <button class="music-btn" id="musicBtn" onclick="toggleMusic()" title="Play / Pause BGM">♪</button>
 </ul>
 </nav>
@@ -72,7 +74,7 @@ footer .links a:hover { color:var(--gold); }
   <div style="text-align:center;padding:40px;color:var(--text-dim);">Loading posts...</div>
 </div>
 <footer>
-  <div class="links"><a href="../index.html">Home</a><a href="../characters.html">Characters</a><a href="../abyss.html">Abyss</a><a href="../forum.html">Forum</a><a href="index.html">Blog</a><a href="../login.html">Login</a></div>
+  <div class="links"><a href="../index">Home</a><a href="../characters">Characters</a><a href="../abyss">Abyss</a><a href="../forum">Forum</a><a href="index">Blog</a><a href="../login">Login</a></div>
   <p>© 2026 Genshin Guide — Not affiliated with HoYoverse</p>
 </footer>
 
@@ -254,7 +256,7 @@ const POSTS = [
   sorted.forEach(p => {
     const isPinned = p.pinned ? '<span style="font-size:11px;color:var(--gold);margin-left:6px;">📌 Pinned</span>' : '';
     const tagColor = p.tagClass || 'tag';
-    html += '<a href="' + p.id + '.html" class="blog-card">';
+    html += '<a href="' + p.id + '" class="blog-card">';
     html += '<div class="meta"><span>📅 ' + p.date + '</span><span>✍️ ' + p.author + '</span>' + isPinned + '</div>';
     html += '<h2>' + p.title + '</h2>';
     html += '<div class="excerpt">' + p.excerpt + '</div>';
