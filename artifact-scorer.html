@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Genshin Artifact Scorer: Rate Your Artifact Substats | Genshin Wiki</title>
+  <meta name="description" content="Free Genshin Impact artifact scorer. Rate CRIT, ATK, HP, DEF, Energy Recharge, and Elemental Mastery rolls for DPS, support, healer, and reaction builds.">
+  <link rel="canonical" href="https://genshinwiki.cn/artifact-scorer">
+  <meta property="og:title" content="Genshin Artifact Scorer: Rate Your Artifact Substats | Genshin Wiki">
+  <meta property="og:description" content="Score Genshin artifacts by role, main stat, substats, and upgrade level before you keep or feed a piece.">
+  <meta property="og:url" content="https://genshinwiki.cn/artifact-scorer">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-497248KSLQ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-497248KSLQ');
+  </script>
+  <style>
+    :root {
+      --bg: #10131f;
+      --panel: #171b2b;
+      --panel-2: #202538;
+      --text: #f7f3e8;
+      --muted: #b9b1a5;
+      --gold: #d4a84b;
+      --violet: #b47bd4;
+      --teal: #4bc4b3;
+      --red: #ff7676;
+      --border: rgba(255,255,255,.12);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 18% 8%, rgba(180,123,212,.18), transparent 32%),
+        radial-gradient(circle at 82% 0%, rgba(75,196,179,.13), transparent 30%),
+        var(--bg);
+      line-height: 1.6;
+    }
+    a { color: inherit; }
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      background: rgba(16,19,31,.9);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .topbar-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+    .brand { font-weight: 800; color: var(--gold); text-decoration: none; }
+    .nav { display: flex; gap: 14px; flex-wrap: wrap; font-size: 14px; color: var(--muted); }
+    .nav a { text-decoration: none; }
+    main { max-width: 1120px; margin: 0 auto; padding: 34px 20px 56px; }
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(300px, .9fr);
+      gap: 22px;
+      align-items: stretch;
+      margin-bottom: 22px;
+    }
+    .hero-copy, .panel {
+      border: 1px solid var(--border);
+      background: rgba(23,27,43,.86);
+      border-radius: 10px;
+      padding: 22px;
+      box-shadow: 0 18px 45px rgba(0,0,0,.2);
+    }
+    .eyebrow { color: var(--teal); text-transform: uppercase; letter-spacing: .08em; font-size: 12px; font-weight: 800; }
+    h1 { margin: 8px 0 10px; font-size: clamp(34px, 5vw, 58px); line-height: 1.03; letter-spacing: 0; }
+    h2 { margin: 0 0 14px; color: var(--gold); font-size: 24px; }
+    h3 { margin: 0 0 8px; color: #f6d98f; }
+    p { color: var(--muted); margin: 0 0 12px; }
+    .hero-copy p { font-size: 17px; max-width: 780px; }
+    .score-card {
+      display: grid;
+      place-items: center;
+      min-height: 260px;
+      text-align: center;
+    }
+    .score-ring {
+      width: 176px;
+      height: 176px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: conic-gradient(var(--gold) 0deg, rgba(255,255,255,.12) 0deg);
+      margin: 8px auto 12px;
+      transition: background .2s ease;
+    }
+    .score-inner {
+      width: 132px;
+      height: 132px;
+      border-radius: 50%;
+      background: var(--panel);
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--border);
+    }
+    .score-number { font-size: 42px; font-weight: 900; color: var(--gold); line-height: 1; }
+    .grade { font-size: 22px; font-weight: 900; color: var(--teal); }
+    .grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(300px, 380px);
+      gap: 22px;
+      align-items: start;
+    }
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+    label { display: block; font-weight: 800; font-size: 13px; color: #f2dfaf; margin-bottom: 6px; }
+    select, input {
+      width: 100%;
+      min-height: 42px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.06);
+      color: var(--text);
+      padding: 9px 10px;
+      font-size: 15px;
+    }
+    select option { background: #171b2b; }
+    .substats {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .substat-row { background: rgba(255,255,255,.04); border: 1px solid var(--border); border-radius: 8px; padding: 12px; }
+    .hint { font-size: 13px; color: var(--muted); }
+    .result-line {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .result-line:last-child { border-bottom: 0; }
+    .value { font-weight: 800; color: var(--text); text-align: right; }
+    .actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 18px; }
+    button, .button {
+      border: 1px solid rgba(212,168,75,.55);
+      background: rgba(212,168,75,.14);
+      color: var(--text);
+      padding: 10px 14px;
+      min-height: 42px;
+      border-radius: 8px;
+      font-weight: 800;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    button.secondary { border-color: var(--border); background: rgba(255,255,255,.06); color: var(--muted); }
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 22px;
+    }
+    .info-card { border: 1px solid var(--border); background: rgba(23,27,43,.72); border-radius: 8px; padding: 16px; }
+    .links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px; }
+    .links a { color: var(--teal); text-decoration: none; border-bottom: 1px solid rgba(75,196,179,.35); }
+    footer { border-top: 1px solid var(--border); color: var(--muted); padding: 24px 20px; text-align: center; }
+    @media (max-width: 860px) {
+      .hero, .grid, .info-grid { grid-template-columns: 1fr; }
+      .topbar-inner { align-items: flex-start; flex-direction: column; }
+    }
+    @media (max-width: 560px) {
+      main { padding: 24px 14px 42px; }
+      .hero-copy, .panel { padding: 16px; }
+      .form-grid, .substats { grid-template-columns: 1fr; }
+      h1 { font-size: 36px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="/">Genshin Wiki</a>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="characters">Characters</a>
+        <a href="build-planner">Build Planner</a>
+        <a href="primogem-calculator">Primogem Calculator</a>
+        <a href="resin-timer">Resin Timer</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow">Artifact Tool</div>
+        <h1>Genshin Artifact Scorer</h1>
+        <p>Rate an artifact by role, slot, main stat, substats, and upgrade level. Use it when you need a quick answer: keep it, level it, or feed it.</p>
+        <p class="hint">This is a practical scoring guide, not a final damage simulator. For exact damage, team buffs, enemy resistance, and rotation timing still matter.</p>
+      </div>
+      <aside class="panel score-card" aria-live="polite">
+        <div>
+          <div class="score-ring" id="scoreRing">
+            <div class="score-inner">
+              <div>
+                <div class="score-number" id="scoreNumber">0</div>
+                <div class="grade" id="grade">D</div>
+              </div>
+            </div>
+          </div>
+          <h2 id="verdict">Enter substats</h2>
+          <p id="verdictText">Add your artifact stats to get a role-based score.</p>
+        </div>
+      </aside>
+    </section>
+
+    <section class="grid">
+      <div class="panel">
+        <h2>Artifact Details</h2>
+        <div class="form-grid">
+          <div>
+            <label for="role">Build Role</label>
+            <select id="role">
+              <option value="dps">CRIT DPS</option>
+              <option value="reaction">Reaction DPS</option>
+              <option value="er">Energy Recharge Support</option>
+              <option value="hp">HP Scaling Support</option>
+              <option value="def">DEF Scaling Build</option>
+              <option value="healer">Healer</option>
+            </select>
+          </div>
+          <div>
+            <label for="slot">Artifact Slot</label>
+            <select id="slot">
+              <option value="flower">Flower</option>
+              <option value="feather">Feather</option>
+              <option value="sands">Sands</option>
+              <option value="goblet">Goblet</option>
+              <option value="circlet">Circlet</option>
+            </select>
+          </div>
+          <div>
+            <label for="mainStat">Main Stat</label>
+            <select id="mainStat">
+              <option value="good">Correct main stat</option>
+              <option value="usable">Usable main stat</option>
+              <option value="bad">Wrong main stat</option>
+            </select>
+          </div>
+          <div>
+            <label for="level">Artifact Level</label>
+            <select id="level">
+              <option value="0">+0</option>
+              <option value="4">+4</option>
+              <option value="8">+8</option>
+              <option value="12">+12</option>
+              <option value="16">+16</option>
+              <option value="20" selected>+20</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="substats">
+          <div class="substat-row">
+            <label for="critRate">CRIT Rate %</label>
+            <input id="critRate" type="number" min="0" max="25" step="0.1" value="7.8">
+          </div>
+          <div class="substat-row">
+            <label for="critDmg">CRIT DMG %</label>
+            <input id="critDmg" type="number" min="0" max="50" step="0.1" value="15.5">
+          </div>
+          <div class="substat-row">
+            <label for="atk">ATK %</label>
+            <input id="atk" type="number" min="0" max="35" step="0.1" value="5.8">
+          </div>
+          <div class="substat-row">
+            <label for="hp">HP %</label>
+            <input id="hp" type="number" min="0" max="35" step="0.1" value="0">
+          </div>
+          <div class="substat-row">
+            <label for="def">DEF %</label>
+            <input id="def" type="number" min="0" max="45" step="0.1" value="0">
+          </div>
+          <div class="substat-row">
+            <label for="er">Energy Recharge %</label>
+            <input id="er" type="number" min="0" max="40" step="0.1" value="11.7">
+          </div>
+          <div class="substat-row">
+            <label for="em">Elemental Mastery</label>
+            <input id="em" type="number" min="0" max="140" step="1" value="0">
+          </div>
+        </div>
+
+        <div class="actions">
+          <button id="exampleDps" type="button">Load DPS Example</button>
+          <button id="exampleSupport" type="button" class="secondary">Load Support Example</button>
+          <button id="resetBtn" type="button" class="secondary">Reset</button>
+        </div>
+      </div>
+
+      <aside class="panel">
+        <h2>Score Breakdown</h2>
+        <div class="result-line"><span>Main stat fit</span><span class="value" id="mainScore">0</span></div>
+        <div class="result-line"><span>Substat value</span><span class="value" id="subScore">0</span></div>
+        <div class="result-line"><span>Upgrade level</span><span class="value" id="levelScore">0</span></div>
+        <div class="result-line"><span>Best substat</span><span class="value" id="bestStat">-</span></div>
+        <div class="result-line"><span>Weak point</span><span class="value" id="weakStat">-</span></div>
+        <p class="hint" style="margin-top:14px;">For most DPS characters, CRIT Rate and CRIT DMG are the safest long-term value. For supports, Energy Recharge can be worth more than raw damage stats.</p>
+      </aside>
+    </section>
+
+    <section class="info-grid" aria-label="Artifact scoring tips">
+      <div class="info-card">
+        <h3>When To Keep</h3>
+        <p>S and A artifacts are usually worth keeping. B pieces can be useful for new accounts, off-set goblets, or rare main stats.</p>
+      </div>
+      <div class="info-card">
+        <h3>When To Stop</h3>
+        <p>If the main stat is wrong and upgrades keep rolling into low-value stats, stop early and save Mora for better pieces.</p>
+      </div>
+      <div class="info-card">
+        <h3>Next Steps</h3>
+        <p>After scoring a piece, check whether your character needs more CRIT, Energy Recharge, or Elemental Mastery before farming again.</p>
+      </div>
+    </section>
+
+    <section class="panel" style="margin-top:22px;">
+      <h2>Related Genshin Tools and Guides</h2>
+      <div class="links">
+        <a href="guide-artifact-farming">Artifact Farming Guide</a>
+        <a href="build-planner">Build Planner</a>
+        <a href="primogem-calculator">Primogem Calculator</a>
+        <a href="characters">Character Gallery</a>
+        <a href="mavuika-build">Mavuika Build</a>
+        <a href="skirk-build">Skirk Build</a>
+        <a href="xilonen-build">Xilonen Build</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Genshin Wiki is not affiliated with miHoYo or HoYoverse. Data is for reference only.
+  </footer>
+
+  <script>
+    const weights = {
+      dps: { critRate: 1.95, critDmg: .98, atk: .72, hp: .18, def: .14, er: .55, em: .28 },
+      reaction: { critRate: 1.25, critDmg: .62, atk: .42, hp: .14, def: .12, er: .62, em: .82 },
+      er: { critRate: .75, critDmg: .38, atk: .34, hp: .28, def: .22, er: 1.2, em: .38 },
+      hp: { critRate: .72, critDmg: .36, atk: .12, hp: 1.02, def: .14, er: .74, em: .18 },
+      def: { critRate: .92, critDmg: .46, atk: .14, hp: .14, def: .95, er: .62, em: .12 },
+      healer: { critRate: .2, critDmg: .1, atk: .2, hp: .86, def: .5, er: .95, em: .12 }
+    };
+    const labels = {
+      critRate: 'CRIT Rate',
+      critDmg: 'CRIT DMG',
+      atk: 'ATK%',
+      hp: 'HP%',
+      def: 'DEF%',
+      er: 'Energy Recharge',
+      em: 'Elemental Mastery'
+    };
+    const inputs = ['role','slot','mainStat','level','critRate','critDmg','atk','hp','def','er','em'];
+
+    function numberValue(id) {
+      const value = Number(document.getElementById(id).value);
+      return Number.isFinite(value) ? value : 0;
+    }
+
+    function calculate() {
+      const role = document.getElementById('role').value;
+      const weight = weights[role];
+      const mainValue = document.getElementById('mainStat').value;
+      const level = numberValue('level');
+      const mainScore = mainValue === 'good' ? 22 : mainValue === 'usable' ? 12 : -12;
+      const levelScore = Math.round((level / 20) * 10);
+      const raw = {
+        critRate: numberValue('critRate'),
+        critDmg: numberValue('critDmg'),
+        atk: numberValue('atk'),
+        hp: numberValue('hp'),
+        def: numberValue('def'),
+        er: numberValue('er'),
+        em: numberValue('em')
+      };
+      const statScores = Object.fromEntries(Object.entries(raw).map(([key, value]) => [key, value * weight[key]]));
+      const subScore = Object.values(statScores).reduce((sum, value) => sum + value, 0);
+      const total = Math.max(0, Math.min(100, Math.round(mainScore + levelScore + subScore)));
+      const sorted = Object.entries(statScores).sort((a, b) => b[1] - a[1]);
+      const best = sorted.find(([, value]) => value > 0);
+      const weak = sorted.slice().reverse().find(([key, value]) => raw[key] > 0 || value === 0);
+      const grade = total >= 92 ? 'S+' : total >= 82 ? 'S' : total >= 70 ? 'A' : total >= 58 ? 'B' : total >= 42 ? 'C' : 'D';
+      const verdicts = {
+        'S+': ['God-tier piece', 'Lock it. This artifact is excellent for the selected role.'],
+        S: ['Very strong', 'This is a high-value piece and usually worth investing in.'],
+        A: ['Good artifact', 'Keep it, especially if the main stat or set is hard to farm.'],
+        B: ['Usable', 'Fine for progression, but replace later if you are optimizing.'],
+        C: ['Temporary piece', 'Use it only if you have no better option right now.'],
+        D: ['Feed candidate', 'Usually not worth more investment unless the main stat is rare.']
+      };
+      document.getElementById('scoreNumber').textContent = total;
+      document.getElementById('grade').textContent = grade;
+      document.getElementById('verdict').textContent = verdicts[grade][0];
+      document.getElementById('verdictText').textContent = verdicts[grade][1];
+      document.getElementById('mainScore').textContent = mainScore;
+      document.getElementById('subScore').textContent = Math.round(subScore);
+      document.getElementById('levelScore').textContent = levelScore;
+      document.getElementById('bestStat').textContent = best ? labels[best[0]] : '-';
+      document.getElementById('weakStat').textContent = weak ? labels[weak[0]] : '-';
+      document.getElementById('scoreRing').style.background = `conic-gradient(var(--gold) ${total * 3.6}deg, rgba(255,255,255,.12) 0deg)`;
+    }
+
+    function setValues(values) {
+      Object.entries(values).forEach(([id, value]) => { document.getElementById(id).value = value; });
+      calculate();
+    }
+
+    inputs.forEach(id => document.getElementById(id).addEventListener('input', calculate));
+    document.getElementById('exampleDps').addEventListener('click', () => setValues({
+      role: 'dps', slot: 'goblet', mainStat: 'good', level: 20, critRate: 10.5, critDmg: 21.8, atk: 5.8, hp: 0, def: 0, er: 5.2, em: 0
+    }));
+    document.getElementById('exampleSupport').addEventListener('click', () => setValues({
+      role: 'er', slot: 'sands', mainStat: 'good', level: 20, critRate: 3.9, critDmg: 7.8, atk: 0, hp: 5.8, def: 0, er: 23.3, em: 40
+    }));
+    document.getElementById('resetBtn').addEventListener('click', () => setValues({
+      role: 'dps', slot: 'flower', mainStat: 'good', level: 20, critRate: 0, critDmg: 0, atk: 0, hp: 0, def: 0, er: 0, em: 0
+    }));
+    calculate();
+  </script>
+</body>
+</html>
