@@ -18,6 +18,46 @@
     gtag('js', new Date());
     gtag('config', 'G-497248KSLQ');
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a good artifact score in Genshin Impact?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "An S or A score is usually worth keeping for the selected role. B pieces can still be useful for new accounts, rare main stats, or temporary builds."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Should I keep an artifact with a wrong main stat?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Usually no. A wrong main stat is hard to fix with good substats. Keep it only if the piece is very rare or you need it temporarily."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are CRIT stats always the best artifact substats?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "CRIT Rate and CRIT DMG are best for many DPS builds, but Energy Recharge, Elemental Mastery, HP%, or DEF% can be stronger for supports and scaling-specific characters."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "When should I stop leveling an artifact?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Stop early if the main stat is wrong or if upgrades repeatedly roll into low-value substats for your character's role."
+        }
+      }
+    ]
+  }
+  </script>
   <style>
     :root {
       --bg: #10131f;
@@ -171,11 +211,35 @@
       margin-top: 22px;
     }
     .info-card { border: 1px solid var(--border); background: rgba(23,27,43,.72); border-radius: 8px; padding: 16px; }
+    .content-section {
+      margin-top: 22px;
+      border: 1px solid var(--border);
+      background: rgba(23,27,43,.72);
+      border-radius: 10px;
+      padding: 22px;
+    }
+    .content-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .text-list {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+    .text-list li { margin-bottom: 8px; }
+    .faq-item {
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .faq-item:last-child { border-bottom: 0; padding-bottom: 0; }
+    .faq-item h3 { font-size: 18px; }
     .links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px; }
     .links a { color: var(--teal); text-decoration: none; border-bottom: 1px solid rgba(75,196,179,.35); }
     footer { border-top: 1px solid var(--border); color: var(--muted); padding: 24px 20px; text-align: center; }
     @media (max-width: 860px) {
-      .hero, .grid, .info-grid { grid-template-columns: 1fr; }
+      .hero, .grid, .info-grid, .content-grid { grid-template-columns: 1fr; }
       .topbar-inner { align-items: flex-start; flex-direction: column; }
     }
     @media (max-width: 560px) {
@@ -330,6 +394,63 @@
       <div class="info-card">
         <h3>Next Steps</h3>
         <p>After scoring a piece, check whether your character needs more CRIT, Energy Recharge, or Elemental Mastery before farming again.</p>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2>How To Read Your Artifact Score</h2>
+      <div class="content-grid">
+        <div>
+          <h3>Score Meaning</h3>
+          <ul class="text-list">
+            <li><strong>S+ / S:</strong> lock the artifact. It is strong enough for serious builds or late-game optimization.</li>
+            <li><strong>A:</strong> keep it. This is usually good for Abyss teams, especially on rare main stats.</li>
+            <li><strong>B:</strong> usable for progression. Replace it later if you are farming a main DPS.</li>
+            <li><strong>C / D:</strong> treat it as temporary unless it solves a very specific Energy Recharge or main stat problem.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>What The Tool Rewards</h3>
+          <ul class="text-list">
+            <li>DPS builds value CRIT Rate, CRIT DMG, ATK%, and enough Energy Recharge to keep rotations smooth.</li>
+            <li>Reaction builds care more about Elemental Mastery and Energy Recharge, especially for Bloom, Hyperbloom, Swirl, and Burgeon teams.</li>
+            <li>Support builds can score highly with Energy Recharge, HP%, or DEF% when those stats match the character kit.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2>Best Stats By Character Type</h2>
+      <div class="content-grid">
+        <div>
+          <h3>Main DPS</h3>
+          <p>Characters like Neuvillette, Arlecchino, Mavuika, Skirk, Raiden, and many on-field carries usually want CRIT stats first. After that, check whether they need ATK%, HP%, DEF%, Energy Recharge, or Elemental Mastery based on their kit.</p>
+        </div>
+        <div>
+          <h3>Support And Sub DPS</h3>
+          <p>Characters like Furina, Xingqiu, Bennett, Kazuha, Nahida, Yelan, and Xiangling often need enough Energy Recharge before damage stats feel good. For reaction teams, Elemental Mastery can be more useful than extra CRIT.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2>Artifact Scorer FAQ</h2>
+      <div class="faq-item">
+        <h3>What is a good artifact score in Genshin Impact?</h3>
+        <p>An S or A score is usually worth keeping for the selected role. B pieces can still be useful for new accounts, rare main stats, or temporary builds.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Should I keep an artifact with a wrong main stat?</h3>
+        <p>Usually no. A wrong main stat is hard to fix with good substats. Keep it only if the piece is very rare or you need it temporarily.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Are CRIT stats always the best artifact substats?</h3>
+        <p>No. CRIT is excellent for many DPS builds, but Energy Recharge, Elemental Mastery, HP%, and DEF% can be stronger for supports or scaling-specific characters.</p>
+      </div>
+      <div class="faq-item">
+        <h3>When should I stop leveling an artifact?</h3>
+        <p>Stop early if the main stat is wrong or if upgrades repeatedly roll into low-value substats for the role you selected.</p>
       </div>
     </section>
 
