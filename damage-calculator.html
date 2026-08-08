@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Genshin Damage Calculator: Estimate CRIT, Bonus & Reactions | Genshin Wiki</title>
+  <meta name="description" content="Free Genshin Impact damage calculator for estimating non-CRIT, CRIT, average damage, damage bonus, enemy resistance, DEF multiplier, and reaction multipliers.">
+  <link rel="canonical" href="https://genshinwiki.cn/damage-calculator">
+  <meta property="og:title" content="Genshin Damage Calculator: Estimate CRIT, Bonus & Reactions | Genshin Wiki">
+  <meta property="og:description" content="Estimate Genshin damage with ATK, talent multiplier, CRIT stats, damage bonus, enemy resistance, DEF multiplier, and reactions.">
+  <meta property="og:url" content="https://genshinwiki.cn/damage-calculator">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-497248KSLQ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-497248KSLQ');
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I calculate Genshin Impact damage?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A simple estimate starts with ATK multiplied by talent scaling, then applies damage bonus, enemy defense, enemy resistance, CRIT damage, and reaction multiplier when relevant."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is average damage in Genshin Impact?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Average damage includes CRIT Rate and CRIT DMG together. It estimates the long-term expected hit instead of only showing a single CRIT hit."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Should I optimize CRIT Rate or CRIT DMG first?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most DPS builds want a balanced CRIT ratio. If CRIT Rate is too low, more CRIT DMG can look impressive but average damage may still be weak."
+        }
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root{--bg:#10131f;--panel:#171b2b;--panel2:#202538;--text:#f7f3e8;--muted:#b9b1a5;--gold:#d4a84b;--teal:#4bc4b3;--violet:#b47bd4;--red:#ff7676;--border:rgba(255,255,255,.12)}
+    *{box-sizing:border-box}body{margin:0;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--text);background:radial-gradient(circle at 18% 8%,rgba(212,168,75,.16),transparent 32%),radial-gradient(circle at 82% 0%,rgba(75,196,179,.13),transparent 30%),var(--bg);line-height:1.6}
+    a{color:inherit}.topbar{position:sticky;top:0;z-index:5;background:rgba(16,19,31,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}.topbar-inner{max-width:1120px;margin:0 auto;padding:14px 20px;display:flex;justify-content:space-between;align-items:center;gap:16px}.brand{font-weight:900;color:var(--gold);text-decoration:none}.nav{display:flex;gap:14px;flex-wrap:wrap;font-size:14px;color:var(--muted)}.nav a{text-decoration:none}
+    main{max-width:1120px;margin:0 auto;padding:34px 20px 56px}.hero{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(300px,.9fr);gap:22px;align-items:stretch;margin-bottom:22px}.hero-copy,.panel{border:1px solid var(--border);background:rgba(23,27,43,.86);border-radius:10px;padding:22px;box-shadow:0 18px 45px rgba(0,0,0,.2)}
+    .eyebrow{color:var(--teal);text-transform:uppercase;letter-spacing:.08em;font-size:12px;font-weight:800}h1{margin:8px 0 10px;font-size:clamp(34px,5vw,58px);line-height:1.03;letter-spacing:0}h2{margin:0 0 14px;color:var(--gold);font-size:24px}h3{margin:0 0 8px;color:#f6d98f}p{color:var(--muted);margin:0 0 12px}.hero-copy p{font-size:17px;max-width:780px}
+    .grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(310px,390px);gap:22px;align-items:start}.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}label{display:block;font-weight:800;font-size:13px;color:#f2dfaf;margin-bottom:6px}input,select{width:100%;min-height:42px;border-radius:8px;border:1px solid var(--border);background:rgba(255,255,255,.06);color:var(--text);padding:9px 10px;font-size:15px}select option{background:#171b2b}.field{background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:8px;padding:12px}.hint{font-size:13px;color:var(--muted)}
+    .result-card{text-align:center}.big-number{font-size:46px;line-height:1;font-weight:900;color:var(--gold);margin:8px 0}.result-line{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.08)}.result-line:last-child{border-bottom:0}.value{font-weight:800;color:var(--text);text-align:right}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}button,.button{border:1px solid rgba(212,168,75,.55);background:rgba(212,168,75,.14);color:var(--text);padding:10px 14px;min-height:42px;border-radius:8px;font-weight:800;cursor:pointer;text-decoration:none}button.secondary{border-color:var(--border);background:rgba(255,255,255,.06);color:var(--muted)}
+    .content-section{margin-top:22px;border:1px solid var(--border);background:rgba(23,27,43,.72);border-radius:10px;padding:22px}.content-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.text-list{margin:0;padding-left:18px;color:var(--muted)}.text-list li{margin-bottom:8px}.links{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}.links a{color:var(--teal);text-decoration:none;border-bottom:1px solid rgba(75,196,179,.35)}
+    footer{border-top:1px solid var(--border);color:var(--muted);padding:24px 20px;text-align:center}@media(max-width:860px){.hero,.grid,.content-grid{grid-template-columns:1fr}.topbar-inner{align-items:flex-start;flex-direction:column}}@media(max-width:560px){main{padding:24px 14px 42px}.hero-copy,.panel,.content-section{padding:16px}.form-grid{grid-template-columns:1fr}h1{font-size:36px}}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="/">Genshin Wiki</a>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="build-planner">Build Planner</a>
+        <a href="artifact-scorer">Artifact Scorer</a>
+        <a href="primogem-calculator">Primogem Calculator</a>
+        <a href="resin-timer">Resin Timer</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow">Damage Tool</div>
+        <h1>Genshin Damage Calculator</h1>
+        <p>Estimate non-CRIT, CRIT, and average damage using attack, talent scaling, damage bonus, CRIT stats, enemy resistance, defense multiplier, and reaction multiplier.</p>
+        <p class="hint">This is a planning tool for quick comparisons. Real in-game damage can change with buffs, enemy level, defense shred, resistance shred, reactions, and rotation timing.</p>
+      </div>
+      <aside class="panel result-card" aria-live="polite">
+        <h2>Average Damage</h2>
+        <div class="big-number" id="avgDamage">0</div>
+        <p id="verdict">Enter your stats to estimate a hit.</p>
+      </aside>
+    </section>
+
+    <section class="grid">
+      <div class="panel">
+        <h2>Damage Inputs</h2>
+        <div class="form-grid">
+          <div class="field"><label for="atk">Total ATK / Scaling Stat</label><input id="atk" type="number" min="0" value="2200"></div>
+          <div class="field"><label for="talent">Talent Multiplier %</label><input id="talent" type="number" min="0" step="0.1" value="180"></div>
+          <div class="field"><label for="bonus">Damage Bonus %</label><input id="bonus" type="number" min="0" step="0.1" value="61.6"></div>
+          <div class="field"><label for="critRate">CRIT Rate %</label><input id="critRate" type="number" min="0" max="100" step="0.1" value="70"></div>
+          <div class="field"><label for="critDmg">CRIT DMG %</label><input id="critDmg" type="number" min="0" step="0.1" value="180"></div>
+          <div class="field"><label for="res">Enemy Resistance %</label><input id="res" type="number" step="0.1" value="10"></div>
+          <div class="field"><label for="defMult">DEF Multiplier %</label><input id="defMult" type="number" min="0" max="100" step="0.1" value="50"></div>
+          <div class="field"><label for="reaction">Reaction Multiplier</label><select id="reaction"><option value="1">No amplifying reaction</option><option value="1.5">Vaporize / Melt 1.5x</option><option value="2">Vaporize / Melt 2x</option></select></div>
+        </div>
+        <div class="actions">
+          <button id="loadDps" type="button">Load DPS Example</button>
+          <button id="loadReaction" type="button" class="secondary">Load Reaction Example</button>
+          <button id="resetBtn" type="button" class="secondary">Reset</button>
+        </div>
+      </div>
+
+      <aside class="panel">
+        <h2>Breakdown</h2>
+        <div class="result-line"><span>Base hit</span><span class="value" id="baseHit">0</span></div>
+        <div class="result-line"><span>Non-CRIT hit</span><span class="value" id="nonCrit">0</span></div>
+        <div class="result-line"><span>CRIT hit</span><span class="value" id="critHit">0</span></div>
+        <div class="result-line"><span>Average CRIT factor</span><span class="value" id="critFactor">0</span></div>
+        <div class="result-line"><span>Resistance factor</span><span class="value" id="resFactor">0</span></div>
+        <p class="hint" style="margin-top:14px;">Average damage is usually better for comparing builds than only looking at one large CRIT screenshot.</p>
+      </aside>
+    </section>
+
+    <section class="content-section">
+      <h2>How To Read Damage Results</h2>
+      <div class="content-grid">
+        <div>
+          <h3>Average Damage</h3>
+          <ul class="text-list">
+            <li>Use average damage when comparing CRIT Rate and CRIT DMG builds.</li>
+            <li>A lower CRIT hit can still be better if the CRIT Rate is much higher.</li>
+            <li>For Abyss planning, stable average damage is usually more useful than one perfect screenshot.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Common Inputs</h3>
+          <ul class="text-list">
+            <li>Damage Bonus includes elemental bonus, normal attack bonus, burst bonus, or other relevant bonuses.</li>
+            <li>DEF Multiplier is often around 50% against same-level enemies without defense shred.</li>
+            <li>Enemy Resistance is commonly 10%, but shred effects can lower it.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2>Damage Calculator FAQ</h2>
+      <h3>How do I calculate Genshin damage?</h3>
+      <p>Start with the scaling stat multiplied by the talent multiplier, then apply damage bonus, enemy defense, enemy resistance, CRIT, and reaction multiplier.</p>
+      <h3>Is CRIT hit or average damage more useful?</h3>
+      <p>Average damage is more useful for comparing builds because it includes CRIT Rate. CRIT hit is useful for checking your best possible single hit.</p>
+      <h3>Does this replace a full simulator?</h3>
+      <p>No. This tool is for quick planning. Full rotations, buffs, enemy behavior, ICD, and team timing still matter.</p>
+    </section>
+
+    <section class="content-section">
+      <h2>Related Genshin Tools</h2>
+      <div class="links">
+        <a href="artifact-scorer">Artifact Scorer</a>
+        <a href="build-planner">Build Planner</a>
+        <a href="primogem-calculator">Primogem Calculator</a>
+        <a href="resin-timer">Resin Timer</a>
+        <a href="guide-artifact-farming">Artifact Farming Guide</a>
+        <a href="characters">Character Gallery</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>Genshin Wiki is not affiliated with miHoYo or HoYoverse. Data is for reference only.</footer>
+
+  <script>
+    const ids = ['atk','talent','bonus','critRate','critDmg','res','defMult','reaction'];
+    const fmt = value => Math.round(value).toLocaleString();
+    function n(id){ const value = Number(document.getElementById(id).value); return Number.isFinite(value) ? value : 0; }
+    function resistanceFactor(res){
+      const r = res / 100;
+      if (r < 0) return 1 - r / 2;
+      if (r < .75) return 1 - r;
+      return 1 / (4 * r + 1);
+    }
+    function calculate(){
+      const base = n('atk') * (n('talent') / 100);
+      const bonus = 1 + n('bonus') / 100;
+      const critRate = Math.min(100, Math.max(0, n('critRate'))) / 100;
+      const critDmg = n('critDmg') / 100;
+      const resFactor = resistanceFactor(n('res'));
+      const defFactor = n('defMult') / 100;
+      const reaction = Number(document.getElementById('reaction').value);
+      const nonCrit = base * bonus * resFactor * defFactor * reaction;
+      const crit = nonCrit * (1 + critDmg);
+      const avg = nonCrit * (1 + critRate * critDmg);
+      document.getElementById('baseHit').textContent = fmt(base);
+      document.getElementById('nonCrit').textContent = fmt(nonCrit);
+      document.getElementById('critHit').textContent = fmt(crit);
+      document.getElementById('avgDamage').textContent = fmt(avg);
+      document.getElementById('critFactor').textContent = (1 + critRate * critDmg).toFixed(2) + 'x';
+      document.getElementById('resFactor').textContent = resFactor.toFixed(2) + 'x';
+      document.getElementById('verdict').textContent = avg > 50000 ? 'Strong hit estimate. Compare artifacts and buffs next.' : avg > 20000 ? 'Good planning range. Try changing CRIT or damage bonus.' : 'Use this as a baseline before adding buffs or reactions.';
+    }
+    function setValues(values){
+      Object.entries(values).forEach(([id,value]) => { document.getElementById(id).value = value; });
+      calculate();
+    }
+    ids.forEach(id => document.getElementById(id).addEventListener('input', calculate));
+    document.getElementById('loadDps').addEventListener('click', () => setValues({atk:2400,talent:220,bonus:75,critRate:75,critDmg:190,res:10,defMult:50,reaction:1}));
+    document.getElementById('loadReaction').addEventListener('click', () => setValues({atk:2100,talent:180,bonus:61.6,critRate:70,critDmg:180,res:10,defMult:50,reaction:1.5}));
+    document.getElementById('resetBtn').addEventListener('click', () => setValues({atk:0,talent:100,bonus:0,critRate:5,critDmg:50,res:10,defMult:50,reaction:1}));
+    calculate();
+  </script>
+</body>
+</html>

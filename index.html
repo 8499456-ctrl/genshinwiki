@@ -23,6 +23,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Genshin Impact Guide 2026 — Best Builds, Tier Lists & Tips</title>
     <meta name="description" content="Complete Genshin Impact guide. Character builds, weapon rankings, Spiral Abyss tips, artifact recommendations, and elemental reaction guides — updated for version 6.3 Moon of Four.">
+<link rel="canonical" href="https://genshinwiki.cn/">
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="stylesheet" href="comment-embed.css">
   <style>
@@ -508,11 +509,11 @@
       <div style="display:flex;align-items:center;gap:8px;">
         <button class="music-btn" id="musicBtn" onclick="toggleMusic()" title="Play / Pause BGM">♪</button>
         <div class="nav-search" style="position:relative;">
-          <input type="text" id="navSearchInput" placeholder="Search characters..." style="width:160px;padding:6px 12px;border-radius:6px;border:1px solid var(--border);background:var(--bg-card);color:var(--text);font-size:13px;outline:none;transition:all .2s;" onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor=''" onkeydown="if(event.key==='Enter'&&this.value.trim())window.location.href='characters.html?q='+encodeURIComponent(this.value.trim())">
+          <input type="text" id="navSearchInput" placeholder="Search characters..." style="width:160px;padding:6px 12px;border-radius:6px;border:1px solid var(--border);background:var(--bg-card);color:var(--text);font-size:13px;outline:none;transition:all .2s;" onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor=''" onkeydown="if(event.key==='Enter'&&this.value.trim())window.location.href='characters?q='+encodeURIComponent(this.value.trim())">
         </div>
         <a href="#" class="lang-switcher" data-i18n-switch="lang.switch" onclick="toggleLang(event)" style="font-size:13px;color:var(--text-dim);padding:4px 10px;border-radius:6px;text-decoration:none;cursor:pointer;transition:all .2s" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--text-dim)'">中文</a>
-        <a href="blog/index.html" style="font-size:13px;color:var(--gold);padding:4px 10px;border-radius:6px;text-decoration:none;cursor:pointer;font-weight:600;">📝 Blog</a>
-        <a href="login.html" id="navLoginBtn" class="nav-login-btn">Login</a>
+        <a href="blog/index" style="font-size:13px;color:var(--gold);padding:4px 10px;border-radius:6px;text-decoration:none;cursor:pointer;font-weight:600;">📝 Blog</a>
+        <a href="login" id="navLoginBtn" class="nav-login-btn">Login</a>
       </div>
     </div>
     <div class="nav-toggle" id="navToggle" onclick="toggleNav()">
@@ -520,44 +521,44 @@
     </div>
     <!-- Mobile nav (hidden on desktop, shown via hamburger on mobile) -->
     <ul id="navMenu">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="characters.html">Characters</a></li>
-      <li><a href="elements.html">Elements</a></li>
-      <li><a href="abyss.html">Abyss</a></li>
-      <li><a href="weapons.html">Weapons</a></li>
-      <li><a href="artifacts.html">Artifacts</a></li>
-      <li><a href="materials.html">Materials</a></li>
-      <li><a href="beginner.html">Guides</a></li>
-      <li><a href="download.html">Download</a></li>
-      <li><a href="codes.html">Codes</a></li>
-      <li><a href="build-planner.html">Build Planner</a></li>
-      <li><a href="resin-timer.html">⏳ Resin</a></li>
-      <li><a href="videos.html">🎬 Videos</a></li>
-      <li><a href="forum.html">Forum</a></li>
-      <li><a href="membership.html">Membership</a></li>
-      <li><a href="bugs.html">Bugs</a></li>
+      <li><a href="index">Home</a></li>
+      <li><a href="characters">Characters</a></li>
+      <li><a href="elements">Elements</a></li>
+      <li><a href="abyss">Abyss</a></li>
+      <li><a href="weapons">Weapons</a></li>
+      <li><a href="artifacts">Artifacts</a></li>
+      <li><a href="materials">Materials</a></li>
+      <li><a href="beginner">Guides</a></li>
+      <li><a href="download">Download</a></li>
+      <li><a href="codes">Codes</a></li>
+      <li><a href="build-planner">Build Planner</a></li>
+      <li><a href="resin-timer">⏳ Resin</a></li>
+      <li><a href="videos">🎬 Videos</a></li>
+      <li><a href="forum">Forum</a></li>
+      <li><a href="membership">Membership</a></li>
+      <li><a href="bugs">Bugs</a></li>
     </ul>
   </nav>
 
   <!-- ====== Sidebar ====== -->
   <aside class="sidebar" id="sidebar">
-    <a href="index.html" class="sidebar-item active"><span class="si-icon">&#127968;</span> <span data-i18n="nav.home">Home</span></a>
-    <a href="characters.html" class="sidebar-item"><span class="si-icon">&#9876;&#65039;</span> <span data-i18n="nav.characters">Characters</span></a>
-    <a href="elements.html" class="sidebar-item"><span class="si-icon">&#127811;</span> <span data-i18n="nav.elements">Elements</span></a>
-    <a href="tierlist.html" class="sidebar-item"><span class="si-icon">⭐</span> <span data-i18n="nav.tierlist">Tier List</span></a>
-    <a href="abyss.html" class="sidebar-item"><span class="si-icon">&#128737;&#65039;</span> <span data-i18n="nav.abyss">Abyss</span></a>
-    <a href="weapons.html" class="sidebar-item"><span class="si-icon">&#128481;&#65039;</span> <span data-i18n="nav.weapons">Weapons</span></a>
-    <a href="artifacts.html" class="sidebar-item"><span class="si-icon">&#128142;</span> <span data-i18n="nav.artifacts">Artifacts</span></a>
-    <a href="materials.html" class="sidebar-item"><span class="si-icon">&#127758;</span> <span data-i18n="nav.materials">Materials</span></a>
-    <a href="beginner.html" class="sidebar-item"><span class="si-icon">&#128214;</span> <span data-i18n="nav.guides">Guides</span></a>
-    <a href="download.html" class="sidebar-item"><span class="si-icon">&#128229;</span> <span data-i18n="nav.download">Download</span></a>
+    <a href="index" class="sidebar-item active"><span class="si-icon">&#127968;</span> <span data-i18n="nav.home">Home</span></a>
+    <a href="characters" class="sidebar-item"><span class="si-icon">&#9876;&#65039;</span> <span data-i18n="nav.characters">Characters</span></a>
+    <a href="elements" class="sidebar-item"><span class="si-icon">&#127811;</span> <span data-i18n="nav.elements">Elements</span></a>
+    <a href="tierlist" class="sidebar-item"><span class="si-icon">⭐</span> <span data-i18n="nav.tierlist">Tier List</span></a>
+    <a href="abyss" class="sidebar-item"><span class="si-icon">&#128737;&#65039;</span> <span data-i18n="nav.abyss">Abyss</span></a>
+    <a href="weapons" class="sidebar-item"><span class="si-icon">&#128481;&#65039;</span> <span data-i18n="nav.weapons">Weapons</span></a>
+    <a href="artifacts" class="sidebar-item"><span class="si-icon">&#128142;</span> <span data-i18n="nav.artifacts">Artifacts</span></a>
+    <a href="materials" class="sidebar-item"><span class="si-icon">&#127758;</span> <span data-i18n="nav.materials">Materials</span></a>
+    <a href="beginner" class="sidebar-item"><span class="si-icon">&#128214;</span> <span data-i18n="nav.guides">Guides</span></a>
+    <a href="download" class="sidebar-item"><span class="si-icon">&#128229;</span> <span data-i18n="nav.download">Download</span></a>
     <div class="sidebar-divider"></div>
-    <a href="codes.html" class="sidebar-item"><span class="si-icon">&#127873;</span> <span data-i18n="nav.codes">Codes</span></a>
-    <a href="build-planner.html" class="sidebar-item"><span class="si-icon">&#128200;</span> <span>Build Planner</span></a>
-    <a href="resin-timer.html" class="sidebar-item"><span class="si-icon">&#9203;</span> <span>Resin Timer</span></a>
-    <a href="forum.html" class="sidebar-item"><span class="si-icon">&#128172;</span> <span data-i18n="nav.forum">Forum</span></a>
-    <a href="membership.html" class="sidebar-item"><span class="si-icon">&#128142;</span> <span data-i18n="nav.membership">Membership</span></a>
-    <a href="bugs.html" class="sidebar-item"><span class="si-icon">&#128028;</span> <span data-i18n="nav.bugs">Bugs</span></a>
+    <a href="codes" class="sidebar-item"><span class="si-icon">&#127873;</span> <span data-i18n="nav.codes">Codes</span></a>
+    <a href="build-planner" class="sidebar-item"><span class="si-icon">&#128200;</span> <span>Build Planner</span></a>
+    <a href="resin-timer" class="sidebar-item"><span class="si-icon">&#9203;</span> <span>Resin Timer</span></a>
+    <a href="forum" class="sidebar-item"><span class="si-icon">&#128172;</span> <span data-i18n="nav.forum">Forum</span></a>
+    <a href="membership" class="sidebar-item"><span class="si-icon">&#128142;</span> <span data-i18n="nav.membership">Membership</span></a>
+    <a href="bugs" class="sidebar-item"><span class="si-icon">&#128028;</span> <span data-i18n="nav.bugs">Bugs</span></a>
     <div class="sidebar-divider"></div>
     <div style="padding:8px 12px;font-size:11px;color:var(--text-dim);margin-top:auto;">
       <div style="background:rgba(212,168,75,0.08);border:1px dashed var(--border);border-radius:6px;padding:8px;">
@@ -566,7 +567,7 @@
         <div style="margin-top:6px;display:flex;flex-direction:column;gap:4px;">
           <a href="https://gearup.sjv.io/c/7462059/3204502/40222" target="_blank" rel="noopener nofollow" style="font-size:11px;color:var(--teal);">🚀 GearUP Booster →</a>
           <a href="https://www.exitlag.com/refer/10324758" target="_blank" rel="noopener nofollow" style="font-size:11px;color:var(--teal);">🌍 ExitLag →</a>
-          <a href="free-accelerator.html" target="_blank" rel="noopener nofollow" style="font-size:11px;color:var(--teal);">雷神加速器 →</a>
+          <a href="free-accelerator" target="_blank" rel="noopener nofollow" style="font-size:11px;color:var(--teal);">雷神加速器 →</a>
           <a href="https://tg.xunyou.com/command/?id=1563075&password=genshinwiki" target="_blank" rel="noopener nofollow" style="font-size:11px;color:var(--teal);">迅游加速器 →</a>
         </div>
         <div style="font-size:9px;color:var(--text-dim);margin-top:4px;text-align:right;">Ad</div>
@@ -591,8 +592,8 @@
       Character Reviews · Team Comps · Weapons &amp; Artifacts · Material Farming · Live Codes
     </p>
     <div class="hero-buttons">
-      <a href="characters.html" class="btn btn-primary" data-i18n="home.cta.characters">⚔️ Character Gallery</a>
-      <a href="beginner.html" class="btn btn-outline" data-i18n="home.cta.guides">📖 Beginner's Guide</a>
+      <a href="characters" class="btn btn-primary" data-i18n="home.cta.characters">⚔️ Character Gallery</a>
+      <a href="beginner" class="btn btn-outline" data-i18n="home.cta.guides">📖 Beginner's Guide</a>
     </div>
   </section>
 
@@ -602,13 +603,13 @@
       <h2 class="section-title" data-i18n-prefix="home.elem.title">The Seven <span data-i18n-inner="home.elem.inner">Elements</span></h2>
       <p class="section-sub" data-i18n="home.elem.desc">Elemental reactions are the core of Genshin combat. Understand each element's power.</p>
       <div class="elements-grid">
-        <a href="elements.html" class="element-badge"><span class="icon">🍃</span><span class="name" style="color:var(--anemo)" data-i18n="home.elem.anemo">Anemo</span></a>
-        <a href="elements.html" class="element-badge"><span class="icon">🪨</span><span class="name" style="color:var(--geo)" data-i18n="home.elem.geo">Geo</span></a>
-        <a href="elements.html" class="element-badge"><span class="icon">⚡</span><span class="name" style="color:var(--electro)" data-i18n="home.elem.electro">Electro</span></a>
-        <a href="elements.html" class="element-badge"><span class="icon">🌿</span><span class="name" style="color:var(--dendro)" data-i18n="home.elem.dendro">Dendro</span></a>
-        <a href="elements.html" class="element-badge"><span class="icon">💧</span><span class="name" style="color:var(--hydro)" data-i18n="home.elem.hydro">Hydro</span></a>
-        <a href="elements.html" class="element-badge"><span class="icon">🔥</span><span class="name" style="color:var(--pyro)" data-i18n="home.elem.pyro">Pyro</span></a>
-        <a href="elements.html" class="element-badge"><span class="icon">❄️</span><span class="name" style="color:var(--cryo)" data-i18n="home.elem.cryo">Cryo</span></a>
+        <a href="elements" class="element-badge"><span class="icon">🍃</span><span class="name" style="color:var(--anemo)" data-i18n="home.elem.anemo">Anemo</span></a>
+        <a href="elements" class="element-badge"><span class="icon">🪨</span><span class="name" style="color:var(--geo)" data-i18n="home.elem.geo">Geo</span></a>
+        <a href="elements" class="element-badge"><span class="icon">⚡</span><span class="name" style="color:var(--electro)" data-i18n="home.elem.electro">Electro</span></a>
+        <a href="elements" class="element-badge"><span class="icon">🌿</span><span class="name" style="color:var(--dendro)" data-i18n="home.elem.dendro">Dendro</span></a>
+        <a href="elements" class="element-badge"><span class="icon">💧</span><span class="name" style="color:var(--hydro)" data-i18n="home.elem.hydro">Hydro</span></a>
+        <a href="elements" class="element-badge"><span class="icon">🔥</span><span class="name" style="color:var(--pyro)" data-i18n="home.elem.pyro">Pyro</span></a>
+        <a href="elements" class="element-badge"><span class="icon">❄️</span><span class="name" style="color:var(--cryo)" data-i18n="home.elem.cryo">Cryo</span></a>
       </div>
     </div>
   </section>
@@ -619,37 +620,37 @@
       <h2 class="section-title" data-i18n-prefix="home.features.title">Site <span data-i18n-inner="home.features.inner">Guide Categories</span></h2>
       <p class="section-sub" data-i18n="home.features.desc">From starter tips to Abyss 36-stars — saving you time and frustration.</p>
       <div class="card-grid">
-        <a href="characters.html" class="card" style="cursor:pointer;">
+        <a href="characters" class="card" style="cursor:pointer;">
           <span class="icon-lg">⚔️</span>
           <h3 data-i18n="home.card.chars">Character Gallery</h3>
           <p data-i18n="home.card.chars.desc">Full skill breakdowns, constellation recommendations, ascension materials, and endgame stat references.</p>
           <span class="tag" data-i18n="home.card.chars.tag">90 Characters</span>
         </a>
-        <a href="abyss.html" class="card" style="cursor:pointer;text-decoration:none;color:inherit;">
+        <a href="abyss" class="card" style="cursor:pointer;text-decoration:none;color:inherit;">
           <span class="icon-lg">🛡️</span>
           <h3 data-i18n="home.card.abyss">Abyss Comps</h3>
           <p data-i18n="home.card.abyss.desc">Monthly Spiral Abyss 36-star team recommendations, from budget to whale, floor by floor.</p>
           <span class="tag" data-i18n="home.card.live">Live</span>
         </a>
-        <a href="weapons.html" class="card" style="cursor:pointer;text-decoration:none;color:inherit;">
+        <a href="weapons" class="card" style="cursor:pointer;text-decoration:none;color:inherit;">
           <span class="icon-lg">🗡️</span>
           <h3 data-i18n="home.card.weapons">Weapon Guide</h3>
           <p data-i18n="home.card.weapons.desc">Full weapon tier lists, BiS picks for each character (4-star and 5-star).</p>
           <span class="tag" data-i18n="home.card.live">Live</span>
         </a>
-        <a href="artifacts.html" class="card" style="cursor:pointer;text-decoration:none;color:inherit;">
+        <a href="artifacts" class="card" style="cursor:pointer;text-decoration:none;color:inherit;">
           <span class="icon-lg">💎</span>
           <h3 data-i18n="home.card.artifacts">Artifacts</h3>
           <p data-i18n="home.card.artifacts.desc">Artifact set recommendations, main/sub stat priorities, and farming route planning.</p>
           <span class="tag" data-i18n="home.card.live">Live</span>
         </a>
-        <a href="materials.html" class="card" style="cursor:pointer;text-decoration:none;color:inherit;">
+        <a href="materials" class="card" style="cursor:pointer;text-decoration:none;color:inherit;">
           <span class="icon-lg">🌍</span>
           <h3 data-i18n="home.card.materials">Material Farming</h3>
           <p data-i18n="home.card.materials.desc">Optimal farming routes for character ascension, talent, and weapon materials.</p>
           <span class="tag" data-i18n="home.card.live">Live</span>
         </a>
-        <a href="codes.html" class="card" style="cursor:pointer;">
+        <a href="codes" class="card" style="cursor:pointer;">
           <span class="icon-lg">🎁</span>
           <h3 data-i18n="home.card.codes">Redeem Codes</h3>
           <p data-i18n="home.card.codes.desc">Live Primogems, Mora, Resin and other reward codes. Expired codes cleaned regularly.</p>
@@ -665,34 +666,46 @@
       <h2 class="section-title" data-i18n-prefix="home.tools.title">Essential <span data-i18n-inner="home.tools.inner">Tools</span></h2>
       <p class="section-sub" data-i18n="home.tools.desc">The pages people land on most often when they need a quick answer.</p>
       <div class="card-grid">
-        <a href="tierlist.html" class="card" style="cursor:pointer;text-decoration:none;color:inherit;">
+        <a href="tierlist" class="card" style="cursor:pointer;text-decoration:none;color:inherit;">
           <span class="icon-lg">⭐</span>
           <h3 data-i18n="home.tool.tier.title">Tier List</h3>
           <p data-i18n="home.tool.tier.desc">Fast meta snapshots for teams, element picks, and Abyss-ready characters.</p>
           <span class="tag" data-i18n="home.tool.tier.tag">Core Page</span>
         </a>
-        <a href="build-planner.html" class="card" style="cursor:pointer;text-decoration:none;color:inherit;border-color:rgba(75,196,179,.45);">
+        <a href="build-planner" class="card" style="cursor:pointer;text-decoration:none;color:inherit;border-color:rgba(75,196,179,.45);">
           <span class="icon-lg">📈</span>
           <h3 data-i18n="home.tool.build.title">Build Planner</h3>
           <p data-i18n="home.tool.build.desc">Estimate resin, farming days, boss runs, talent books, Mora, EXP books, weapon materials, and artifact time for your next character.</p>
           <span class="tag" data-i18n="home.tool.new" style="background:rgba(75,196,179,.15);color:var(--teal);">New Tool</span>
         </a>
-        <a href="primogem-calculator.html" class="card" style="cursor:pointer;text-decoration:none;color:inherit;border-color:rgba(212,168,75,.45);">
+        <a href="primogem-calculator" class="card" style="cursor:pointer;text-decoration:none;color:inherit;border-color:rgba(212,168,75,.45);">
           <span class="icon-lg">💎</span>
           <h3 data-i18n="home.tool.primogem.title">Primogem Calculator</h3>
           <p data-i18n="home.tool.primogem.desc">Estimate wishes, pity progress, Welkin income, events, Abyss rewards, and how close you are to a banner guarantee.</p>
           <span class="tag" data-i18n="home.tool.new" style="background:rgba(212,168,75,.15);color:var(--gold-light);">New Tool</span>
         </a>
-        <a href="resin-timer.html" class="card" style="cursor:pointer;text-decoration:none;color:inherit;">
+        <a href="artifact-scorer" class="card" style="cursor:pointer;text-decoration:none;color:inherit;border-color:rgba(180,123,212,.45);">
+          <span class="icon-lg">🏺</span>
+          <h3 data-i18n="home.tool.artifact.title">Artifact Scorer</h3>
+          <p data-i18n="home.tool.artifact.desc">Rate artifact substats for DPS, support, healer, Energy Recharge, and reaction builds before you keep or feed a piece.</p>
+          <span class="tag" data-i18n="home.tool.new" style="background:rgba(180,123,212,.15);color:#d8b4fe;">New Tool</span>
+        </a>
+        <a href="damage-calculator" class="card" style="cursor:pointer;text-decoration:none;color:inherit;border-color:rgba(255,118,118,.45);">
+          <span class="icon-lg">⚔️</span>
+          <h3 data-i18n="home.tool.damage.title">Damage Calculator</h3>
+          <p data-i18n="home.tool.damage.desc">Estimate non-CRIT, CRIT, and average damage with attack, talent scaling, damage bonus, resistance, and reactions.</p>
+          <span class="tag" data-i18n="home.tool.new" style="background:rgba(255,118,118,.15);color:#ff9b9b;">New Tool</span>
+        </a>
+        <a href="resin-timer" class="card" style="cursor:pointer;text-decoration:none;color:inherit;">
           <span class="icon-lg">⏳</span>
           <h3 data-i18n="home.tool.resin.title">Resin Timer</h3>
           <p data-i18n="home.tool.resin.desc">Track Original Resin refill time, condensed resin, daily recovery, and farming sessions without opening a spreadsheet.</p>
           <span class="tag" data-i18n="home.tool.tool">Tool</span>
         </a>
-        <a href="videos.html" class="card" style="cursor:pointer;text-decoration:none;color:inherit;">
+        <a href="videos" class="card" style="cursor:pointer;text-decoration:none;color:inherit;">
           <span class="icon-lg">🎬</span>
           <h3 data-i18n="home.tool.videos.title">Videos</h3>
-          <p data-i18n="home.tool.videos.desc">HoYoverse-published trailers, character demos, and visual references worth revisiting.</p>
+          <p data-i18n="home.tool.videos.desc">Official trailers, character demos, and visual references worth revisiting.</p>
           <span class="tag" data-i18n="home.tool.media">Media</span>
         </a>
       </div>
@@ -747,77 +760,148 @@
       <h2 class="section-title" data-i18n-prefix="home.guides.title">Featured <span data-i18n-inner="home.guides.inner">Guides</span></h2>
       <p class="section-sub" data-i18n="home.guides.desc">From beginner to advanced, all in one place.</p>
       <div style="display:flex; flex-direction:column; gap:16px;">
-        <a href="beginner.html" class="guide-card" style="text-decoration:none;color:inherit;cursor:pointer;">
+        <a href="beginner" class="guide-card" style="text-decoration:none;color:inherit;cursor:pointer;">
           <div class="thumb" style="background:rgba(75,196,179,0.12);">🌱</div>
           <div class="info">
             <h4 data-i18n="home.guide.beginner.title">Beginner's Guide · Fast Track AR 1~45</h4>
             <p data-i18n="home.guide.beginner.desc">15 things every new player must know — resin planning, character picks, resource pitfalls. Reach AR 45 in no time.</p>
           </div>
         </a>
-        <a href="abyss.html" class="guide-card" style="text-decoration:none;color:inherit;cursor:pointer;">
+        <a href="abyss" class="guide-card" style="text-decoration:none;color:inherit;cursor:pointer;">
           <div class="thumb" style="background:rgba(212,168,75,0.12);">🏆</div>
           <div class="info">
             <h4 data-i18n="home.guide.abyss.title">Spiral Abyss Floor 12 Full Stars Guide</h4>
             <p data-i18n="home.guide.abyss.desc">Latest Abyss buff breakdown, optimal team comps, enemy spawn patterns and grouping tips — get your 600 Primogems.</p>
           </div>
         </a>
-        <a href="elements.html" class="guide-card" style="text-decoration:none;color:inherit;cursor:pointer;">
+        <a href="elements" class="guide-card" style="text-decoration:none;color:inherit;cursor:pointer;">
           <div class="thumb" style="background:rgba(180,123,212,0.12);">⚡</div>
           <div class="info">
             <h4 data-i18n="home.guide.elements.title">Elemental Reactions — Complete Guide</h4>
             <p data-i18n="home.guide.elements.desc">Vaporize, Melt, Aggravate, Bloom... all reaction formulas, multipliers, and trigger order explained in one article.</p>
           </div>
         </a>
-        <a href="materials.html" class="guide-card" style="text-decoration:none;color:inherit;cursor:pointer;">
+        <a href="materials" class="guide-card" style="text-decoration:none;color:inherit;cursor:pointer;">
           <div class="thumb" style="background:rgba(217,96,74,0.12);">🗺️</div>
           <div class="info">
             <h4 data-i18n="home.guide.boss.title">Weekly Boss / Boss Rush Guide</h4>
             <p data-i18n="home.guide.boss.desc">All weekly boss mechanics explained + speedclear comps. Clear all weekly bosses in 30 minutes.</p>
           </div>
         </a>
-        <a href="guide-character-build-order.html" class="guide-card" style="text-decoration:none;color:inherit;cursor:pointer;">
+        <a href="guide-character-build-order" class="guide-card" style="text-decoration:none;color:inherit;cursor:pointer;">
           <div class="thumb" style="background:rgba(75,196,179,0.12);">📈</div>
           <div class="info">
             <h4 data-i18n="home.guide.buildorder.title">Character Build Order: What to Farm First</h4>
             <p data-i18n="home.guide.buildorder.desc">A practical resin priority for levels, weapons, talents, artifacts, and knowing when a build is finished.</p>
           </div>
         </a>
-        <a href="arlecchino-build.html" class="guide-card" style="text-decoration:none;color:inherit;cursor:pointer;">
+        <a href="arlecchino-build" class="guide-card" style="text-decoration:none;color:inherit;cursor:pointer;">
           <div class="thumb" style="background:rgba(217,96,74,0.12);">🔥</div>
           <div class="info">
             <h4 data-i18n="home.guide.arlecchino.title">Arlecchino Build Guide: Weapons, Artifacts & Teams</h4>
             <p data-i18n="home.guide.arlecchino.desc">A deeper character guide with weapon ranking, artifact explanations, F2P options, team comps, and FAQ.</p>
           </div>
         </a>
-        <a href="furina-build.html" class="guide-card" style="text-decoration:none;color:inherit;cursor:pointer;">
+        <a href="furina-build" class="guide-card" style="text-decoration:none;color:inherit;cursor:pointer;">
           <div class="thumb" style="background:rgba(74,157,214,0.12);">💧</div>
           <div class="info">
             <h4 data-i18n="home.guide.furina.title">Furina Build Guide: Weapons, Artifacts, ER & Teams</h4>
             <p data-i18n="home.guide.furina.desc">A practical Furina guide covering Golden Troupe, Energy Recharge targets, healers, weapons, teams, and FAQ.</p>
           </div>
         </a>
-        <a href="neuvillette-build.html" class="guide-card" style="text-decoration:none;color:inherit;cursor:pointer;">
+        <a href="neuvillette-build" class="guide-card" style="text-decoration:none;color:inherit;cursor:pointer;">
           <div class="thumb" style="background:rgba(75,196,179,0.12);">🌊</div>
           <div class="info">
             <h4 data-i18n="home.guide.neuvillette.title">Neuvillette Build Guide: Weapons, Artifacts & Teams</h4>
             <p data-i18n="home.guide.neuvillette.desc">A focused guide for Marechaussee Hunter, HP vs Hydro stats, Furina teams, C1 value, weapons, and FAQ.</p>
           </div>
         </a>
-        <a href="raiden-build.html" class="guide-card" style="text-decoration:none;color:inherit;cursor:pointer;">
+        <a href="raiden-build" class="guide-card" style="text-decoration:none;color:inherit;cursor:pointer;">
           <div class="thumb" style="background:rgba(180,123,212,0.12);">⚡</div>
           <div class="info">
             <h4 data-i18n="home.guide.raiden.title">Raiden Shogun Build Guide: DPS, Hyperbloom & Teams</h4>
             <p data-i18n="home.guide.raiden.desc">Choose between Burst DPS and Hyperbloom builds, with weapons, Emblem artifacts, Energy Recharge, teams, and FAQ.</p>
           </div>
         </a>
-        <a href="guide-artifact-farming.html" class="guide-card" style="text-decoration:none;color:inherit;cursor:pointer;">
+
+        <a href="nahida-build" class="guide-card" style="text-decoration:none;color:inherit;cursor:pointer;">
+          <div class="thumb" style="background:rgba(115,192,136,0.12);">🌿</div>
+          <div class="info">
+            <h4 data-i18n="home.guide.nahida.title">Nahida Build Guide: Best Weapons, Artifacts & Teams</h4>
+            <p data-i18n="home.guide.nahida.desc">Deepwood Memories, Elemental Mastery targets, Hyperbloom, Nilou Bloom, Aggravate teams, and FAQ.</p>
+          </div>
+        </a>
+        <a href="kazuha-build" class="guide-card" style="text-decoration:none;color:inherit;cursor:pointer;">
+          <div class="thumb" style="background:rgba(75,196,179,0.12);">🍃</div>
+          <div class="info">
+            <h4 data-i18n="home.guide.kazuha.title">Kaedehara Kazuha Build Guide: Best Weapons, Artifacts & Teams</h4>
+            <p data-i18n="home.guide.kazuha.desc">Viridescent Venerer, EM and ER targets, Swirl setups, team buffs, F2P weapons, and FAQ.</p>
+          </div>
+        </a>
+        <a href="yelan-build" class="guide-card" style="text-decoration:none;color:inherit;cursor:pointer;">
+          <div class="thumb" style="background:rgba(74,157,214,0.12);">💧</div>
+          <div class="info">
+            <h4 data-i18n="home.guide.yelan.title">Yelan Build Guide: Best Weapons, Artifacts & Teams</h4>
+            <p data-i18n="home.guide.yelan.desc">Emblem artifacts, HP and ER planning, Hydro teams, Favonius builds, F2P options, and FAQ.</p>
+          </div>
+        </a>
+        <a href="bennett-build" class="guide-card" style="text-decoration:none;color:inherit;cursor:pointer;">
+          <div class="thumb" style="background:rgba(217,96,74,0.12);">🔥</div>
+          <div class="info">
+            <h4 data-i18n="home.guide.bennett.title">Bennett Build Guide: Best Weapons, Artifacts & Teams</h4>
+            <p data-i18n="home.guide.bennett.desc">Noblesse support, Energy Recharge, Base ATK weapons, healing, team buffs, and FAQ.</p>
+          </div>
+        </a>
+        <a href="zhongli-build" class="guide-card" style="text-decoration:none;color:inherit;cursor:pointer;">
+          <div class="thumb" style="background:rgba(212,168,75,0.12);">🛡️</div>
+          <div class="info">
+            <h4 data-i18n="home.guide.zhongli.title">Zhongli Build Guide: Shield, Artifacts & Teams</h4>
+            <p data-i18n="home.guide.zhongli.desc">HP shield support, Tenacity, Archaic Petra, weapon choices, team utility, and FAQ.</p>
+          </div>
+        </a>
+        <a href="xingqiu-build" class="guide-card" style="text-decoration:none;color:inherit;cursor:pointer;">
+          <div class="thumb" style="background:rgba(74,157,214,0.12);">💧</div>
+          <div class="info">
+            <h4 data-i18n="home.guide.xingqiu.title">Xingqiu Build Guide: ER, Weapons, Artifacts & Teams</h4>
+            <p data-i18n="home.guide.xingqiu.desc">Sacrificial Sword, Emblem sets, Energy Recharge targets, Hydro application, and FAQ.</p>
+          </div>
+        </a>
+        <a href="xiangling-build" class="guide-card" style="text-decoration:none;color:inherit;cursor:pointer;">
+          <div class="thumb" style="background:rgba(217,96,74,0.12);">🔥</div>
+          <div class="info">
+            <h4 data-i18n="home.guide.xiangling.title">Xiangling Build Guide: Weapons, Artifacts & Teams</h4>
+            <p data-i18n="home.guide.xiangling.desc">The Catch, Emblem, Energy Recharge, Vaporize teams, National core, and FAQ.</p>
+          </div>
+        </a>
+        <a href="mavuika-build" class="guide-card" style="text-decoration:none;color:inherit;cursor:pointer;">
+          <div class="thumb" style="background:rgba(217,96,74,0.12);">🔥</div>
+          <div class="info">
+            <h4 data-i18n="home.guide.mavuika.title">Mavuika Build Guide: Weapons, Artifacts & Teams</h4>
+            <p data-i18n="home.guide.mavuika.desc">Pyro carry planning, Nightsoul teams, artifact choices, F2P weapons, rotations, and FAQ.</p>
+          </div>
+        </a>
+        <a href="skirk-build" class="guide-card" style="text-decoration:none;color:inherit;cursor:pointer;">
+          <div class="thumb" style="background:rgba(74,157,214,0.12);">❄️</div>
+          <div class="info">
+            <h4 data-i18n="home.guide.skirk.title">Skirk Build Guide: Weapons, Artifacts & Teams</h4>
+            <p data-i18n="home.guide.skirk.desc">Cryo on-field DPS setup, CRIT stats, Freeze teams, premium options, F2P choices, and FAQ.</p>
+          </div>
+        </a>
+        <a href="xilonen-build" class="guide-card" style="text-decoration:none;color:inherit;cursor:pointer;">
+          <div class="thumb" style="background:rgba(212,168,75,0.12);">🛠️</div>
+          <div class="info">
+            <h4 data-i18n="home.guide.xilonen.title">Xilonen Build Guide: Support, Artifacts & Teams</h4>
+            <p data-i18n="home.guide.xilonen.desc">Geo support builds, Scroll set value, Energy Recharge, team buffs, weapon choices, and FAQ.</p>
+          </div>
+        </a>
+        <a href="guide-artifact-farming" class="guide-card" style="text-decoration:none;color:inherit;cursor:pointer;">
           <div class="thumb" style="background:rgba(212,168,75,0.12);">💎</div>
           <div class="info">
             <h4 data-i18n="home.guide.artifact.title">Artifact Farming: When to Farm and What to Keep</h4>
             <p data-i18n="home.guide.artifact.desc">Know when artifact domains are worth your resin, which main stats matter, and when to stop farming.</p>
           </div>
         </a>
-        <a href="guide-daily-resin-priority.html" class="guide-card" style="text-decoration:none;color:inherit;cursor:pointer;">
+        <a href="guide-daily-resin-priority" class="guide-card" style="text-decoration:none;color:inherit;cursor:pointer;">
           <div class="thumb" style="background:rgba(74,157,214,0.12);">⏳</div>
           <div class="info">
             <h4 data-i18n="home.guide.resinpriority.title">Daily Resin Priority: What to Farm Today</h4>
@@ -829,7 +913,7 @@
   </section>
 
   <div class="section">
-    <div class="section-title"><a href="bugs.html" style="color:var(--gold-light);text-decoration:none">🐛 Bug Tracker</a></div>
+    <div class="section-title"><a href="bugs" style="color:var(--gold-light);text-decoration:none">🐛 Bug Tracker</a></div>
     <div class="section-sub">Known issues & workarounds for v6.3 "Moon of Four"</div>
     <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:12px">
       <div style="flex:1;min-width:200px;background:var(--bg-card);border:1px solid var(--border);padding:14px;border-radius:8px">
@@ -849,7 +933,7 @@
       </div>
     </div>
     <div style="margin-top:10px;font-size:13px;text-align:center">
-      <a href="bugs.html" style="color:var(--gold)">View full bug tracker →</a>
+      <a href="bugs" style="color:var(--gold)">View full bug tracker →</a>
     </div>
   </div>
 
@@ -893,13 +977,13 @@
       <h2 class="section-title">💎 Premium <span>Content</span></h2>
       <p class="section-sub">Exclusive guides for members only — advanced strategies and in-depth analysis.</p>
       <div class="card-grid">
-        <a href="premium/best-builds.html" class="card" style="cursor:pointer;border-color:var(--gold);">
+        <a href="premium/best-builds" class="card" style="cursor:pointer;border-color:var(--gold);">
           <span class="icon-lg">🔥</span>
           <h3>Premium Team Builds</h3>
           <p>Expert-optimized team compositions with rotation details and artifact benchmarks.</p>
           <span class="tag" style="background:rgba(212,168,75,0.2);color:var(--gold-light);">✨ Members Only</span>
         </a>
-        <a href="premium/abyss-strategy.html" class="card" style="cursor:pointer;border-color:var(--gold);">
+        <a href="premium/abyss-strategy" class="card" style="cursor:pointer;border-color:var(--gold);">
           <span class="icon-lg">🌀</span>
           <h3>Abyss Floor 12 Guide</h3>
           <p>Detailed floor-by-floor breakdown of the current Abyss rotation.</p>
@@ -913,7 +997,7 @@
   <section id="featured-video">
     <div class="container">
       <h2 class="section-title">🎬 Featured <span>Videos</span></h2>
-      <p class="section-sub">HoYoverse-published Genshin Impact trailers, animated shorts, and cinematic moments. <a href="videos.html" style="color:var(--gold);font-size:13px;">View all videos →</a></p>
+      <p class="section-sub">Official Genshin Impact trailers, animated shorts, and cinematic moments. <a href="videos" style="color:var(--gold);font-size:13px;">View all videos →</a></p>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px;">
         <!-- Video 1 -->
         <div style="border-radius:12px;overflow:hidden;border:1px solid var(--border);background:#000;">
@@ -964,7 +1048,7 @@
           </div>
         </div>
       </div>
-      <p style="text-align:center;margin-top:12px;"><a href="videos.html" style="display:inline-block;padding:10px 24px;border-radius:8px;border:1px solid var(--gold);color:var(--gold-light);text-decoration:none;font-size:14px;transition:all .3s;">📺 View All Videos</a></p>
+      <p style="text-align:center;margin-top:12px;"><a href="videos" style="display:inline-block;padding:10px 24px;border-radius:8px;border:1px solid var(--gold);color:var(--gold-light);text-decoration:none;font-size:14px;transition:all .3s;">📺 View All Videos</a></p>
     </div>
   </section>
 
@@ -1011,28 +1095,26 @@
       <img src="images/age_rating_12plus.png" alt="Ages 12+">
     </div>
     <div class="links">
-      <a href="index.html">Home</a>
-      <a href="characters.html">Characters</a>
-      <a href="elements.html">Elements</a>
-      <a href="abyss.html">Abyss</a>
-      <a href="weapons.html">Weapons</a>
-      <a href="bugs.html">🐛 Bugs</a><a href="artifacts.html">Artifacts</a>
-      <a href="materials.html">Materials</a>
-      <a href="download.html">📥 Download</a><a href="beginner.html">Guides</a>
-      <a href="codes.html">Codes</a>
-      <a href="build-planner.html">Build Planner</a>
-      <a href="resin-timer.html">Resin Timer</a>
-      <a href="login.html">Login</a>
-      <a href="membership.html">Membership</a>
-      <a href="forum.html">Forum</a>
-      <a href="blog/index.html">📝 Blog</a>
-      <a href="premium/best-builds.html">Premium Builds</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-      <a href="privacy.html">Privacy</a>
+      <a href="index">Home</a>
+      <a href="characters">Characters</a>
+      <a href="elements">Elements</a>
+      <a href="abyss">Abyss</a>
+      <a href="weapons">Weapons</a>
+      <a href="bugs">🐛 Bugs</a><a href="artifacts">Artifacts</a>
+      <a href="materials">Materials</a>
+      <a href="download">📥 Download</a><a href="beginner">Guides</a>
+      <a href="codes">Codes</a>
+      <a href="build-planner">Build Planner</a>
+      <a href="resin-timer">Resin Timer</a>
+      <a href="login">Login</a>
+      <a href="membership">Membership</a>
+      <a href="forum">Forum</a>
+      <a href="blog/index">📝 Blog</a>
+      <a href="premium/best-builds">Premium Builds</a>
+      <a href="privacy">Privacy</a>
     </div>
-    <p>Independent fan-made guide website. Not affiliated with, endorsed by, or sponsored by HoYoverse, miHoYo, or Genshin Impact.</p>
-    <p>All game artwork, visual assets, and intellectual property are the property of their respective owners. Some outbound links may be affiliate links.</p>
+    <p>This website is not affiliated with miHoYo / HoYoverse. Data is for reference only.</p>
+    <p>All game artwork, visual assets, and intellectual property are the property of their respective owners. This is a fan-made guide website and is not affiliated with HoYoverse.</p>
     <p style="margin-top:4px;">© 2026 Genshin Guide · Built with ❤️ and code</p>
   </footer>
 
@@ -1159,7 +1241,7 @@
     }, { once: true });
   </script>
 
-  <script src="i18n.js?v=20260730"></script>
+  <script src="i18n.js?v=20260808-damage1"></script>
   <script src="char_avatars.js"></script>
   <script src="enhanced-search.js"></script>
   <script>// ====== Comment Embed — API 版 ======
