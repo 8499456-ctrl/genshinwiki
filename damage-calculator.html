@@ -108,6 +108,13 @@
           <button id="loadReaction" type="button" class="secondary">Load Reaction Example</button>
           <button id="resetBtn" type="button" class="secondary">Reset</button>
         </div>
+        <div class="actions" aria-label="Character presets">
+          <button id="presetNeuvillette" type="button" class="secondary">Neuvillette HP Scaling</button>
+          <button id="presetArlecchino" type="button" class="secondary">Arlecchino Pyro DPS</button>
+          <button id="presetRaiden" type="button" class="secondary">Raiden Burst</button>
+          <button id="presetReaction" type="button" class="secondary">Vaporize / Melt Hit</button>
+        </div>
+        <p class="hint" style="margin-top:10px;">Use presets as starting points, then replace the numbers with your own character stats, talent scaling, and artifact values.</p>
       </div>
 
       <aside class="panel">
@@ -139,6 +146,47 @@
             <li>DEF Multiplier is often around 50% against same-level enemies without defense shred.</li>
             <li>Enemy Resistance is commonly 10%, but shred effects can lower it.</li>
           </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2>Simple Damage Formula</h2>
+      <div class="content-grid">
+        <div>
+          <h3>Quick Formula</h3>
+          <p>Estimated hit = scaling stat x talent multiplier x damage bonus x DEF factor x resistance factor x reaction factor.</p>
+          <p>Average damage then adds CRIT Rate and CRIT DMG with this simple factor: 1 + CRIT Rate x CRIT DMG.</p>
+        </div>
+        <div>
+          <h3>What To Change First</h3>
+          <ul class="text-list">
+            <li>If average damage is low, compare CRIT Rate and CRIT DMG first.</li>
+            <li>If both CRIT stats are already strong, test damage bonus and reaction multiplier.</li>
+            <li>If a support gives resistance shred or defense shred, update those inputs before judging artifacts.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2>Common Damage Scenarios</h2>
+      <div class="content-grid">
+        <div>
+          <h3>On-field DPS</h3>
+          <p>For characters such as Arlecchino, Raiden, Mavuika, and Skirk, average damage is useful for comparing weapon and artifact upgrades. Do not judge a build only by its biggest CRIT hit.</p>
+        </div>
+        <div>
+          <h3>Reaction DPS</h3>
+          <p>For Vaporize and Melt hits, reaction multiplier can change the result dramatically. Use the reaction preset first, then adjust Elemental DMG Bonus, CRIT, and the correct talent multiplier.</p>
+        </div>
+        <div>
+          <h3>HP / DEF Scaling</h3>
+          <p>For HP or DEF scaling characters, enter the real scaling stat in the first field instead of ATK. The tool still works as long as the talent multiplier matches that stat.</p>
+        </div>
+        <div>
+          <h3>Buff Comparison</h3>
+          <p>To compare buffs, change one input at a time. For example, test the same build with 10% resistance, then with reduced resistance after a support effect.</p>
         </div>
       </div>
     </section>
@@ -204,6 +252,10 @@
     ids.forEach(id => document.getElementById(id).addEventListener('input', calculate));
     document.getElementById('loadDps').addEventListener('click', () => setValues({atk:2400,talent:220,bonus:75,critRate:75,critDmg:190,res:10,defMult:50,reaction:1}));
     document.getElementById('loadReaction').addEventListener('click', () => setValues({atk:2100,talent:180,bonus:61.6,critRate:70,critDmg:180,res:10,defMult:50,reaction:1.5}));
+    document.getElementById('presetNeuvillette').addEventListener('click', () => setValues({atk:42000,talent:14.5,bonus:86.6,critRate:64,critDmg:220,res:10,defMult:50,reaction:1}));
+    document.getElementById('presetArlecchino').addEventListener('click', () => setValues({atk:2600,talent:245,bonus:61.6,critRate:78,critDmg:210,res:10,defMult:50,reaction:1}));
+    document.getElementById('presetRaiden').addEventListener('click', () => setValues({atk:2300,talent:320,bonus:95,critRate:70,critDmg:160,res:10,defMult:50,reaction:1}));
+    document.getElementById('presetReaction').addEventListener('click', () => setValues({atk:2200,talent:210,bonus:61.6,critRate:72,critDmg:180,res:10,defMult:50,reaction:1.5}));
     document.getElementById('resetBtn').addEventListener('click', () => setValues({atk:0,talent:100,bonus:0,critRate:5,critDmg:50,res:10,defMult:50,reaction:1}));
     calculate();
   </script>
