@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Genshin 7.0 Tools: Primogem, Damage, Artifact & Build Planner | Genshin Wiki</title>
+  <meta name="description" content="Use Genshin 7.0 tools to plan pulls, estimate damage, score artifacts, manage resin, check codes, and choose build priorities after the Version 7.0 update.">
+  <link rel="canonical" href="https://genshinwiki.cn/version-70-tools">
+  <meta property="og:title" content="Genshin 7.0 Tools: Primogem, Damage, Artifact & Build Planner | Genshin Wiki">
+  <meta property="og:description" content="Plan Version 7.0 pulls, damage, artifacts, resin, codes, and character build priorities with practical Genshin tools.">
+  <meta property="og:url" content="https://genshinwiki.cn/version-70-tools">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-497248KSLQ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-497248KSLQ');
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Which Genshin tools should I use first after Version 7.0?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Start with the Primogem Calculator if you are deciding whether to pull, then use the Build Planner for resin and material priorities, Artifact Scorer for artifact decisions, and Damage Calculator for comparing build upgrades."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I plan pulls for a new Genshin banner?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Count your current pity, wishes, Primogems, Welkin, events, Abyss rewards, and daily commissions. Then compare the total against soft pity and guarantee targets before spending."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I know if an artifact is worth leveling?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Check whether the main stat fits the character, then score useful substats such as CRIT, Energy Recharge, HP, ATK, Elemental Mastery, or DEF depending on the build."
+        }
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root{--bg:#10131f;--panel:#171b2b;--panel2:#202538;--text:#f7f3e8;--muted:#b9b1a5;--gold:#d4a84b;--teal:#4bc4b3;--violet:#b47bd4;--red:#ff7676;--border:rgba(255,255,255,.12)}
+    *{box-sizing:border-box}body{margin:0;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--text);background:radial-gradient(circle at 18% 8%,rgba(75,196,179,.15),transparent 31%),radial-gradient(circle at 82% 0%,rgba(212,168,75,.12),transparent 28%),var(--bg);line-height:1.6}
+    a{color:inherit}.topbar{position:sticky;top:0;z-index:5;background:rgba(16,19,31,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}.topbar-inner{max-width:1120px;margin:0 auto;padding:14px 20px;display:flex;justify-content:space-between;align-items:center;gap:16px}.brand{font-weight:900;color:var(--gold);text-decoration:none}.nav{display:flex;gap:14px;flex-wrap:wrap;font-size:14px;color:var(--muted)}.nav a{text-decoration:none}
+    main{max-width:1120px;margin:0 auto;padding:34px 20px 56px}.hero{border:1px solid var(--border);background:rgba(23,27,43,.86);border-radius:10px;padding:26px;margin-bottom:22px;box-shadow:0 18px 45px rgba(0,0,0,.2)}.eyebrow{color:var(--teal);text-transform:uppercase;letter-spacing:.08em;font-size:12px;font-weight:800}h1{margin:8px 0 10px;font-size:clamp(34px,5vw,58px);line-height:1.03;letter-spacing:0}h2{margin:0 0 14px;color:var(--gold);font-size:24px}h3{margin:0 0 8px;color:#f6d98f}p{color:var(--muted);margin:0 0 12px}.hero p{font-size:17px;max-width:820px}
+    .tool-grid,.build-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.card,.section{border:1px solid var(--border);background:rgba(23,27,43,.72);border-radius:10px;padding:18px}.card{display:block;text-decoration:none;transition:transform .18s ease,border-color .18s ease}.card:hover{transform:translateY(-2px);border-color:rgba(212,168,75,.55)}.card strong{display:block;color:var(--text);font-size:18px;margin-bottom:4px}.tag{display:inline-block;margin-top:8px;color:var(--teal);font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.06em}.section{margin-top:22px}.checklist{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;counter-reset:step}.step{border:1px solid rgba(255,255,255,.09);background:rgba(255,255,255,.04);border-radius:8px;padding:14px}.step:before{counter-increment:step;content:counter(step);display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;background:rgba(75,196,179,.16);color:var(--teal);font-weight:900;margin-bottom:8px}.links{display:flex;flex-wrap:wrap;gap:10px}.links a{color:var(--teal);text-decoration:none;border-bottom:1px solid rgba(75,196,179,.35)}footer{border-top:1px solid var(--border);color:var(--muted);padding:24px 20px;text-align:center}
+    @media(max-width:820px){.tool-grid,.build-grid,.checklist{grid-template-columns:1fr}.topbar-inner{align-items:flex-start;flex-direction:column}}@media(max-width:560px){main{padding:24px 14px 42px}.hero,.card,.section{padding:16px}h1{font-size:36px}}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="/">Genshin Wiki</a>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="primogem-calculator">Primogem Calculator</a>
+        <a href="damage-calculator">Damage Calculator</a>
+        <a href="artifact-scorer">Artifact Scorer</a>
+        <a href="build-planner">Build Planner</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="eyebrow">Version 7.0 Update Hub</div>
+      <h1>Genshin 7.0 Tools</h1>
+      <p>Version 7.0 brings a fresh wave of pulls, builds, materials, team testing, and artifact decisions. Use this hub as a fast checklist before you spend Primogems or resin.</p>
+      <p>Start with the tool that matches your current problem: pull planning, build cost, artifact quality, damage comparison, or reward codes.</p>
+    </section>
+
+    <section class="section">
+      <h2>Pick the Tool You Need</h2>
+      <div class="tool-grid">
+        <a class="card" href="primogem-calculator">
+          <strong>Primogem Calculator</strong>
+          <p>Estimate wishes, pity progress, Welkin income, events, Abyss rewards, and how close you are to a guarantee.</p>
+          <span class="tag">Pull Planning</span>
+        </a>
+        <a class="card" href="build-planner">
+          <strong>Build Planner</strong>
+          <p>Plan resin, farming days, boss runs, talent books, Mora, EXP books, and artifact time for your next character.</p>
+          <span class="tag">Resin Priority</span>
+        </a>
+        <a class="card" href="artifact-scorer">
+          <strong>Artifact Scorer</strong>
+          <p>Score DPS, support, healer, Energy Recharge, and reaction artifacts before you level or feed them.</p>
+          <span class="tag">Artifact Decisions</span>
+        </a>
+        <a class="card" href="damage-calculator">
+          <strong>Damage Calculator</strong>
+          <p>Compare average damage, CRIT damage, damage bonus, resistance, and reaction multiplier changes.</p>
+          <span class="tag">Build Testing</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>7.0 Update Checklist</h2>
+      <div class="checklist">
+        <div class="step"><h3>Claim rewards</h3><p>Check maintenance rewards, active codes, and any limited-time mail before planning pulls.</p></div>
+        <div class="step"><h3>Count wishes</h3><p>Use your current pity, Primogems, Intertwined Fates, Welkin, events, and Abyss income.</p></div>
+        <div class="step"><h3>Choose priorities</h3><p>Decide whether a new pull, constellation, weapon, or saved guarantee is the better account upgrade.</p></div>
+        <div class="step"><h3>Plan resin</h3><p>Map out levels, weapon ascension, talents, weekly bosses, Mora, and EXP books before farming artifacts.</p></div>
+        <div class="step"><h3>Score artifacts</h3><p>Keep pieces that fit the character's main stat and substat needs, then compare upgrade potential.</p></div>
+        <div class="step"><h3>Test damage</h3><p>Compare your current build against possible weapon, artifact, CRIT, or reaction changes.</p></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Popular Builds to Recheck</h2>
+      <div class="build-grid">
+        <a class="card" href="arlecchino-build"><strong>Arlecchino Build</strong><p>Pyro DPS weapon, artifact, team, and F2P planning.</p></a>
+        <a class="card" href="neuvillette-build"><strong>Neuvillette Build</strong><p>Hydro carry stats, artifact choices, and team upgrades.</p></a>
+        <a class="card" href="raiden-build"><strong>Raiden Build</strong><p>Burst DPS, Energy Recharge, Emblem, and Hyperbloom options.</p></a>
+        <a class="card" href="furina-build"><strong>Furina Build</strong><p>HP, Energy Recharge, Golden Troupe, and team value checks.</p></a>
+        <a class="card" href="nahida-build"><strong>Nahida Build</strong><p>Dendro reaction support, EM targets, and Deepwood planning.</p></a>
+        <a class="card" href="kazuha-build"><strong>Kazuha Build</strong><p>Viridescent support, EM, Energy Recharge, and team buffing.</p></a>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Related Quick Pages</h2>
+      <p>These pages help users who arrive from update searches and need quick answers before deciding what to do next.</p>
+      <div class="links">
+        <a href="codes">Redeem Codes</a>
+        <a href="tierlist">Tier List</a>
+        <a href="characters">Character Gallery</a>
+        <a href="guide-character-build-order">Character Build Order</a>
+        <a href="guide-daily-resin-priority">Daily Resin Priority</a>
+        <a href="guide-artifact-farming">Artifact Farming Guide</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Genshin Wiki is a fan-made guide site and is not affiliated with miHoYo or HoYoverse.</p>
+  </footer>
+</body>
+</html>
