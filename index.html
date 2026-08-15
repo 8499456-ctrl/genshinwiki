@@ -522,6 +522,7 @@
     <!-- Mobile nav (hidden on desktop, shown via hamburger on mobile) -->
     <ul id="navMenu">
       <li><a href="index">Home</a></li>
+      <li><a href="#features" data-i18n="nav.siteCategories">Site Categories</a></li>
       <li><a href="characters">Characters</a></li>
       <li><a href="elements">Elements</a></li>
       <li><a href="abyss">Abyss</a></li>
@@ -529,12 +530,17 @@
       <li><a href="artifacts">Artifacts</a></li>
       <li><a href="materials">Materials</a></li>
       <li><a href="beginner">Guides</a></li>
+      <li><a href="#guides" data-i18n="nav.featuredGuides">Featured Guides</a></li>
       <li><a href="download">Download</a></li>
       <li><a href="codes">Codes</a></li>
+      <li><a href="#tools" data-i18n="nav.tools">Essential Tools</a></li>
       <li><a href="build-planner">Build Planner</a></li>
       <li><a href="damage-calculator">Damage</a></li>
       <li><a href="resin-timer">⏳ Resin</a></li>
-      <li><a href="videos">🎬 Videos</a></li>
+      <li><a href="#gallery" data-i18n="nav.gallery">Gallery</a></li>
+      <li><a href="#featured-video" data-i18n="nav.featuredVideos">Featured Videos</a></li>
+      <li><a href="#sister-site" data-i18n="nav.sisterSite">Sister Site</a></li>
+      <li><a href="#featured-creator-tool" data-i18n="nav.avatarTool">Avatar Tool</a></li>
       <li><a href="forum">Forum</a></li>
       <li><a href="membership">Membership</a></li>
       <li><a href="bugs">Bugs</a></li>
@@ -544,6 +550,7 @@
   <!-- ====== Sidebar ====== -->
   <aside class="sidebar" id="sidebar">
     <a href="index" class="sidebar-item active"><span class="si-icon">&#127968;</span> <span data-i18n="nav.home">Home</span></a>
+    <a href="#features" class="sidebar-item"><span class="si-icon">&#128506;</span> <span data-i18n="nav.siteCategories">Site Categories</span></a>
     <a href="characters" class="sidebar-item"><span class="si-icon">&#9876;&#65039;</span> <span data-i18n="nav.characters">Characters</span></a>
     <a href="elements" class="sidebar-item"><span class="si-icon">&#127811;</span> <span data-i18n="nav.elements">Elements</span></a>
     <a href="tierlist" class="sidebar-item"><span class="si-icon">⭐</span> <span data-i18n="nav.tierlist">Tier List</span></a>
@@ -552,12 +559,19 @@
     <a href="artifacts" class="sidebar-item"><span class="si-icon">&#128142;</span> <span data-i18n="nav.artifacts">Artifacts</span></a>
     <a href="materials" class="sidebar-item"><span class="si-icon">&#127758;</span> <span data-i18n="nav.materials">Materials</span></a>
     <a href="beginner" class="sidebar-item"><span class="si-icon">&#128214;</span> <span data-i18n="nav.guides">Guides</span></a>
+    <a href="#guides" class="sidebar-item"><span class="si-icon">&#128209;</span> <span data-i18n="nav.featuredGuides">Featured Guides</span></a>
     <a href="download" class="sidebar-item"><span class="si-icon">&#128229;</span> <span data-i18n="nav.download">Download</span></a>
     <div class="sidebar-divider"></div>
     <a href="codes" class="sidebar-item"><span class="si-icon">&#127873;</span> <span data-i18n="nav.codes">Codes</span></a>
+    <a href="#tools" class="sidebar-item"><span class="si-icon">&#129521;</span> <span data-i18n="nav.tools">Essential Tools</span></a>
     <a href="build-planner" class="sidebar-item"><span class="si-icon">&#128200;</span> <span>Build Planner</span></a>
     <a href="damage-calculator" class="sidebar-item"><span class="si-icon">&#9876;&#65039;</span> <span>Damage Calculator</span></a>
     <a href="resin-timer" class="sidebar-item"><span class="si-icon">&#9203;</span> <span>Resin Timer</span></a>
+    <div class="sidebar-divider"></div>
+    <a href="#gallery" class="sidebar-item"><span class="si-icon">&#128248;</span> <span data-i18n="nav.gallery">Gallery</span></a>
+    <a href="#featured-video" class="sidebar-item"><span class="si-icon">&#127916;</span> <span data-i18n="nav.featuredVideos">Featured Videos</span></a>
+    <a href="#sister-site" class="sidebar-item"><span class="si-icon">&#127775;</span> <span data-i18n="nav.sisterSite">Sister Site</span></a>
+    <a href="#featured-creator-tool" class="sidebar-item"><span class="si-icon">&#127912;</span> <span data-i18n="nav.avatarTool">Avatar Tool</span></a>
     <a href="forum" class="sidebar-item"><span class="si-icon">&#128172;</span> <span data-i18n="nav.forum">Forum</span></a>
     <a href="membership" class="sidebar-item"><span class="si-icon">&#128142;</span> <span data-i18n="nav.membership">Membership</span></a>
     <a href="bugs" class="sidebar-item"><span class="si-icon">&#128028;</span> <span data-i18n="nav.bugs">Bugs</span></a>
@@ -1250,7 +1264,7 @@
     }, { once: true });
   </script>
 
-  <script src="i18n.js?v=20260815-version70-tools1"></script>
+  <script src="i18n.js?v=20260815-home-section-sidebar1"></script>
   <script src="char_avatars.js"></script>
   <script src="enhanced-search.js"></script>
   <script>// ====== Comment Embed — API 版 ======

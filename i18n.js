@@ -6,6 +6,7 @@ const i18nData = {
   'en': {
     // Nav
     'nav.home': 'Home',
+    'nav.siteCategories': 'Site Categories',
     'nav.characters': 'Characters',
     'nav.elements': 'Elements',
     'nav.abyss': 'Abyss',
@@ -14,10 +15,16 @@ const i18nData = {
     'nav.materials': 'Materials',
     'nav.download': 'Download',
     'nav.codes': 'Codes',
+    'nav.tools': 'Essential Tools',
     'nav.forum': 'Forum',
     'nav.login': 'Login',
     'nav.tierlist': 'Tier List',
     'nav.guides': 'Guides',
+    'nav.featuredGuides': 'Featured Guides',
+    'nav.gallery': 'Gallery',
+    'nav.featuredVideos': 'Featured Videos',
+    'nav.sisterSite': 'Sister Site',
+    'nav.avatarTool': 'Avatar Tool',
     'nav.bugs': 'Bugs',
     'nav.membership': 'Membership',
     
@@ -158,6 +165,7 @@ const i18nData = {
   'zh': {
     // Nav
     'nav.home': '首页',
+    'nav.siteCategories': '功能分类',
     'nav.characters': '角色',
     'nav.elements': '元素',
     'nav.abyss': '深渊',
@@ -166,10 +174,16 @@ const i18nData = {
     'nav.materials': '材料',
     'nav.download': '下载',
     'nav.codes': '兑换码',
+    'nav.tools': '必备工具',
     'nav.forum': '论坛',
     'nav.login': '登录',
     'nav.tierlist': 'Tier 榜',
     'nav.guides': '指南',
+    'nav.featuredGuides': '精选攻略',
+    'nav.gallery': '截图展示',
+    'nav.featuredVideos': '精选视频',
+    'nav.sisterSite': '姐妹网站',
+    'nav.avatarTool': '头像工具',
     'nav.bugs': '问题反馈',
     'nav.membership': '会员',
     
