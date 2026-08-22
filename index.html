@@ -9,272 +9,1443 @@
   gtag('js', new Date());
   gtag('config', 'G-497248KSLQ');
 </script>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Genshin Guide Blog — Builds, Teams & Tips (v6.3)</title>
-<meta name="description" content="Latest Genshin Impact guides, character builds, Spiral Abyss tips, and meta analysis. Updated regularly.">
-<link rel="canonical" href="https://genshinwiki.cn/blog/">
-<meta property="og:url" content="https://genshinwiki.cn/blog/">
-<link rel="icon" type="image/png" href="../favicon.png">
-<style>
-* { margin:0; padding:0; box-sizing:border-box; }
-:root { --bg:#0d1117; --bg-card:#151b23; --bg-card-hover:#1c2333; --border:#21262d; --gold:#d4a84b; --gold-light:#e8c75a; --text:#e6edf3; --text-dim:#8b949e; --text-muted:#484f58; }
-body { background:var(--bg); color:var(--text); font-family:-apple-system,'PingFang SC','Helvetica Neue',sans-serif; }
-nav { position:fixed; top:0; left:0; right:0; display:flex; align-items:center; justify-content:space-between; padding:12px 28px; background:rgba(13,17,23,0.94); backdrop-filter:blur(12px); z-index:100; border-bottom:1px solid var(--border); }
-.logo { font-size:18px; font-weight:700; }
-.logo span { color:var(--gold); }
-.logo a { color:var(--text); text-decoration:none; }
-nav ul { list-style:none; display:flex; gap:16px; flex-wrap:wrap; }
-nav ul li a { color:var(--text-dim); text-decoration:none; font-size:13px; padding:4px 8px; border-radius:6px; transition:all .2s; }
-nav ul li a:hover, nav ul li a.active { color:var(--gold); background:rgba(212,168,75,0.1); }
-.page-header { padding:76px 28px 24px; text-align:center; background:linear-gradient(180deg,rgba(212,168,75,0.06),transparent 80%), url(../images/bg_hero.jpg) center/cover fixed; min-height:200px; display:flex; flex-direction:column; justify-content:center; align-items:center; position:relative; }
-.page-header::before{content:"";position:absolute;inset:0;background:rgba(13,17,23,0.6);z-index:0;}
-.page-header>*{position:relative;z-index:1;}
-.page-header h1 { font-size:26px; } .page-header p { color:var(--text-dim); font-size:14px; margin-top:4px; }
-.container { max-width:860px; margin:0 auto; padding:0 16px 32px; }
-.blog-card { background:var(--bg-card); border:1px solid var(--border); border-radius:12px; padding:20px 22px; margin-bottom:14px; cursor:pointer; transition:all .25s; display:block; text-decoration:none; color:inherit; }
-.blog-card:hover { background:var(--bg-card-hover); border-color:var(--gold-dark); transform:translateY(-2px); }
-.blog-card .meta { font-size:12px; color:var(--text-muted); margin-bottom:6px; display:flex; gap:12px; flex-wrap:wrap; }
-.blog-card h2 { font-size:18px; font-weight:700; color:var(--text); margin-bottom:6px; }
-.blog-card .excerpt { font-size:14px; color:var(--text-dim); line-height:1.6; }
-.blog-card .tags { display:flex; gap:6px; flex-wrap:wrap; margin-top:8px; }
-.tag { display:inline-block; padding:2px 10px; border-radius:20px; font-size:11px; background:rgba(212,168,75,0.15); color:var(--gold-light); }
-.tag-tier { background:rgba(212,168,75,0.15); color:var(--gold); }
-.tag-guide { background:rgba(75,196,179,0.15); color:#5dbf9a; }
-.tag-meta { background:rgba(180,123,212,0.15); color:#b47bd4; }
-.tag-beginner { background:rgba(74,157,214,0.15); color:#4a9dd6; }
-.tag-update { background:rgba(212,168,75,0.15); color:var(--gold-light); }
-.rss-link { font-size:13px; color:var(--gold); text-decoration:none; }
-.rss-link:hover { text-decoration:underline; }
-footer { border-top:1px solid var(--border); padding:24px 16px; text-align:center; color:var(--text-dim); font-size:13px; }
-footer .links { display:flex; justify-content:center; gap:14px; flex-wrap:wrap; margin-bottom:10px; }
-footer .links a { color:var(--text-dim); font-size:13px; text-decoration:none; }
-footer .links a:hover { color:var(--gold); }
-@media (max-width:768px) { nav { padding:10px 12px; } nav ul { gap:6px; } .page-header h1 { font-size:20px; } }
-</style>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18321892237"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-18321892237');
+</script>
+  <meta name="baidu_union_verify" content="1aa58870ad218f2c661f1198c0410089">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Genshin Impact Guide 2026 — Best Builds, Tier Lists & Tips</title>
+    <meta name="description" content="Complete Genshin Impact guide. Character builds, weapon rankings, Spiral Abyss tips, artifact recommendations, and elemental reaction guides — updated for version 6.3 Moon of Four.">
+<link rel="canonical" href="https://genshinwiki.cn/">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="comment-embed.css">
+  <style>
+    /* ===== Reset & Base ===== */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --gold: #d4a84b;
+      --gold-light: #f0d78c;
+      --gold-dark: #b8872e;
+      --teal: #4bc4b3;
+      --teal-dark: #2a9d8f;
+      --bg-dark: #0d1117;
+      --bg-card: #161b22;
+      --bg-card-hover: #1c2333;
+      --img-brightness: 1.3;
+      --img-contrast: 1.15;
+      --img-saturate: 1.1;
+      --img-brightness: 1.3;
+      --img-contrast: 1.15;
+      --img-saturate: 1.1;
+      --text: #e6e6e6;
+      --text-dim: #8b949e;
+      --border: #30363d;
+      --anemo: #5dbf9a;
+      --geo: #d4a84b;
+      --electro: #b47bd4;
+      --dendro: #7bc47b;
+      --hydro: #4a9dd6;
+      --pyro: #d9604a;
+      --cryo: #7bc4d0;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+      background: var(--bg-dark);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    a { color: var(--gold); text-decoration: none; transition: color .2s; }
+    a:hover { color: var(--gold-light); }
+
+    /* ===== Scrollbar ===== */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: var(--bg-dark); }
+    ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #555; }
+
+    /* ===== Navigation ===== */
+    nav {
+      position: fixed; top: 0; width: 100%; z-index: 100;
+      background: rgba(13, 17, 23, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 20px;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 64px;
+    }
+    nav .nav-inner {
+      display: flex; align-items: center; gap: 16px;
+    }
+    nav .logo {
+      display: flex; align-items: center;
+      font-size: 0;
+    }
+    nav .logo img {
+      height: 48px;
+      width: auto;
+      display: block;
+    }
+    nav .nav-login-btn {
+      font-size: 14px; color: var(--gold); font-weight: 600;
+      text-decoration: none; padding: 6px 12px; border-radius: 6px;
+      transition: all .2s;
+    }
+    nav .nav-login-btn:hover { background: rgba(212,168,75,0.1); }
+    /* ===== Music Button ===== */
+    .music-btn {
+      background: none; border: 1px solid var(--border);
+      color: var(--text-dim); font-size: 18px;
+      width: 36px; height: 36px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; transition: all .25s;
+      margin-right: 8px;
+    }
+    .music-btn:hover { border-color: var(--gold); color: var(--gold); }
+    .music-btn.playing { color: var(--teal); border-color: var(--teal); animation: pulseGlow 2s ease-in-out infinite; }
+    @keyframes pulseGlow {
+      0%, 100% { box-shadow: 0 0 4px rgba(75,196,179,0.2); }
+      50% { box-shadow: 0 0 12px rgba(75,196,179,0.4); }
+    }
+
+    /* ===== Sidebar ===== */
+    .sidebar {
+      position: fixed; top: 64px; left: 0; bottom: 0;
+      width: 180px;
+      background: rgba(13, 17, 23, 0.95);
+      backdrop-filter: blur(8px);
+      border-right: 1px solid var(--border);
+      padding: 12px 8px;
+      overflow-y: auto;
+      z-index: 90;
+      display: flex; flex-direction: column; gap: 2px;
+    }
+    .sidebar-item {
+      display: flex; align-items: center; gap: 8px;
+      padding: 8px 12px; border-radius: 6px;
+      font-size: 13px; color: var(--text-dim);
+      text-decoration: none; transition: all .2s;
+    }
+    .sidebar-item:hover { background: var(--bg-card-hover); color: var(--text); }
+    .sidebar-item.active {
+      color: var(--gold); background: rgba(212,168,75,0.1);
+    }
+    .sidebar-item .si-icon { font-size: 15px; width: 20px; text-align: center; }
+    .sidebar-divider {
+      height: 1px; background: var(--border);
+      margin: 6px 0;
+    }
+    /* Push main content right */
+    .hero, section, .ad-wrap, footer {
+      margin-left: 180px;
+    }
+    footer { margin-left: 180px; }
+
+    /* ===== Old nav ul (hide on desktop, show on mobile) ===== */
+    nav ul { display: none; } /* shown via hamburger on mobile */
+    nav ul li a {
+      display: block;
+      padding: 12px 14px;
+      font-size: 14px; color: var(--text-dim); border-radius: 6px;
+      transition: all .2s;
+    }
+    nav ul li a:hover,
+    nav ul li a.active { color: var(--gold); background: rgba(212, 168, 75, 0.1); }
+    .nav-toggle { display: none; flex-direction: column; gap: 4px; cursor: pointer; padding: 4px; }
+    .nav-toggle span { width: 24px; height: 2px; background: var(--text); border-radius: 2px; transition: .3s; }
+
+    /* ===== Hero ===== */
+    .hero {
+      min-height: 100vh;
+      display: flex; flex-direction: column; justify-content: center; align-items: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      padding: 56px 24px 36px;
+    }
+    .hero-video-bg {
+      position: absolute; inset: 0; z-index: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      opacity: 0.35;
+      pointer-events: none;
+    }
+    .hero::after {
+      content: '';
+      position: absolute; inset: 0; z-index: 1;
+      background: linear-gradient(180deg, rgba(0,0,0,0.4), rgba(13,17,23,0.85));
+      pointer-events: none;
+    }
+    .hero > *:not(.hero-video-bg) { position: relative; z-index: 2; }
+    /* Hero image container */
+    .hero-image-wrap {
+      position: relative;
+      width: 100%; max-width: 640px; margin-bottom: 18px;
+      border-radius: 12px; overflow: hidden;
+      box-shadow: 0 12px 32px rgba(0,0,0,0.4);
+      background: var(--bg-card);
+    }
+    .hero-image-wrap img {
+      width: 100%; display: block;
+      transition: transform .4s ease;
+      filter: brightness(var(--img-brightness)) contrast(var(--img-contrast)) saturate(var(--img-saturate));
+      object-fit: cover;
+    }
+    .hero-image-wrap:hover img { transform: scale(1.03); }
+    .hero-image-wrap .overlay {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      height: 60%;
+      background: linear-gradient(transparent, rgba(10,14,23,0.8));
+    }
+    /* Watermark corner mask */
+    .hero-image-wrap .watermark-mask {
+      position: absolute; inset: 0; pointer-events: none;
+      background:
+        radial-gradient(ellipse 200px 60px at 50% 95%, rgba(10,14,23,0.5), transparent 80%),
+        radial-gradient(ellipse 50px 50px at 5% 5%, rgba(10,14,23,0.3), transparent 70%),
+        radial-gradient(ellipse 50px 50px at 95% 5%, rgba(10,14,23,0.3), transparent 70%);
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 600px 400px at 20% 30%, rgba(75, 196, 179, 0.08), transparent),
+        radial-gradient(ellipse 500px 500px at 80% 70%, rgba(212, 168, 75, 0.06), transparent),
+        radial-gradient(ellipse 300px 300px at 50% 50%, rgba(180, 123, 212, 0.04), transparent);
+      pointer-events: none;
+    }
+    /* Floating stars / particles */
+    .particles {
+      position: absolute; inset: 0; overflow: hidden; pointer-events: none;
+    }
+    .particle {
+      position: absolute; width: 4px; height: 4px;
+      background: var(--gold); border-radius: 50%;
+      opacity: 0; animation: floatUp linear infinite;
+    }
+    @keyframes floatUp {
+      0% { opacity: 0; transform: translateY(100vh) scale(0); }
+      10% { opacity: 0.6; }
+      90% { opacity: 0.6; }
+      100% { opacity: 0; transform: translateY(-10vh) scale(1); }
+    }
+
+    .hero h1 {
+      font-size: clamp(36px, 7vw, 72px);
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--gold-light), var(--gold), var(--gold-dark));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      margin-bottom: 16px;
+      position: relative;
+    }
+    .hero h1 small {
+      display: block;
+      font-size: clamp(14px, 2.5vw, 22px);
+      font-weight: 400;
+      -webkit-text-fill-color: var(--text-dim);
+      margin-top: 8px;
+    }
+    .hero p {
+      font-size: clamp(15px, 2vw, 19px);
+      color: var(--text-dim);
+      max-width: 600px;
+      margin-bottom: 36px;
+    }
+    .hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 32px; border-radius: 8px;
+      font-size: 15px; font-weight: 600;
+      transition: all .25s; cursor: pointer; border: none;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+      color: #0d1117;
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(212, 168, 75, 0.3); }
+    .btn-outline {
+      background: transparent; border: 1px solid var(--border);
+      color: var(--text);
+    }
+    .btn-outline:hover {
+      border-color: var(--gold); color: var(--gold);
+      transform: translateY(-2px);
+    }
+
+    /* ===== Section Common ===== */
+    section { padding: 40px 24px; }
+    .section-title {
+      text-align: center;
+      font-size: clamp(26px, 4vw, 36px);
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .section-title span {
+      background: linear-gradient(135deg, var(--gold-light), var(--gold));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .section-sub {
+      text-align: center; color: var(--text-dim);
+      max-width: 550px; margin: 0 auto 24px; font-size: 14px;
+    }
+    .container { max-width: 1200px; margin: 0 auto; }
+
+    /* ===== Elements Showcase ===== */
+    .elements-grid {
+      display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;
+      margin-bottom: 32px;
+    }
+    .element-badge {
+      display: flex; flex-direction: column; align-items: center; gap: 6px;
+      padding: 12px 16px; border-radius: 10px;
+      background: var(--bg-card); border: 1px solid var(--border);
+      min-width: 80px; transition: all .25s; cursor: pointer; text-decoration: none; color: inherit;
+    }
+    .element-badge:hover { transform: translateY(-4px); border-color: var(--gold); }
+    .element-badge .icon { font-size: 28px; }
+    .element-badge .name { font-size: 12px; color: var(--text-dim); }
+
+    /* ===== Card Grid ===== */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 12px;
+    }
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px 18px;
+      transition: all .25s;
+      cursor: default;
+    }
+    .card:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--gold-dark);
+      transform: translateY(-3px);
+    }
+    .card .icon-lg { font-size: 28px; margin-bottom: 8px; display: block; }
+    .card h3 { font-size: 16px; margin-bottom: 6px; }
+    .card p { font-size: 14px; color: var(--text-dim); line-height: 1.5; }
+    .card .tag {
+      display: inline-block; margin-top: 10px;
+      font-size: 11px; padding: 2px 8px; border-radius: 16px;
+      background: rgba(212, 168, 75, 0.15);
+      color: var(--gold-light);
+    }
+
+    /* ===== Redeem Codes ===== */
+    .codes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+    }
+    .code-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px;
+      text-align: center;
+      transition: all .25s;
+    }
+    .code-card:hover { border-color: var(--gold); }
+    .code-card .code {
+      font-family: 'Menlo', 'Monaco', 'Courier New', monospace;
+      font-size: 17px; font-weight: 700;
+      letter-spacing: 1px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      margin-bottom: 6px;
+    }
+    .code-card .reward { font-size: 13px; color: var(--text-dim); }
+    .code-card .status {
+      display: inline-block; margin-top: 8px;
+      font-size: 11px; padding: 2px 10px; border-radius: 20px;
+    }
+    .code-card .active { background: rgba(75, 196, 179, 0.15); color: var(--teal); }
+    .code-card .expired { background: rgba(217, 96, 74, 0.15); color: var(--pyro); }
+
+    /* ===== Featured Guides ===== */
+    .guide-card {
+      display: flex; gap: 16px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 18px;
+      transition: all .25s;
+      cursor: default;
+    }
+    .guide-card:hover { background: var(--bg-card-hover); border-color: var(--gold-dark); }
+    .guide-card .thumb {
+      width: 64px; height: 64px; min-width: 64px;
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 30px;
+    }
+    .guide-card .info { flex: 1; }
+    .guide-card .info h4 { font-size: 15px; margin-bottom: 3px; }
+    .guide-card .info p { font-size: 13px; color: var(--text-dim); }
+
+    /* ===== Footer ===== */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 28px 16px 20px;
+      text-align: center;
+      color: var(--text-dim);
+      font-size: 13px;
+      min-height: 160px;
+    }
+    .age-badge {
+      position: absolute; left: 24px; bottom: 24px;
+      display: flex; flex-direction: column; align-items: center; gap: 4px;
+    }
+    .age-badge img { width: 55px; height: auto; display: block; }
+    @media (max-width: 600px) {
+      .age-badge { position: static; margin: 20px auto 0; }
+    }
+    footer .links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 12px; }
+    footer .links a { color: var(--text-dim); font-size: 13px; }
+    footer .links a:hover { color: var(--gold); }
+
+    /* ===== Mobile ===== */
+    @media (max-width: 768px) {
+      .sidebar { display: none; }
+      .nav-toggle { display: flex; }
+      .nav-search { display: none; }
+      .hero, section, .ad-wrap, footer { margin-left: 0; }
+      footer { margin-left: 0; }
+      nav ul {
+        display: none;
+        position: absolute; top: 64px; left: 0; right: 0;
+        flex-direction: column;
+        background: rgba(13, 17, 23, 0.98);
+        border-bottom: 1px solid var(--border);
+        padding: 8px 16px;
+        gap: 0;
+      }
+      nav ul.open { display: flex; }
+      nav ul li a { padding: 12px 14px; border-radius: 0; border-bottom: 1px solid var(--border); }
+      nav ul li:last-child a { border-bottom: none; }
+      .guide-card { flex-direction: column; align-items: flex-start; }
+      .guide-card .thumb { width: 60px; height: 60px; min-width: 60px; font-size: 28px; }
+      .hero { padding: 80px 16px 40px; }
+      section { padding: 28px 12px; }
+      .hero-buttons { flex-direction: column; align-items: center; }
+    }
+    .ad-wrap { margin: 24px auto; max-width: 728px; }
+    .ad-banner {
+      display: flex; align-items: center; justify-content: center; gap: 14px;
+      padding: 14px 20px; border-radius: 10px;
+      border: 1px dashed var(--border);
+      background: linear-gradient(135deg, rgba(212,168,75,0.06), rgba(75,196,179,0.04));
+      transition: all .3s; cursor: pointer; text-decoration: none;
+    }
+    .ad-banner:hover { border-color: var(--gold); background: rgba(212,168,75,0.1); }
+    .ad-banner .icon-ad { font-size: 32px; opacity: .6; }
+    .ad-banner .text-ad { flex: 1; }
+    .ad-banner .text-ad .title-ad { font-size: 14px; color: var(--text); font-weight: 500; }
+    .ad-banner .text-ad .desc-ad { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+    .ad-tag { font-size: 10px; color: var(--text-muted); padding: 2px 8px; border-radius: 4px; border: 1px solid var(--border); }
+
+    /* ===== Gallery ===== */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-top: 24px;
+    }
+    .gallery-item {
+      display: block;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      transition: all .3s;
+      aspect-ratio: 16/9;
+      background: var(--bg-card);
+    }
+    .gallery-item:hover {
+      border-color: var(--gold);
+      transform: scale(1.02);
+      box-shadow: 0 6px 24px rgba(212,168,75,0.15);
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .gallery-item:nth-child(7),
+    .gallery-item:nth-child(8) {
+      aspect-ratio: 1/1;
+    }
+    @media (max-width: 768px) {
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      #featured-video > .container > div:first-child { grid-template-columns: 1fr !important; }
+    }
+  </style>
+    <meta property="og:title" content="Genshin Impact Guide & Wiki — Best Teams, Builds, Codes & More">
+    <meta property="og:description" content="Complete Genshin Impact guide: best character builds, team comps, abyss strategies, weapon rankings, artifact sets, farming materials, and daily redeem codes.">
+    <meta property="og:url" content="https://genshinwiki.cn/">
+    <meta property="og:type" content="website">
+  <link rel="alternate" hreflang="en" href="https://genshinwiki.cn/" />
 </head>
 <body>
-<nav>
-  <div class="logo"><a href="../index"><span>✦</span> Genshin Guide</a></div>
-  <ul>
-<li><a href="../index">Home</a></li>
-<li><a href="../characters">Characters</a></li>
-<li><a href="../abyss">Abyss</a></li>
-<li><a href="../forum">Forum</a></li>
-<li><a href="index" class="active">Blog</a></li>
-<li><a href="../login" style="color:var(--gold);">Login</a></li>
-      <button class="music-btn" id="musicBtn" onclick="toggleMusic()" title="Play / Pause BGM">♪</button>
-</ul>
-</nav>
-<div class="page-header">
-  <h1>📝 Genshin Guide Blog</h1>
-  <p>Build guides, team recommendations, and meta analysis · <a href="rss.xml" class="rss-link">📡 RSS</a></p>
-</div>
-<div class="container" id="blogList">
-  <div style="text-align:center;padding:40px;color:var(--text-dim);">Loading posts...</div>
-</div>
-<footer>
-  <div class="links"><a href="../index">Home</a><a href="../characters">Characters</a><a href="../abyss">Abyss</a><a href="../forum">Forum</a><a href="index">Blog</a><a href="../login">Login</a></div>
-  <p>© 2026 Genshin Guide — Not affiliated with HoYoverse</p>
-</footer>
 
-<script>
-const POSTS = [
-  {
-    id: 'xilonen-guide',
-    title: '⛰️ Xilonen Build Guide — Best Weapons, Artifacts & Teams (v6.4)',
-    date: '2026-07-23',
-    author: 'Wiki',
-    excerpt: 'Complete Xilonen build guide for Genshin Impact v6.4 — best weapons, artifacts, team compositions, and constellations. The ultimate Natlan support.',
-    tags: ['xilonen', 'build', 'guide', 'natlan'],
-    tagClass: 'tag-guide'
-  },
-  {
-    id: 'emilie-best-teams-build-guide',
-    title: '🌿 Emilie Best Build Guide — Teams, Weapons & Artifacts (v6.4 Update)',
-    date: '2026-07-22',
-    author: 'Wiki',
-    excerpt: 'Complete Emilie build guide for Genshin Impact v6.4 — best weapons, artifact sets, team compositions, and Burning mechanics explained. Updated July 2026.',
-    tags: ['emilie', 'build', 'guide'],
-    tagClass: 'tag-guide'
-  },
-  {
-    id: 'skirk-build-guide',
-    title: '❄️ Skirk Build Guide — Best Weapons, Artifacts & Teams (v6.4)',
-    date: '2026-07-21',
-    author: 'Wiki',
-    excerpt: 'Complete Skirk build guide for v6.4. Best weapons, artifact sets, team compositions, talent priority, and rotation tips for the new 5-star Cryo Sword DPS.',
-    tags: ['skirk', 'build', 'guide'],
-    tagClass: 'tag-guide'
-  },
-  {
-    id: 'v64-nod-krai-preview',
-    title: '❄️ Version 6.4 "Whispers of Nod-Krai" — Everything We Know',
-    date: '2026-07-20',
-    author: 'Wiki',
-    excerpt: 'HoYoverse unveils v6.4 — Nod-Krai\'s first explorable zone, Skirk playable debut, Dainsleif Quest Act 2, new artifact sets, and banner leaks. Full preview inside.',
-    tags: ['v6.4', 'nod-krai', 'skirk', 'preview'],
-    tagClass: 'tag-guide'
-  },
-  {
-    id: 'natlan-5-0-preview',
-    title: '🔆 Genshin 5.0 — Natlan Preview: New Characters, Pyro Traveler & Release Date',
-    date: '2026-07-18',
-    author: 'Wiki',
-    excerpt: 'Everything we know about Version 5.0: Mavuika, Iansan, Xilonen kits, Pyro Traveler abilities, Natlan exploration mechanics, and the August 28 release date.',
-    tags: ['natlan', '5.0', 'preview'],
-    tagClass: 'tag-update'
-  },
-  {
-    id: 'v63-tier-list',
-    title: '📊 Genshin Impact Tier List — v6.3 Moon of Four',
-    date: '2026-07-16',
-    author: 'Wiki',
-    excerpt: 'Updated tier list for v6.3 with new Natlan characters. All characters ranked for Abyss, exploration, and meta impact.',
-    tags: ['tier list', 'v6.3', 'meta'],
-    tagClass: 'tag-guide'
-  },
-  {
-    id: 'mualani-build',
-    title: '🌊 Mualani Build Guide — Best Weapons, Artifacts & Teams',
-    date: '2026-07-16',
-    author: 'Wiki',
-    excerpt: 'Complete Mualani build guide for v6.3. Best weapons, artifacts, team comps, and rotation tips for the new Natlan Hydro DPS.',
-    tags: ['mualani', 'build', 'natlan'],
-    tagClass: 'tag-guide'
-  },
-  {
-    id: 'natlan-hidden-quests',
-    title: '🗺️ Natlan Hidden Quests & Secret Rewards — Full Guide',
-    date: '2026-07-16',
-    author: 'Wiki',
-    excerpt: 'Complete guide to all hidden quests in Natlan. Secret world quests, hidden chests, achievement guides, and rare rewards — 1200+ Primogems total.',
-    tags: ['natlan', 'hidden quests', 'exploration'],
-    tagClass: 'tag-guide'
-  },
-  {
-    id: 'primogems-guide',
-    title: '💎 How to Get Primogems Fast — Complete F2P Guide (v6.3)',
-    date: '2026-07-12',
-    author: 'Wiki',
-    excerpt: 'Complete guide to farming Primogems as a F2P player. Daily income, events, achievements, exploration rewards, and common mistakes to avoid.',
-    tags: ['f2p', 'primogems', 'guide'],
-    tagClass: 'tag-guide'
-  },
-  {
-    id: 'new-player-guide',
-    title: '🌱 New Player Guide — What to Do First in Genshin Impact',
-    date: '2026-07-12',
-    author: 'Wiki',
-    excerpt: 'Just started Genshin? Here\'s the exact priority order: which quests to do, which characters to build, how to spend resin, and what mistakes to avoid.',
-    tags: ['beginner', 'guide', 'tips'],
-    tagClass: 'tag-beginner'
-  },
-  {
-    id: 'game-accelerator-free-50h',
-    title: '🚀 Game Accelerator Free Trial — 50 Hours Low-Ping Gaming',
-    date: '2026-07-03',
-    author: 'Wiki',
-    pinned: true,
-    excerpt: 'Claim 50 hours of free game accelerator time. Reduce Genshin Impact ping from 200ms to 30-50ms, fix download speeds, and play on EU/NA servers smoothly.',
-    tags: ['tools', 'guide', 'free'],
-    tagClass: 'tag-guide'
-  },
-  {
-    id: 'genshin-gift-guide-2026',
-    title: '🎁 Top 10 Genshin Impact Gifts — Perfect for Any Traveler in 2026',
-    date: '2026-07-03',
-    author: 'Wiki',
-    pinned: true,
-    excerpt: 'Stuck on what to get a Genshin fan? From official plushies to gaming gear and digital codes — 10 hand-picked gifts with Amazon links for every budget.',
-    tags: ['gift guide', 'merch', 'recommendations'],
-    tagClass: 'tag-guide'
-  },
-  {
-    id: 'mavuika-build',
-    title: '🔥 Mavuika Build Guide — Best Weapons, Artifacts & Teams (v6.3)',
-    date: '2026-07-03',
-    author: 'Wiki',
-    excerpt: 'Complete Mavuika build guide for v6.3. Best weapons, artifact sets, team compositions, constellations, and rotation tips for the Pyro Archon.',
-    tags: ['character', 'build', 'guide', 'meta'],
-    tagClass: 'tag-guide'
-  },
-  {
-    id: 'top-10-4-star-characters',
-    title: '⭐ Top 10 Must-Build 4-Star Characters (2026 Edition)',
-    date: '2026-07-03',
-    author: 'Wiki',
-    excerpt: 'The best 4-star characters worth building in Genshin Impact v6.3. Ranked by impact, team flexibility, and future-proofing. From Bennett to Kuki.',
-    tags: ['beginner', 'guide', 'f2p', 'meta'],
-    tagClass: 'tag-tier'
-  },
-  {
-    id: 'abyss-v63-teams',
-    title: 'Best Teams for Spiral Abyss v6.3 — 36-Star Guide',
-    date: '2026-07-03',
-    author: 'Wiki',
-    excerpt: 'The current Abyss rotation features Consecrated Beasts on 12-1 and dual Baptists on 12-3. Here are the best team compositions for each half, with F2P alternatives.',
-    tags: ['abyss', 'meta', 'guide'],
-    tagClass: 'tag-tier'
-  },
-  {
-    id: 'f2p-36-star',
-    title: 'How to 36-Star Spiral Abyss as a Free-to-Play Player',
-    date: '2026-07-01',
-    author: 'Wiki',
-    excerpt: "You don't need limited 5-star weapons or constellations to clear Abyss. This guide covers the best F2P team archetypes, energy thresholds, and resource planning.",
-    tags: ['beginner', 'f2p', 'guide'],
-    tagClass: 'tag-beginner'
-  },
-  {
-    id: 'natlan-meta-shift',
-    title: 'Natlan Meta Shift — How New Characters Changed the Game',
-    date: '2026-06-30',
-    author: 'Wiki',
-    excerpt: 'The Nightsoul mechanic, Bond of Life reworks, and new reaction priorities. A deep dive into how Natlan characters like Mualani, Kinich, and Xilonen reshaped the meta.',
-    tags: ['meta', 'analysis'],
-    tagClass: 'tag-meta'
-  },
-  {
-    id: 'v63-banner-guide',
-    title: 'v6.3 Banner Guide — Who to Pull For',
-    date: '2026-06-28',
-    author: 'Wiki',
-    excerpt: 'Mavuika, Citlali, and reruns. Which banners are worth your primogems? Constellation analysis, weapon banner value, and pull recommendations based on your account.',
-    tags: ['update', 'banner'],
-    tagClass: 'tag-update'
-  }
-];
+  <!-- ============ Hero ============ -->
+  <!-- ============ Navigation ============ -->
+  <nav>
+    <div class="nav-inner">
+      <div class="logo">
+        <img src="images/logo.png" alt="Genshin Wiki by Song" style="height:64px; width:auto; display:block;">
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <button class="music-btn" id="musicBtn" onclick="toggleMusic()" title="Play / Pause BGM">♪</button>
+        <div class="nav-search" style="position:relative;">
+          <input type="text" id="navSearchInput" placeholder="Search characters..." style="width:160px;padding:6px 12px;border-radius:6px;border:1px solid var(--border);background:var(--bg-card);color:var(--text);font-size:13px;outline:none;transition:all .2s;" onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor=''" onkeydown="if(event.key==='Enter'&&this.value.trim())window.location.href='characters?q='+encodeURIComponent(this.value.trim())">
+        </div>
+        <a href="#" class="lang-switcher" data-i18n-switch="lang.switch" onclick="toggleLang(event)" style="font-size:13px;color:var(--text-dim);padding:4px 10px;border-radius:6px;text-decoration:none;cursor:pointer;transition:all .2s" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--text-dim)'">中文</a>
+        <a href="blog/index" style="font-size:13px;color:var(--gold);padding:4px 10px;border-radius:6px;text-decoration:none;cursor:pointer;font-weight:600;">📝 Blog</a>
+        <a href="login" id="navLoginBtn" class="nav-login-btn">Login</a>
+      </div>
+    </div>
+    <div class="nav-toggle" id="navToggle" onclick="toggleNav()">
+      <span></span><span></span><span></span>
+    </div>
+    <!-- Mobile nav (hidden on desktop, shown via hamburger on mobile) -->
+    <ul id="navMenu">
+      <li><a href="index">Home</a></li>
+      <li><a href="#features" data-i18n="nav.siteCategories">Site Categories</a></li>
+      <li><a href="characters">Characters</a></li>
+      <li><a href="elements">Elements</a></li>
+      <li><a href="abyss">Abyss</a></li>
+      <li><a href="weapons">Weapons</a></li>
+      <li><a href="artifacts">Artifacts</a></li>
+      <li><a href="materials">Materials</a></li>
+      <li><a href="beginner">Guides</a></li>
+      <li><a href="#guides" data-i18n="nav.featuredGuides">Featured Guides</a></li>
+      <li><a href="download">Download</a></li>
+      <li><a href="codes">Codes</a></li>
+      <li><a href="#tools" data-i18n="nav.tools">Essential Tools</a></li>
+      <li><a href="build-planner">Build Planner</a></li>
+      <li><a href="damage-calculator">Damage</a></li>
+      <li><a href="resin-timer">⏳ Resin</a></li>
+      <li><a href="#gallery" data-i18n="nav.gallery">Gallery</a></li>
+      <li><a href="#featured-video" data-i18n="nav.featuredVideos">Featured Videos</a></li>
+      <li><a href="#sister-site" data-i18n="nav.sisterSite">Sister Site</a></li>
+      <li><a href="#featured-creator-tool" data-i18n="nav.avatarTool">Avatar Tool</a></li>
+      <li><a href="forum">Forum</a></li>
+      <li><a href="membership">Membership</a></li>
+      <li><a href="bugs">Bugs</a></li>
+    </ul>
+  </nav>
 
-(function() {
-  const container = document.getElementById('blogList');
-  let html = '';
-  const sorted = [...POSTS].sort((a, b) => {
-    if (a.pinned !== b.pinned) return a.pinned ? -1 : 1;
-    return new Date(b.date) - new Date(a.date);
-  });
-  sorted.forEach(p => {
-    const isPinned = p.pinned ? '<span style="font-size:11px;color:var(--gold);margin-left:6px;">📌 Pinned</span>' : '';
-    const tagColor = p.tagClass || 'tag';
-    html += '<a href="' + p.id + '" class="blog-card">';
-    html += '<div class="meta"><span>📅 ' + p.date + '</span><span>✍️ ' + p.author + '</span>' + isPinned + '</div>';
-    html += '<h2>' + p.title + '</h2>';
-    html += '<div class="excerpt">' + p.excerpt + '</div>';
-    html += '<div class="tags">' + p.tags.map(t => '<span class="tag ' + tagColor + '">' + t + '</span>').join('') + '</div>';
-    html += '</a>';
-  });
-  container.innerHTML = html;
-})();
-</script>
-    <script>
-    (function(){
-      var bgm=new Audio("/ys_bgm.mp3");bgm.loop=true;var mp=false;
-      setInterval(function(){if(mp&&!bgm.paused)localStorage.setItem("bgm_time",bgm.currentTime)},1000);
-      window.addEventListener("beforeunload",function(){if(mp&&!bgm.paused)localStorage.setItem("bgm_time",bgm.currentTime)});
-      initMusic=function(){var s=localStorage.getItem("bgm_playing");var t=parseFloat(localStorage.getItem("bgm_time")||"0");if(t>0&&t<bgm.duration)bgm.currentTime=t;if(s==="true")toggleMusic()};
-      toggleMusic=function(){var btn=document.getElementById("musicBtn");if(mp){bgm.pause();mp=false;if(btn){btn.classList.remove("playing");btn.textContent="♪"}localStorage.setItem("bgm_playing","false")}else{var t=parseFloat(localStorage.getItem("bgm_time")||"0");if(t>0&&t<bgm.duration)bgm.currentTime=t;bgm.play().then(function(){mp=true;if(btn){btn.classList.add("playing");btn.textContent="♫"}localStorage.setItem("bgm_playing","true")}).catch(function(e){console.log("BGM autoplay blocked:",e)})}};
-      document.addEventListener("click",function o(){if(typeof initMusic==="function")initMusic();document.removeEventListener("click",o)},{once:true});
+  <!-- ====== Sidebar ====== -->
+  <aside class="sidebar" id="sidebar">
+    <a href="index" class="sidebar-item active"><span class="si-icon">&#127968;</span> <span data-i18n="nav.home">Home</span></a>
+    <a href="#features" class="sidebar-item"><span class="si-icon">&#128506;</span> <span data-i18n="nav.siteCategories">Site Categories</span></a>
+    <a href="characters" class="sidebar-item"><span class="si-icon">&#9876;&#65039;</span> <span data-i18n="nav.characters">Characters</span></a>
+    <a href="elements" class="sidebar-item"><span class="si-icon">&#127811;</span> <span data-i18n="nav.elements">Elements</span></a>
+    <a href="tierlist" class="sidebar-item"><span class="si-icon">⭐</span> <span data-i18n="nav.tierlist">Tier List</span></a>
+    <a href="abyss" class="sidebar-item"><span class="si-icon">&#128737;&#65039;</span> <span data-i18n="nav.abyss">Abyss</span></a>
+    <a href="weapons" class="sidebar-item"><span class="si-icon">&#128481;&#65039;</span> <span data-i18n="nav.weapons">Weapons</span></a>
+    <a href="artifacts" class="sidebar-item"><span class="si-icon">&#128142;</span> <span data-i18n="nav.artifacts">Artifacts</span></a>
+    <a href="materials" class="sidebar-item"><span class="si-icon">&#127758;</span> <span data-i18n="nav.materials">Materials</span></a>
+    <a href="beginner" class="sidebar-item"><span class="si-icon">&#128214;</span> <span data-i18n="nav.guides">Guides</span></a>
+    <a href="#guides" class="sidebar-item"><span class="si-icon">&#128209;</span> <span data-i18n="nav.featuredGuides">Featured Guides</span></a>
+    <a href="download" class="sidebar-item"><span class="si-icon">&#128229;</span> <span data-i18n="nav.download">Download</span></a>
+    <div class="sidebar-divider"></div>
+    <a href="codes" class="sidebar-item"><span class="si-icon">&#127873;</span> <span data-i18n="nav.codes">Codes</span></a>
+    <a href="#tools" class="sidebar-item"><span class="si-icon">&#129521;</span> <span data-i18n="nav.tools">Essential Tools</span></a>
+    <a href="build-planner" class="sidebar-item"><span class="si-icon">&#128200;</span> <span>Build Planner</span></a>
+    <a href="damage-calculator" class="sidebar-item"><span class="si-icon">&#9876;&#65039;</span> <span>Damage Calculator</span></a>
+    <a href="resin-timer" class="sidebar-item"><span class="si-icon">&#9203;</span> <span>Resin Timer</span></a>
+    <div class="sidebar-divider"></div>
+    <a href="#gallery" class="sidebar-item"><span class="si-icon">&#128248;</span> <span data-i18n="nav.gallery">Gallery</span></a>
+    <a href="#featured-video" class="sidebar-item"><span class="si-icon">&#127916;</span> <span data-i18n="nav.featuredVideos">Featured Videos</span></a>
+    <a href="#sister-site" class="sidebar-item"><span class="si-icon">&#127775;</span> <span data-i18n="nav.sisterSite">Sister Site</span></a>
+    <a href="#featured-creator-tool" class="sidebar-item"><span class="si-icon">&#127912;</span> <span data-i18n="nav.avatarTool">Avatar Tool</span></a>
+    <a href="forum" class="sidebar-item"><span class="si-icon">&#128172;</span> <span data-i18n="nav.forum">Forum</span></a>
+    <a href="membership" class="sidebar-item"><span class="si-icon">&#128142;</span> <span data-i18n="nav.membership">Membership</span></a>
+    <a href="bugs" class="sidebar-item"><span class="si-icon">&#128028;</span> <span data-i18n="nav.bugs">Bugs</span></a>
+    <div class="sidebar-divider"></div>
+    <div style="padding:8px 12px;font-size:11px;color:var(--text-dim);margin-top:auto;">
+      <div style="background:rgba(212,168,75,0.08);border:1px dashed var(--border);border-radius:6px;padding:8px;">
+        <div style="font-size:12px;font-weight:600;color:var(--gold-light);margin-bottom:4px;" data-i18n="home.sidebar.boosters">⚡ Game Booster</div>
+        <div style="font-size:11px;line-height:1.5;color:var(--text-dim);" data-i18n="home.sidebar.boosters.desc">Download slow? Lag in co-op? Try a game accelerator.</div>
+        <div style="margin-top:6px;display:flex;flex-direction:column;gap:4px;">
+          <a href="https://gearup.sjv.io/c/7462059/3204502/40222" target="_blank" rel="noopener nofollow" style="font-size:11px;color:var(--teal);">🚀 GearUP Booster →</a>
+          <a href="https://www.exitlag.com/refer/10324758" target="_blank" rel="noopener nofollow" style="font-size:11px;color:var(--teal);">🌍 ExitLag →</a>
+          <a href="free-accelerator" target="_blank" rel="noopener nofollow" style="font-size:11px;color:var(--teal);">雷神加速器 →</a>
+          <a href="https://tg.xunyou.com/command/?id=1563075&password=genshinwiki" target="_blank" rel="noopener nofollow" style="font-size:11px;color:var(--teal);">迅游加速器 →</a>
+        </div>
+        <div style="font-size:9px;color:var(--text-dim);margin-top:4px;text-align:right;">Ad</div>
+      </div>
+    </div>
+  </aside>
+  <section class="hero">
+    <div class="particles" id="particles"></div>
+
+    <!-- Hero background image -->
+    <div class="hero-image-wrap">
+      <img src="images/hero.jpg" alt="Genshin Impact" loading="lazy" onerror="this.parentElement.style.display='none'">
+      <div class="overlay"></div>
+      <div class="watermark-mask"></div>
+    </div>
+
+    <h1>
+      <span data-i18n="home.title">The World of Teyvat</span>
+      <small data-i18n="home.subtitle">— The Most Practical Genshin Guide Encyclopedia —</small>
+    </h1>
+    <p data-i18n="home.desc">
+      Character Reviews · Team Comps · Weapons &amp; Artifacts · Material Farming · Live Codes
+    </p>
+    <div class="hero-buttons">
+      <a href="characters" class="btn btn-primary" data-i18n="home.cta.characters">⚔️ Character Gallery</a>
+      <a href="beginner" class="btn btn-outline" data-i18n="home.cta.guides">📖 Beginner's Guide</a>
+    </div>
+  </section>
+
+  <!-- ============ Elements Showcase ============ -->
+  <section id="elements">
+    <div class="container">
+      <h2 class="section-title" data-i18n-prefix="home.elem.title">The Seven <span data-i18n-inner="home.elem.inner">Elements</span></h2>
+      <p class="section-sub" data-i18n="home.elem.desc">Elemental reactions are the core of Genshin combat. Understand each element's power.</p>
+      <div class="elements-grid">
+        <a href="elements" class="element-badge"><span class="icon">🍃</span><span class="name" style="color:var(--anemo)" data-i18n="home.elem.anemo">Anemo</span></a>
+        <a href="elements" class="element-badge"><span class="icon">🪨</span><span class="name" style="color:var(--geo)" data-i18n="home.elem.geo">Geo</span></a>
+        <a href="elements" class="element-badge"><span class="icon">⚡</span><span class="name" style="color:var(--electro)" data-i18n="home.elem.electro">Electro</span></a>
+        <a href="elements" class="element-badge"><span class="icon">🌿</span><span class="name" style="color:var(--dendro)" data-i18n="home.elem.dendro">Dendro</span></a>
+        <a href="elements" class="element-badge"><span class="icon">💧</span><span class="name" style="color:var(--hydro)" data-i18n="home.elem.hydro">Hydro</span></a>
+        <a href="elements" class="element-badge"><span class="icon">🔥</span><span class="name" style="color:var(--pyro)" data-i18n="home.elem.pyro">Pyro</span></a>
+        <a href="elements" class="element-badge"><span class="icon">❄️</span><span class="name" style="color:var(--cryo)" data-i18n="home.elem.cryo">Cryo</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Feature Cards ============ -->
+  <section id="features">
+    <div class="container">
+      <h2 class="section-title" data-i18n-prefix="home.features.title">Site <span data-i18n-inner="home.features.inner">Guide Categories</span></h2>
+      <p class="section-sub" data-i18n="home.features.desc">From starter tips to Abyss 36-stars — saving you time and frustration.</p>
+      <div class="card-grid">
+        <a href="characters" class="card" style="cursor:pointer;">
+          <span class="icon-lg">⚔️</span>
+          <h3 data-i18n="home.card.chars">Character Gallery</h3>
+          <p data-i18n="home.card.chars.desc">Full skill breakdowns, constellation recommendations, ascension materials, and endgame stat references.</p>
+          <span class="tag" data-i18n="home.card.chars.tag">90 Characters</span>
+        </a>
+        <a href="abyss" class="card" style="cursor:pointer;text-decoration:none;color:inherit;">
+          <span class="icon-lg">🛡️</span>
+          <h3 data-i18n="home.card.abyss">Abyss Comps</h3>
+          <p data-i18n="home.card.abyss.desc">Monthly Spiral Abyss 36-star team recommendations, from budget to whale, floor by floor.</p>
+          <span class="tag" data-i18n="home.card.live">Live</span>
+        </a>
+        <a href="weapons" class="card" style="cursor:pointer;text-decoration:none;color:inherit;">
+          <span class="icon-lg">🗡️</span>
+          <h3 data-i18n="home.card.weapons">Weapon Guide</h3>
+          <p data-i18n="home.card.weapons.desc">Full weapon tier lists, BiS picks for each character (4-star and 5-star).</p>
+          <span class="tag" data-i18n="home.card.live">Live</span>
+        </a>
+        <a href="artifacts" class="card" style="cursor:pointer;text-decoration:none;color:inherit;">
+          <span class="icon-lg">💎</span>
+          <h3 data-i18n="home.card.artifacts">Artifacts</h3>
+          <p data-i18n="home.card.artifacts.desc">Artifact set recommendations, main/sub stat priorities, and farming route planning.</p>
+          <span class="tag" data-i18n="home.card.live">Live</span>
+        </a>
+        <a href="materials" class="card" style="cursor:pointer;text-decoration:none;color:inherit;">
+          <span class="icon-lg">🌍</span>
+          <h3 data-i18n="home.card.materials">Material Farming</h3>
+          <p data-i18n="home.card.materials.desc">Optimal farming routes for character ascension, talent, and weapon materials.</p>
+          <span class="tag" data-i18n="home.card.live">Live</span>
+        </a>
+        <a href="codes" class="card" style="cursor:pointer;">
+          <span class="icon-lg">🎁</span>
+          <h3 data-i18n="home.card.codes">Redeem Codes</h3>
+          <p data-i18n="home.card.codes.desc">Live Primogems, Mora, Resin and other reward codes. Expired codes cleaned regularly.</p>
+          <span class="tag" data-i18n="home.card.live">Live</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Essential Tools ============ -->
+  <section id="tools">
+    <div class="container">
+      <h2 class="section-title" data-i18n-prefix="home.tools.title">Essential <span data-i18n-inner="home.tools.inner">Tools</span></h2>
+      <p class="section-sub" data-i18n="home.tools.desc">The pages people land on most often when they need a quick answer.</p>
+      <div class="card-grid">
+        <a href="tierlist" class="card" style="cursor:pointer;text-decoration:none;color:inherit;">
+          <span class="icon-lg">⭐</span>
+          <h3 data-i18n="home.tool.tier.title">Tier List</h3>
+          <p data-i18n="home.tool.tier.desc">Fast meta snapshots for teams, element picks, and Abyss-ready characters.</p>
+          <span class="tag" data-i18n="home.tool.tier.tag">Core Page</span>
+        </a>
+        <a href="build-planner" class="card" style="cursor:pointer;text-decoration:none;color:inherit;border-color:rgba(75,196,179,.45);">
+          <span class="icon-lg">📈</span>
+          <h3 data-i18n="home.tool.build.title">Build Planner</h3>
+          <p data-i18n="home.tool.build.desc">Estimate resin, farming days, boss runs, talent books, Mora, EXP books, weapon materials, and artifact time for your next character.</p>
+          <span class="tag" data-i18n="home.tool.new" style="background:rgba(75,196,179,.15);color:var(--teal);">New Tool</span>
+        </a>
+        <a href="primogem-calculator" class="card" style="cursor:pointer;text-decoration:none;color:inherit;border-color:rgba(212,168,75,.45);">
+          <span class="icon-lg">💎</span>
+          <h3 data-i18n="home.tool.primogem.title">Primogem Calculator</h3>
+          <p data-i18n="home.tool.primogem.desc">Estimate wishes, pity progress, Welkin income, events, Abyss rewards, and how close you are to a banner guarantee.</p>
+          <span class="tag" data-i18n="home.tool.new" style="background:rgba(212,168,75,.15);color:var(--gold-light);">New Tool</span>
+        </a>
+        <a href="artifact-scorer" class="card" style="cursor:pointer;text-decoration:none;color:inherit;border-color:rgba(180,123,212,.45);">
+          <span class="icon-lg">🏺</span>
+          <h3 data-i18n="home.tool.artifact.title">Artifact Scorer</h3>
+          <p data-i18n="home.tool.artifact.desc">Rate artifact substats for DPS, support, healer, Energy Recharge, and reaction builds before you keep or feed a piece.</p>
+          <span class="tag" data-i18n="home.tool.new" style="background:rgba(180,123,212,.15);color:#d8b4fe;">New Tool</span>
+        </a>
+        <a href="damage-calculator" class="card" style="cursor:pointer;text-decoration:none;color:inherit;border-color:rgba(255,118,118,.45);">
+          <span class="icon-lg">⚔️</span>
+          <h3 data-i18n="home.tool.damage.title">Damage Calculator</h3>
+          <p data-i18n="home.tool.damage.desc">Estimate non-CRIT, CRIT, and average damage with attack, talent scaling, damage bonus, resistance, and reactions.</p>
+          <span class="tag" data-i18n="home.tool.new" style="background:rgba(255,118,118,.15);color:#ff9b9b;">New Tool</span>
+        </a>
+        <a href="version-70-tools" class="card" style="cursor:pointer;text-decoration:none;color:inherit;border-color:rgba(75,196,179,.45);">
+          <span class="icon-lg">❄️</span>
+          <h3 data-i18n="home.tool.version70.title">Version 7.0 Tools</h3>
+          <p data-i18n="home.tool.version70.desc">Plan pulls, damage, artifacts, resin, codes, and build priorities for the Version 7.0 update cycle.</p>
+          <span class="tag" data-i18n="home.tool.new" style="background:rgba(75,196,179,.15);color:var(--teal);">New Tool</span>
+        </a>
+        <a href="resin-timer" class="card" style="cursor:pointer;text-decoration:none;color:inherit;">
+          <span class="icon-lg">⏳</span>
+          <h3 data-i18n="home.tool.resin.title">Resin Timer</h3>
+          <p data-i18n="home.tool.resin.desc">Track Original Resin refill time, condensed resin, daily recovery, and farming sessions without opening a spreadsheet.</p>
+          <span class="tag" data-i18n="home.tool.tool">Tool</span>
+        </a>
+        <a href="videos" class="card" style="cursor:pointer;text-decoration:none;color:inherit;">
+          <span class="icon-lg">🎬</span>
+          <h3 data-i18n="home.tool.videos.title">Videos</h3>
+          <p data-i18n="home.tool.videos.desc">Official trailers, character demos, and visual references worth revisiting.</p>
+          <span class="tag" data-i18n="home.tool.media">Media</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Redeem Codes ============ -->
+  <section id="codes">
+    <div class="container">
+      <h2 class="section-title" data-i18n-prefix="home.codes.title">🎁 Live <span data-i18n-inner="home.codes.inner">Redeem Codes</span></h2>
+      <p class="section-sub" data-i18n="home.codes.desc">The latest Genshin reward codes — grab them before they expire!</p>
+      <div class="codes-grid">
+        <div class="code-card">
+          <div class="code">GENSHINGIFT</div>
+          <div class="reward">Primogems × 60 · Adventure XP × 10000</div>
+          <span class="status active">Active</span>
+        </div>
+        <div class="code-card">
+          <div class="code">6GS7VJ9S7SDK</div>
+          <div class="reward">Primogems × 100 · Mora × 50000</div>
+          <span class="status active">Active</span>
+        </div>
+        <div class="code-card">
+          <div class="code">ETN23PJ5LKJ9</div>
+          <div class="reward">Mystic Enhancement Ore × 5 · Hero's Wit × 3</div>
+          <span class="status active">Active</span>
+        </div>
+        <div class="code-card">
+          <div class="code">3B6R6SD7H89H</div>
+          <div class="reward">Resin × 40</div>
+          <span class="status expired">Unverified</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Ad Banner ============ -->
+  <div class="container ad-wrap">
+    <div class="ad-banner" style="cursor:default;">
+      <span class="icon-ad">📢</span>
+      <div class="text-ad">
+        <div class="title-ad">Ad Space · Google AdSense</div>
+        <div class="desc-ad">Support this site — game recommendations and more. Ad space pending approval.</div>
+      </div>
+      <span class="ad-tag">Ad</span>
+    </div>
+  </div>
+
+  <!-- ============ Featured Guides ============ -->
+  <section id="guides">
+    <div class="container">
+      <h2 class="section-title" data-i18n-prefix="home.guides.title">Featured <span data-i18n-inner="home.guides.inner">Guides</span></h2>
+      <p class="section-sub" data-i18n="home.guides.desc">From beginner to advanced, all in one place.</p>
+      <div style="display:flex; flex-direction:column; gap:16px;">
+        <a href="beginner" class="guide-card" style="text-decoration:none;color:inherit;cursor:pointer;">
+          <div class="thumb" style="background:rgba(75,196,179,0.12);">🌱</div>
+          <div class="info">
+            <h4 data-i18n="home.guide.beginner.title">Beginner's Guide · Fast Track AR 1~45</h4>
+            <p data-i18n="home.guide.beginner.desc">15 things every new player must know — resin planning, character picks, resource pitfalls. Reach AR 45 in no time.</p>
+          </div>
+        </a>
+        <a href="abyss" class="guide-card" style="text-decoration:none;color:inherit;cursor:pointer;">
+          <div class="thumb" style="background:rgba(212,168,75,0.12);">🏆</div>
+          <div class="info">
+            <h4 data-i18n="home.guide.abyss.title">Spiral Abyss Floor 12 Full Stars Guide</h4>
+            <p data-i18n="home.guide.abyss.desc">Latest Abyss buff breakdown, optimal team comps, enemy spawn patterns and grouping tips — get your 600 Primogems.</p>
+          </div>
+        </a>
+        <a href="elements" class="guide-card" style="text-decoration:none;color:inherit;cursor:pointer;">
+          <div class="thumb" style="background:rgba(180,123,212,0.12);">⚡</div>
+          <div class="info">
+            <h4 data-i18n="home.guide.elements.title">Elemental Reactions — Complete Guide</h4>
+            <p data-i18n="home.guide.elements.desc">Vaporize, Melt, Aggravate, Bloom... all reaction formulas, multipliers, and trigger order explained in one article.</p>
+          </div>
+        </a>
+        <a href="materials" class="guide-card" style="text-decoration:none;color:inherit;cursor:pointer;">
+          <div class="thumb" style="background:rgba(217,96,74,0.12);">🗺️</div>
+          <div class="info">
+            <h4 data-i18n="home.guide.boss.title">Weekly Boss / Boss Rush Guide</h4>
+            <p data-i18n="home.guide.boss.desc">All weekly boss mechanics explained + speedclear comps. Clear all weekly bosses in 30 minutes.</p>
+          </div>
+        </a>
+        <a href="guide-character-build-order" class="guide-card" style="text-decoration:none;color:inherit;cursor:pointer;">
+          <div class="thumb" style="background:rgba(75,196,179,0.12);">📈</div>
+          <div class="info">
+            <h4 data-i18n="home.guide.buildorder.title">Character Build Order: What to Farm First</h4>
+            <p data-i18n="home.guide.buildorder.desc">A practical resin priority for levels, weapons, talents, artifacts, and knowing when a build is finished.</p>
+          </div>
+        </a>
+        <a href="arlecchino-build" class="guide-card" style="text-decoration:none;color:inherit;cursor:pointer;">
+          <div class="thumb" style="background:rgba(217,96,74,0.12);">🔥</div>
+          <div class="info">
+            <h4 data-i18n="home.guide.arlecchino.title">Arlecchino Build Guide: Weapons, Artifacts & Teams</h4>
+            <p data-i18n="home.guide.arlecchino.desc">A deeper character guide with weapon ranking, artifact explanations, F2P options, team comps, and FAQ.</p>
+          </div>
+        </a>
+        <a href="furina-build" class="guide-card" style="text-decoration:none;color:inherit;cursor:pointer;">
+          <div class="thumb" style="background:rgba(74,157,214,0.12);">💧</div>
+          <div class="info">
+            <h4 data-i18n="home.guide.furina.title">Furina Build Guide: Weapons, Artifacts, ER & Teams</h4>
+            <p data-i18n="home.guide.furina.desc">A practical Furina guide covering Golden Troupe, Energy Recharge targets, healers, weapons, teams, and FAQ.</p>
+          </div>
+        </a>
+        <a href="neuvillette-build" class="guide-card" style="text-decoration:none;color:inherit;cursor:pointer;">
+          <div class="thumb" style="background:rgba(75,196,179,0.12);">🌊</div>
+          <div class="info">
+            <h4 data-i18n="home.guide.neuvillette.title">Neuvillette Build Guide: Weapons, Artifacts & Teams</h4>
+            <p data-i18n="home.guide.neuvillette.desc">A focused guide for Marechaussee Hunter, HP vs Hydro stats, Furina teams, C1 value, weapons, and FAQ.</p>
+          </div>
+        </a>
+        <a href="raiden-build" class="guide-card" style="text-decoration:none;color:inherit;cursor:pointer;">
+          <div class="thumb" style="background:rgba(180,123,212,0.12);">⚡</div>
+          <div class="info">
+            <h4 data-i18n="home.guide.raiden.title">Raiden Shogun Build Guide: DPS, Hyperbloom & Teams</h4>
+            <p data-i18n="home.guide.raiden.desc">Choose between Burst DPS and Hyperbloom builds, with weapons, Emblem artifacts, Energy Recharge, teams, and FAQ.</p>
+          </div>
+        </a>
+
+        <a href="nahida-build" class="guide-card" style="text-decoration:none;color:inherit;cursor:pointer;">
+          <div class="thumb" style="background:rgba(115,192,136,0.12);">🌿</div>
+          <div class="info">
+            <h4 data-i18n="home.guide.nahida.title">Nahida Build Guide: Best Weapons, Artifacts & Teams</h4>
+            <p data-i18n="home.guide.nahida.desc">Deepwood Memories, Elemental Mastery targets, Hyperbloom, Nilou Bloom, Aggravate teams, and FAQ.</p>
+          </div>
+        </a>
+        <a href="kazuha-build" class="guide-card" style="text-decoration:none;color:inherit;cursor:pointer;">
+          <div class="thumb" style="background:rgba(75,196,179,0.12);">🍃</div>
+          <div class="info">
+            <h4 data-i18n="home.guide.kazuha.title">Kaedehara Kazuha Build Guide: Best Weapons, Artifacts & Teams</h4>
+            <p data-i18n="home.guide.kazuha.desc">Viridescent Venerer, EM and ER targets, Swirl setups, team buffs, F2P weapons, and FAQ.</p>
+          </div>
+        </a>
+        <a href="yelan-build" class="guide-card" style="text-decoration:none;color:inherit;cursor:pointer;">
+          <div class="thumb" style="background:rgba(74,157,214,0.12);">💧</div>
+          <div class="info">
+            <h4 data-i18n="home.guide.yelan.title">Yelan Build Guide: Best Weapons, Artifacts & Teams</h4>
+            <p data-i18n="home.guide.yelan.desc">Emblem artifacts, HP and ER planning, Hydro teams, Favonius builds, F2P options, and FAQ.</p>
+          </div>
+        </a>
+        <a href="bennett-build" class="guide-card" style="text-decoration:none;color:inherit;cursor:pointer;">
+          <div class="thumb" style="background:rgba(217,96,74,0.12);">🔥</div>
+          <div class="info">
+            <h4 data-i18n="home.guide.bennett.title">Bennett Build Guide: Best Weapons, Artifacts & Teams</h4>
+            <p data-i18n="home.guide.bennett.desc">Noblesse support, Energy Recharge, Base ATK weapons, healing, team buffs, and FAQ.</p>
+          </div>
+        </a>
+        <a href="zhongli-build" class="guide-card" style="text-decoration:none;color:inherit;cursor:pointer;">
+          <div class="thumb" style="background:rgba(212,168,75,0.12);">🛡️</div>
+          <div class="info">
+            <h4 data-i18n="home.guide.zhongli.title">Zhongli Build Guide: Shield, Artifacts & Teams</h4>
+            <p data-i18n="home.guide.zhongli.desc">HP shield support, Tenacity, Archaic Petra, weapon choices, team utility, and FAQ.</p>
+          </div>
+        </a>
+        <a href="xingqiu-build" class="guide-card" style="text-decoration:none;color:inherit;cursor:pointer;">
+          <div class="thumb" style="background:rgba(74,157,214,0.12);">💧</div>
+          <div class="info">
+            <h4 data-i18n="home.guide.xingqiu.title">Xingqiu Build Guide: ER, Weapons, Artifacts & Teams</h4>
+            <p data-i18n="home.guide.xingqiu.desc">Sacrificial Sword, Emblem sets, Energy Recharge targets, Hydro application, and FAQ.</p>
+          </div>
+        </a>
+        <a href="xiangling-build" class="guide-card" style="text-decoration:none;color:inherit;cursor:pointer;">
+          <div class="thumb" style="background:rgba(217,96,74,0.12);">🔥</div>
+          <div class="info">
+            <h4 data-i18n="home.guide.xiangling.title">Xiangling Build Guide: Weapons, Artifacts & Teams</h4>
+            <p data-i18n="home.guide.xiangling.desc">The Catch, Emblem, Energy Recharge, Vaporize teams, National core, and FAQ.</p>
+          </div>
+        </a>
+        <a href="mavuika-build" class="guide-card" style="text-decoration:none;color:inherit;cursor:pointer;">
+          <div class="thumb" style="background:rgba(217,96,74,0.12);">🔥</div>
+          <div class="info">
+            <h4 data-i18n="home.guide.mavuika.title">Mavuika Build Guide: Weapons, Artifacts & Teams</h4>
+            <p data-i18n="home.guide.mavuika.desc">Pyro carry planning, Nightsoul teams, artifact choices, F2P weapons, rotations, and FAQ.</p>
+          </div>
+        </a>
+        <a href="skirk-build" class="guide-card" style="text-decoration:none;color:inherit;cursor:pointer;">
+          <div class="thumb" style="background:rgba(74,157,214,0.12);">❄️</div>
+          <div class="info">
+            <h4 data-i18n="home.guide.skirk.title">Skirk Build Guide: Weapons, Artifacts & Teams</h4>
+            <p data-i18n="home.guide.skirk.desc">Cryo on-field DPS setup, CRIT stats, Freeze teams, premium options, F2P choices, and FAQ.</p>
+          </div>
+        </a>
+        <a href="xilonen-build" class="guide-card" style="text-decoration:none;color:inherit;cursor:pointer;">
+          <div class="thumb" style="background:rgba(212,168,75,0.12);">🛠️</div>
+          <div class="info">
+            <h4 data-i18n="home.guide.xilonen.title">Xilonen Build Guide: Support, Artifacts & Teams</h4>
+            <p data-i18n="home.guide.xilonen.desc">Geo support builds, Scroll set value, Energy Recharge, team buffs, weapon choices, and FAQ.</p>
+          </div>
+        </a>
+        <a href="guide-artifact-farming" class="guide-card" style="text-decoration:none;color:inherit;cursor:pointer;">
+          <div class="thumb" style="background:rgba(212,168,75,0.12);">💎</div>
+          <div class="info">
+            <h4 data-i18n="home.guide.artifact.title">Artifact Farming: When to Farm and What to Keep</h4>
+            <p data-i18n="home.guide.artifact.desc">Know when artifact domains are worth your resin, which main stats matter, and when to stop farming.</p>
+          </div>
+        </a>
+        <a href="guide-daily-resin-priority" class="guide-card" style="text-decoration:none;color:inherit;cursor:pointer;">
+          <div class="thumb" style="background:rgba(74,157,214,0.12);">⏳</div>
+          <div class="info">
+            <h4 data-i18n="home.guide.resinpriority.title">Daily Resin Priority: What to Farm Today</h4>
+            <p data-i18n="home.guide.resinpriority.desc">A simple daily checklist for domains, bosses, Mora, EXP books, and artifacts.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div class="section">
+    <div class="section-title"><a href="bugs" style="color:var(--gold-light);text-decoration:none">🐛 Bug Tracker</a></div>
+    <div class="section-sub">Known issues & workarounds for v6.3 "Moon of Four"</div>
+    <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:12px">
+      <div style="flex:1;min-width:200px;background:var(--bg-card);border:1px solid var(--border);padding:14px;border-radius:8px">
+        <div style="font-size:13px;font-weight:600;margin-bottom:6px">⚔️ Nightsoul Burst double-proc</div>
+        <div style="font-size:12px;color:var(--text-dim)">Natlan skill triggers Nightsoul Burst twice — under investigation</div>
+        <span class="tag" style="background:#1b2838;color:#60a5fa">Investigating</span>
+      </div>
+      <div style="flex:1;min-width:200px;background:var(--bg-card);border:1px solid var(--border);padding:14px;border-radius:8px">
+        <div style="font-size:13px;font-weight:600;margin-bottom:6px">✅ Domain spawn fixed</div>
+        <div style="font-size:12px;color:var(--text-dim)">"Moon of Four" domain enemy wave bug resolved Jun 29</div>
+        <span class="tag" style="background:#1a3020;color:#4ade80">Fixed</span>
+      </div>
+      <div style="flex:1;min-width:200px;background:var(--bg-card);border:1px solid var(--border);padding:14px;border-radius:8px">
+        <div style="font-size:13px;font-weight:600;margin-bottom:6px">🎨 Grass flicker (iOS)</div>
+        <div style="font-size:12px;color:var(--text-dim)">iPhone 15 Pro — set Visual Effects to Medium</div>
+        <span class="tag" style="background:#322a1a;color:#fbbf24">Workaround</span>
+      </div>
+    </div>
+    <div style="margin-top:10px;font-size:13px;text-align:center">
+      <a href="bugs" style="color:var(--gold)">View full bug tracker →</a>
+    </div>
+  </div>
+
+  <!-- ============ Gallery Section ============ -->
+  <section id="gallery">
+    <div class="container">
+      <h2 class="section-title">📸 <span>Screenshot Gallery</span></h2>
+      <p class="section-sub">A collection of stunning scenes and artwork from the world of Teyvat.</p>
+      <div class="gallery-grid">
+        <a href="images/scene_1.jpg" class="gallery-item" target="_blank">
+          <img src="images/scene_1.jpg" alt="Genshin Scene 1" loading="lazy">
+        </a>
+        <a href="images/scene_2.jpg" class="gallery-item" target="_blank">
+          <img src="images/scene_2.jpg" alt="Genshin Scene 2" loading="lazy">
+        </a>
+        <a href="images/scene_3.jpg" class="gallery-item" target="_blank">
+          <img src="images/scene_3.jpg" alt="Genshin Scene 3" loading="lazy">
+        </a>
+        <a href="images/scene_4.png" class="gallery-item" target="_blank">
+          <img src="images/scene_4.png" alt="Genshin Scene 4" loading="lazy">
+        </a>
+        <a href="images/scene_5.jpg" class="gallery-item" target="_blank">
+          <img src="images/scene_5.jpg" alt="Genshin Scene 5" loading="lazy">
+        </a>
+        <a href="images/scene_6.jpg" class="gallery-item" target="_blank">
+          <img src="images/scene_6.jpg" alt="Genshin Scene 6" loading="lazy">
+        </a>
+        <a href="images/feature_card.jpg" class="gallery-item" target="_blank">
+          <img src="images/feature_card.jpg" alt="Character Art 1" loading="lazy">
+        </a>
+        <a href="images/feature_square.webp" class="gallery-item" target="_blank">
+          <img src="images/feature_square.webp" alt="Character Art 2" loading="lazy">
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Premium Section (会员可见) ============ -->
+  <section id="premium-section" style="display:none;">
+    <div class="container">
+      <h2 class="section-title">💎 Premium <span>Content</span></h2>
+      <p class="section-sub">Exclusive guides for members only — advanced strategies and in-depth analysis.</p>
+      <div class="card-grid">
+        <a href="premium/best-builds" class="card" style="cursor:pointer;border-color:var(--gold);">
+          <span class="icon-lg">🔥</span>
+          <h3>Premium Team Builds</h3>
+          <p>Expert-optimized team compositions with rotation details and artifact benchmarks.</p>
+          <span class="tag" style="background:rgba(212,168,75,0.2);color:var(--gold-light);">✨ Members Only</span>
+        </a>
+        <a href="premium/abyss-strategy" class="card" style="cursor:pointer;border-color:var(--gold);">
+          <span class="icon-lg">🌀</span>
+          <h3>Abyss Floor 12 Guide</h3>
+          <p>Detailed floor-by-floor breakdown of the current Abyss rotation.</p>
+          <span class="tag" style="background:rgba(212,168,75,0.2);color:var(--gold-light);">✨ Members Only</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Featured Videos ============ -->
+  <section id="featured-video">
+    <div class="container">
+      <h2 class="section-title">🎬 Featured <span>Videos</span></h2>
+      <p class="section-sub">Official Genshin Impact trailers, animated shorts, and cinematic moments. <a href="videos" style="color:var(--gold);font-size:13px;">View all videos →</a></p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px;">
+        <!-- Video 1 -->
+        <div style="border-radius:12px;overflow:hidden;border:1px solid var(--border);background:#000;">
+          <div style="position:relative;padding-bottom:56.25%;height:0;">
+            <iframe src="https://www.youtube.com/embed/y2Zcmcbrm9s?start=8" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div style="padding:10px 14px;background:var(--bg-card);border-top:1px solid var(--border);">
+            <p style="font-size:13px;color:var(--text-dim);line-height:1.5;">
+              🌙 Winter Night's Lazzo — Fatui Harbingers<br>
+              <span style="color:var(--text-muted);font-size:11px;">Sleep, sleep, child of this world... Fear neither darkness nor silence.</span>
+            </p>
+          </div>
+        </div>
+        <!-- Video 2 -->
+        <div style="border-radius:12px;overflow:hidden;border:1px solid var(--border);background:#000;">
+          <div style="position:relative;padding-bottom:56.25%;height:0;">
+            <iframe src="https://www.youtube.com/embed/TAlKhARUcoY" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div style="padding:10px 14px;background:var(--bg-card);border-top:1px solid var(--border);">
+            <p style="font-size:13px;color:var(--text-dim);line-height:1.5;">
+              📖 Teyvat Chapter Storyline Trailer<br>
+              <span style="color:var(--text-muted);font-size:11px;">All seven nations unveiled — from Mondstadt to Snezhnaya.</span>
+            </p>
+          </div>
+        </div>
+        <!-- Video 3 -->
+        <div style="border-radius:12px;overflow:hidden;border:1px solid var(--border);background:#000;">
+          <div style="position:relative;padding-bottom:56.25%;height:0;">
+            <iframe src="https://www.youtube.com/embed/TmaAOV4SJNQ" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div style="padding:10px 14px;background:var(--bg-card);border-top:1px solid var(--border);">
+            <p style="font-size:13px;color:var(--text-dim);line-height:1.5;">
+              🎭 Fatui Harbingers — A Winter Night's Lazzo<br>
+              <span style="color:var(--text-muted);font-size:11px;">All Harbingers gather to sing, make merry, fall silent, and grieve.</span>
+            </p>
+          </div>
+        </div>
+        <!-- Video 4 -->
+        <div style="border-radius:12px;overflow:hidden;border:1px solid var(--border);background:#000;">
+          <div style="position:relative;padding-bottom:56.25%;height:0;">
+            <iframe src="https://www.youtube.com/embed/jvXVmvW8ZQw" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div style="padding:10px 14px;background:var(--bg-card);border-top:1px solid var(--border);">
+            <p style="font-size:13px;color:var(--text-dim);line-height:1.5;">
+              👑 The Divine Council — We Will Be Reunited<br>
+              <span style="color:var(--text-muted);font-size:11px;">In the councils of the gods, no human voice is ever heard.</span>
+            </p>
+          </div>
+        </div>
+      </div>
+      <p style="text-align:center;margin-top:12px;"><a href="videos" style="display:inline-block;padding:10px 24px;border-radius:8px;border:1px solid var(--gold);color:var(--gold-light);text-decoration:none;font-size:14px;transition:all .3s;">📺 View All Videos</a></p>
+    </div>
+  </section>
+
+  <!-- ============ Sister Site ============ -->
+  <section id="sister-site">
+    <div class="container">
+      <h2 class="section-title">🌟 Sister <span>Site</span></h2>
+      <p class="section-sub">Check out our other game guides!</p>
+      <div style="text-align:center;margin:16px 0;">
+        <a href="https://eggywiki.com" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;padding:14px 28px;border-radius:10px;border:1px solid var(--gold);background:linear-gradient(135deg,rgba(212,168,75,0.1),rgba(75,196,179,0.05));color:var(--gold-light);text-decoration:none;font-size:16px;font-weight:500;transition:all .3s;">
+          <span style="font-size:24px;">🥚</span>
+          <span>Eggy Wiki — Best Eggy Party Guides</span>
+          <span style="font-size:14px;">↗</span>
+        </a>
+      </div>
+      <p style="text-align:center;font-size:12px;color:var(--text-muted);">A fan-made wiki for Eggy Party — builds, tips, and more!</p>
+    </div>
+  </section>
+  <!-- ============ Featured Creator Tool ============ -->
+  <section id="featured-creator-tool">
+    <div class="container">
+      <p style="text-align:center;color:var(--teal);font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px;">✦ Featured player creation tool</p>
+      <h2 class="section-title">🎮 Create Your Original <span>Game Avatar</span></h2>
+      <p class="section-sub">Turn a photo into an original fantasy RPG avatar, community profile picture, or guide cover — free daily creations, no sign-up required.</p>
+      <div style="max-width:760px;margin:24px auto 0;padding:2px;border-radius:18px;background:linear-gradient(135deg,var(--gold),var(--teal),#b47bd4);box-shadow:0 14px 42px rgba(75,196,179,.16);">
+        <a href="https://www.picttool.com/?utm_source=genshinwiki&utm_medium=referral&utm_campaign=featured_creator_tool" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:18px;padding:24px;border-radius:16px;background:linear-gradient(135deg,#182438,#111827);color:var(--text);text-decoration:none;">
+          <span style="font-size:46px;line-height:1;">✨</span>
+          <span style="flex:1;text-align:left;">
+            <strong style="display:block;font-size:21px;color:var(--gold-light);margin-bottom:5px;">PictTool — AI Image Tools for Players</strong>
+            <span style="display:block;color:var(--text-dim);font-size:14px;line-height:1.6;">Fantasy game avatars · cartoon style · art style · new backgrounds · screenshot polish</span>
+          </span>
+          <span style="flex-shrink:0;padding:11px 16px;border-radius:8px;background:linear-gradient(135deg,var(--gold-dark),var(--gold));color:#0d1117;font-size:14px;font-weight:800;">Try PictTool ↗</span>
+        </a>
+      </div>
+      <p style="text-align:center;margin-top:12px;font-size:12px;color:var(--text-dim);">Independent creative tool — not affiliated with HoYoverse or any game publisher.</p>
+      <div style="text-align:center;margin-top:22px;">
+        <a href="https://eggywiki.com" target="_blank" rel="noopener" style="color:var(--text-dim);font-size:13px;text-decoration:none;">🥚 Also visit Eggy Wiki — Eggy Party guides ↗</a>
+      </div>
+    </div>
+  </section>
+  <!-- ============ Footer ============ -->
+  <footer style="position:relative;">
+    <div class="age-badge">
+      <img src="images/age_rating_12plus.png" alt="Ages 12+">
+    </div>
+    <div class="links">
+      <a href="index">Home</a>
+      <a href="characters">Characters</a>
+      <a href="elements">Elements</a>
+      <a href="abyss">Abyss</a>
+      <a href="weapons">Weapons</a>
+      <a href="bugs">🐛 Bugs</a><a href="artifacts">Artifacts</a>
+      <a href="materials">Materials</a>
+      <a href="download">📥 Download</a><a href="beginner">Guides</a>
+      <a href="codes">Codes</a>
+      <a href="build-planner">Build Planner</a>
+      <a href="damage-calculator">Damage Calculator</a>
+      <a href="resin-timer">Resin Timer</a>
+      <a href="login">Login</a>
+      <a href="membership">Membership</a>
+      <a href="forum">Forum</a>
+      <a href="blog/index">📝 Blog</a>
+      <a href="premium/best-builds">Premium Builds</a>
+      <a href="privacy">Privacy</a>
+    </div>
+    <p>This website is not affiliated with miHoYo / HoYoverse. Data is for reference only.</p>
+    <p>All game artwork, visual assets, and intellectual property are the property of their respective owners. This is a fan-made guide website and is not affiliated with HoYoverse.</p>
+    <p style="margin-top:4px;">© 2026 Genshin Guide · Built with ❤️ and code</p>
+  </footer>
+
+  <script>
+    // ===== Mobile Nav Toggle =====
+    function toggleNav() {
+      document.getElementById('navMenu').classList.toggle('open');
+    }
+    document.querySelectorAll('#navMenu a').forEach(a => {
+      a.addEventListener('click', () => {
+        document.getElementById('navMenu').classList.remove('open');
+      });
+    });
+
+    // ===== Sticky Nav Active State =====
+
+    // ===== Floating Particles =====
+    (function createParticles() {
+      const container = document.getElementById('particles');
+      if (!container) return;
+      for (let i = 0; i < 30; i++) {
+        const p = document.createElement('div');
+        p.className = 'particle';
+        p.style.left = Math.random() * 100 + '%';
+        p.style.width = (2 + Math.random() * 3) + 'px';
+        p.style.height = p.style.width;
+        p.style.animationDuration = (8 + Math.random() * 16) + 's';
+        p.style.animationDelay = (Math.random() * 20) + 's';
+        p.style.background = ['#d4a84b', '#f0d78c', '#4bc4b3', '#7bc4d0'][Math.floor(Math.random() * 4)];
+        container.appendChild(p);
+      }
     })();
-    </script>
-</body><script src="../tool-i18n.js?v=20260822-4"></script>
+    // ===== Check Login + Membership Status =====
+    (function updateNavLogin() {
+      const token = localStorage.getItem('auth_token');
+      const cached = localStorage.getItem('auth_member');
+      const loginBtn = document.getElementById('navLoginBtn');
+      if (token && cached && loginBtn) {
+        try {
+          const m = JSON.parse(cached);
+          loginBtn.textContent = '👋 ' + (m.name || m.email || 'User');
+          loginBtn.style.color = 'var(--teal)';
+        } catch(e) {}
+      }
+    })();
+    (async function checkMember() {
+      const token = localStorage.getItem('auth_token');
+      if (!token) return;
+      try {
+        const res = await fetch('/api/me?token=' + encodeURIComponent(token));
+        const data = await res.json();
+        const premiumSection = document.getElementById('premium-section');
+        if (data.member && premiumSection) premiumSection.style.display = 'block';
+        // Update nav with verified info
+        if (data.member) {
+          const loginBtn = document.getElementById('navLoginBtn');
+          if (loginBtn) {
+            loginBtn.textContent = '👋 ' + (data.name || data.email);
+            loginBtn.style.color = 'var(--teal)';
+          }
+          // Update localStorage too
+          localStorage.setItem('auth_member', JSON.stringify(data));
+        }
+      } catch (e) {}
+    })();
+
+    // ===== Background Music (cross-page resume) =====
+    var bgm = new Audio('ys_bgm.mp3');
+    bgm.loop = true;
+    var musicPlaying = false;
+
+    // Save progress periodically
+    setInterval(function() {
+      if (musicPlaying && !bgm.paused) {
+        localStorage.setItem('bgm_time', bgm.currentTime);
+      }
+    }, 1000);
+
+    // Save on page unload
+    window.addEventListener('beforeunload', function() {
+      if (musicPlaying && !bgm.paused) {
+        localStorage.setItem('bgm_time', bgm.currentTime);
+      }
+    });
+
+    function initMusic() {
+      var saved = localStorage.getItem('bgm_playing');
+      var savedTime = parseFloat(localStorage.getItem('bgm_time') || '0');
+      if (savedTime > 0 && savedTime < bgm.duration) {
+        bgm.currentTime = savedTime;
+      }
+      if (saved === 'true') {
+        toggleMusic();
+      }
+    }
+
+    function toggleMusic() {
+      var btn = document.getElementById('musicBtn');
+      if (musicPlaying) {
+        bgm.pause();
+        musicPlaying = false;
+        btn.classList.remove('playing');
+        btn.textContent = '\u266A';
+        localStorage.setItem('bgm_playing', 'false');
+      } else {
+        var savedTime = parseFloat(localStorage.getItem('bgm_time') || '0');
+        if (savedTime > 0 && savedTime < bgm.duration) {
+          bgm.currentTime = savedTime;
+        }
+        bgm.play().then(function() {
+          musicPlaying = true;
+          btn.classList.add('playing');
+          btn.textContent = '\u266B';
+          localStorage.setItem('bgm_playing', 'true');
+        }).catch(function(e) {
+          console.log('BGM autoplay blocked:', e);
+        });
+      }
+    }
+
+    document.addEventListener('click', function initOnce() {
+      initMusic();
+      document.removeEventListener('click', initOnce);
+    }, { once: true });
+  </script>
+
+  <script src="i18n.js?v=20260815-home-section-sidebar1"></script>
+  <script src="char_avatars.js"></script>
+  <script src="enhanced-search.js"></script>
+  <script>// ====== Comment Embed — API 版 ======
+// 评论通过 /api/comments 读写，所有用户共享
+// Usage: CommentEmbed.mount('comment-container', { page: 'home', title: 'Comments' })
+
+window.CommentEmbed = {
+  mount: function(containerId, opts) {
+    var el = document.getElementById(containerId);
+    if (!el) return;
+    opts = opts || {};
+    var page = opts.page || 'home';
+    var title = opts.title || '💬 Comments';
+    var subtitle = opts.subtitle || 'Share your thoughts!';
+
+    el.innerHTML =
+      '<div class="comment-section">' +
+        '<h2>' + title + '</h2>' +
+        '<p class="sub">' + subtitle + '</p>' +
+        '<div class="cform">' +
+          '<div class="cerror" id="cerror-' + page + '"></div>' +
+          '<div class="crow">' +
+            '<input type="text" id="cname-' + page + '" placeholder="Your name" maxlength="50" autocomplete="off">' +
+            '<input type="text" id="cemail-' + page + '" placeholder="Email (optional)" maxlength="100" autocomplete="off">' +
+          '</div>' +
+          '<textarea id="ctext-' + page + '" placeholder="Write your comment..." maxlength="2000"></textarea>' +
+          '<div class="bwrap">' +
+            '<span class="charcount"><span id="ccount-' + page + '">0</span>/2000</span>' +
+            '<div style="display:flex;gap:8px;align-items:center;">' +
+              '<span id="membadge-' + page + '" style="display:none;" class="member-tag">✨ Member</span>' +
+              '<button class="btn-post" id="cbtn-' + page + '" onclick="CommentEmbed.post(\'' + page + '\')">Post Comment</button>' +
+            '</div>' +
+          '</div>' +
+        '</div>' +
+        '<div id="clist-' + page + '">' +
+          '<div class="cspin" id="cspin-' + page + '">Loading comments...</div>' +
+        '</div>' +
+      '</div>';
+
+    document.getElementById('ctext-' + page).addEventListener('input', function() {
+      document.getElementById('ccount-' + page).textContent = this.value.length;
+    });
+
+    // 自动填入会员名
+    (function(pg) {
+      var token = localStorage.getItem('auth_token');
+      if (!token) return;
+      fetch('/api/me?token=' + encodeURIComponent(token))
+        .then(function(r) { return r.json(); })
+        .then(function(d) {
+          if (d.member) {
+            document.getElementById('membadge-' + pg).style.display = 'inline';
+            if (d.email) {
+              var ni = document.getElementById('cname-' + pg);
+              ni.value = d.email.split('@')[0];
+              ni.disabled = true;
+              document.getElementById('cemail-' + pg).value = d.email;
+            }
+          }
+        })
+        .catch(function(){});
+    })(page);
+
+    CommentEmbed.load(page);
+  },
+
+  load: function(page) {
+    var listEl = document.getElementById('clist-' + page);
+    var spinEl = document.getElementById('cspin-' + page);
+
+    fetch('/api/comments?page=' + encodeURIComponent(page))
+      .then(function(r) {
+        if (!r.ok) throw new Error('API error');
+        return r.json();
+      })
+      .then(function(data) {
+        if (spinEl) spinEl.style.display = 'none';
+        var comments = data.comments || [];
+        if (comments.length === 0) {
+          listEl.innerHTML += '<div class="cempty">No comments yet. Be the first!</div>';
+          return;
+        }
+        var html = '';
+        for (var i = 0; i < comments.length; i++) {
+          var c = comments[i];
+          var time = new Date(c.createdAt).toLocaleDateString('en-US', { month:'short', day:'numeric', year:'numeric', hour:'2-digit', minute:'2-digit' });
+          html += '<div class="citem">' +
+            '<div class="meta">' +
+              '<span class="name">' + CommentEmbed._esc(c.name) + '</span>' +
+              (c.isMember ? '<span class="mbadge">✨ Member</span>' : '') +
+              '<span class="time">' + time + '</span>' +
+            '</div>' +
+            '<div class="ctext">' + CommentEmbed._esc(c.content) + '</div>' +
+          '</div>';
+        }
+        listEl.innerHTML += html;
+      })
+      .catch(function(err) {
+        if (spinEl) spinEl.style.display = 'none';
+        listEl.innerHTML += '<div class="cerror" style="display:block">Failed to load comments.</div>';
+      });
+  },
+
+  post: function(page) {
+    var name = document.getElementById('cname-' + page).value.trim();
+    var content = document.getElementById('ctext-' + page).value.trim();
+    var email = document.getElementById('cemail-' + page).value.trim() || null;
+    var btn = document.getElementById('cbtn-' + page);
+    var errorEl = document.getElementById('cerror-' + page);
+
+    errorEl.style.display = 'none';
+    if (!name) { CommentEmbed._showError(page, 'Please enter your name.'); return; }
+    if (!content) { CommentEmbed._showError(page, 'Please write something.'); return; }
+
+    var token = localStorage.getItem('auth_token') || '';
+
+    btn.disabled = true;
+    btn.textContent = 'Posting...';
+
+    fetch('/api/comments', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name: name, content: content, email: email, page: page, token: token }),
+    })
+      .then(function(r) { return r.json(); })
+      .then(function(data) {
+        if (data.success) {
+          document.getElementById('ctext-' + page).value = '';
+          document.getElementById('ccount-' + page).textContent = '0';
+          var listEl = document.getElementById('clist-' + page);
+          listEl.innerHTML = '<div class="cspin" id="cspin-' + page + '">Loading comments...</div>';
+          CommentEmbed.load(page);
+        } else {
+          CommentEmbed._showError(page, data.error || 'Failed to post.');
+        }
+      })
+      .catch(function(err) {
+        CommentEmbed._showError(page, 'Network error. Please try again.');
+      })
+      .then(function() {
+        btn.disabled = false;
+        btn.textContent = 'Post Comment';
+      });
+  },
+
+  _showError: function(page, msg) {
+    var el = document.getElementById('cerror-' + page);
+    el.textContent = msg;
+    el.style.display = 'block';
+    setTimeout(function() { el.style.display = 'none'; }, 4000);
+  },
+
+  _esc: function(str) {
+    if (!str) return '';
+    var d = document.createElement('div');
+    d.textContent = str;
+    return d.innerHTML;
+  }
+};
+
+// Auto-mount — retry until element exists in DOM
+(function autoMount() {
+  var mounts = [
+    { id: 'forum-comments', opts: { page: 'forum', title: '💬 Forum Comments', subtitle: 'Discuss Genshin Impact!' } },
+  ];
+  var allDone = true;
+  for (var i = 0; i < mounts.length; i++) {
+    var m = mounts[i];
+    var el = document.getElementById(m.id);
+    if (!el) { allDone = false; continue; }
+    if (el.getAttribute('data-mounted')) continue;
+    el.setAttribute('data-mounted', '1');
+    window.CommentEmbed.mount(m.id, m.opts);
+  }
+  if (!allDone) setTimeout(autoMount, 300);
+})();
+
+  <script src="site-comments.js"></script>
+  <!-- Cloudflare Web Analytics -->
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "d8e6f9bb41564ccead265168e47540c9"}'></script>
+<!-- End Cloudflare Web Analytics -->
+<script>(function(s){s.dataset.zone='11277266',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+</body>
 </html>
