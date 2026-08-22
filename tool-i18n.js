@@ -6,7 +6,8 @@
     if(new URLSearchParams(location.search).get('lang')!=='zh')return;
     document.documentElement.lang='zh-CN';
     var w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT),n;
-    while(n=w.nextNode()){var value=n.nodeValue;Object.keys(zh).forEach(function(key){if(value.indexOf(key)>=0)value=value.split(key).join(zh[key]);});n.nodeValue=value;}
+    var keys=Object.keys(zh).sort(function(a,b){return b.length-a.length;});
+    while(n=w.nextNode()){var value=n.nodeValue;keys.forEach(function(key){if(value.indexOf(key)>=0)value=value.split(key).join(zh[key]);});n.nodeValue=value;}
     document.querySelectorAll('input[placeholder]').forEach(function(el){if(zh[el.placeholder])el.placeholder=zh[el.placeholder];});
   }
   function addSwitcher(){
