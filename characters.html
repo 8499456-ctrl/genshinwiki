@@ -72,7 +72,7 @@ if(f.rar&&f.rar!='all'&&c.rarity!=parseInt(f.rar))continue;
 if(f.q&&f.q!=''&&!c.name.toLowerCase().includes(f.q.toLowerCase()))continue;
 var x={anemo:'#5dbf9a',geo:'#d4a84b',electro:'#b47bd4',dendro:'#7bc47b',hydro:'#4a9dd6',pyro:'#d9604a',cryo:'#7bc4d0'}[c.element]||'#d4a84b';
 var s='';for(var i=0;i<5;i++)s+=i<c.rarity?'\u2605':'\u2606';
-h+='<div class=card style=border-color:'+x+'44><a href=/character?char='+id+'>'+
+h+='<div class=card style=border-color:'+x+'44><a href="/character?char='+id+(new URLSearchParams(location.search).get('lang')==='zh'?'&lang=zh':'')+'">'+
 '<div class=char-avatar>'+(A[id]?'<img src="'+A[id]+'">':'<span style=font-size:28px>?')+'</div>'+
 '<div class=char-name>'+c.name+'</div><div class=char-rarity>'+s+'</div>'+
 '<div><span style="padding:2px 8px;border-radius:10px;background:'+x+'22;color:'+x+';font-size:11px">'+c.element+'</span></div></a></div>';

@@ -408,6 +408,19 @@ function applyTranslations(lang) {
   if (lang === 'en') url.searchParams.delete('lang');
   else url.searchParams.set('lang', lang);
   window.history.replaceState({}, '', url);
+
+  // Keep the selected language when navigating to another first-party page.
+  document.querySelectorAll('a[href]').forEach(link => {
+    const raw = link.getAttribute('href');
+    if (!raw || raw.startsWith('#') || raw.startsWith('http') || raw.startsWith('mailto:')) return;
+    try {
+      const target = new URL(raw, window.location.href);
+      if (target.origin !== window.location.origin) return;
+      if (lang === 'zh') target.searchParams.set('lang', 'zh');
+      else target.searchParams.delete('lang');
+      link.setAttribute('href', target.pathname + target.search + target.hash);
+    } catch (_) {}
+  });
 }
 
 function toggleLang(e) {
