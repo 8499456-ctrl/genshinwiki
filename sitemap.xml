@@ -31,6 +31,8 @@
   <url><loc>https://genshinwiki.cn/abyss</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://genshinwiki.cn/artifacts</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://genshinwiki.cn/materials</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://genshinwiki.cn/talent-books</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://genshinwiki.cn/character-ascension-materials</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://genshinwiki.cn/beginner</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://genshinwiki.cn/download</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://genshinwiki.cn/codes</loc><changefreq>daily</changefreq><priority>0.6</priority></url>
