@@ -39,6 +39,7 @@
   <url><loc>https://genshinwiki.cn/forum</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
   <url><loc>https://genshinwiki.cn/videos</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://genshinwiki.cn/blog/</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://genshinwiki.cn/blog/talent-books-schedule-guide.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://genshinwiki.cn/bugs</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
   <url><loc>https://genshinwiki.cn/login</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
   <url><loc>https://genshinwiki.cn/membership</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
