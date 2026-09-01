@@ -5,24 +5,24 @@
     <link>https://genshinwiki.cn/blog/</link>
     <description>Latest Genshin Impact guides, builds, and team recommendations</description>
     <language>en</language>
-    <lastBuildDate>Thu, 23 Jul 2026 00:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 01 Sep 2026 00:00:00 +0800</lastBuildDate>
     <atom:link href="https://genshinwiki.cn/blog/rss.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>⛰️ Xilonen Build Guide — Best Weapons, Artifacts & Teams (v6.4)</title>
+      <title>How We Test Genshin Builds Before Recommending Them</title>
+      <link>https://genshinwiki.cn/blog/how-we-test-genshin-builds.html</link>
+      <description>Our practical editorial method for comparing weapons, artifacts, teams, rotations, and account-friendly alternatives.</description>
+      <pubDate>Tue, 01 Sep 2026 00:00:00 +0800</pubDate>
+      <guid>https://genshinwiki.cn/blog/how-we-test-genshin-builds.html</guid>
+    </item>
+    <item>
+      <title>⛰️ Xilonen Build Guide — Best Weapons, Artifacts &amp; Teams (v6.4)</title>
       <link>https://genshinwiki.cn/blog/xilonen-guide.html</link>
       <description>Complete Xilonen build guide for v6.4 — best weapons, artifacts, team compositions, and constellations. The ultimate Natlan support.</description>
       <pubDate>Thu, 23 Jul 2026 00:00:00 +0800</pubDate>
       <guid>https://genshinwiki.cn/blog/xilonen-guide.html</guid>
     </item>
     <item>
-      <title>🚀 Game Accelerator Free Trial — 50 Hours Low-Ping Gaming</title>
-      <link>https://genshinwiki.cn/blog/game-accelerator-free-50h.html</link>
-      <description>Claim 50 hours of free game accelerator time. Reduce Genshin Impact ping from 200ms to 30-50ms on EU/NA servers.</description>
-      <pubDate>Fri, 03 Jul 2026 00:00:00 +0800</pubDate>
-      <guid>https://genshinwiki.cn/blog/game-accelerator-free-50h.html</guid>
-    </item>
-    <item>
-      <title>🔥 Mavuika Build Guide — Best Weapons, Artifacts & Teams (v6.3)</title>
+      <title>🔥 Mavuika Build Guide — Best Weapons, Artifacts &amp; Teams (v6.3)</title>
       <link>https://genshinwiki.cn/blog/mavuika-build.html</link>
       <description>Complete Mavuika build guide for v6.3. Best weapons, artifacts, teams, and constellation analysis for the Pyro Archon.</description>
       <pubDate>Fri, 03 Jul 2026 00:00:00 +0800</pubDate>
@@ -36,13 +36,6 @@
       <guid>https://genshinwiki.cn/blog/top-10-4-star-characters.html</guid>
     </item>
     <item>
-      <title>Top 10 Genshin Impact Gifts — Perfect for Any Traveler in 2026</title>
-      <link>https://genshinwiki.cn/blog/genshin-gift-guide-2026.html</link>
-      <description>The ultimate Genshin Impact gift guide for 2026. Official merch, digital codes, and gaming gear for every budget.</description>
-      <pubDate>Fri, 03 Jul 2026 00:00:00 +0800</pubDate>
-      <guid>https://genshinwiki.cn/blog/genshin-gift-guide-2026.html</guid>
-    </item>
-    <item>
       <title>Best Teams for Spiral Abyss v6.3 — 36-Star Guide</title>
       <link>https://genshinwiki.cn/blog/abyss-v63-teams.html</link>
       <description>Complete Spiral Abyss v6.3 team guide with enemy lineups, F2P alternatives, and pro tips for 36 stars.</description>
@@ -50,7 +43,7 @@
       <guid>https://genshinwiki.cn/blog/abyss-v63-teams.html</guid>
     </item>
     <item>
-      <title>Mavuika Build Guide — Best Weapons, Artifacts & Teams</title>
+      <title>Mavuika Build Guide — Best Weapons, Artifacts &amp; Teams</title>
       <link>https://genshinwiki.cn/blog/mavuika-build.html</link>
       <description>Complete Mavuika build guide for v6.3. Best artifacts, weapons, team comps, and rotation tips.</description>
       <pubDate>Thu, 02 Jul 2026 00:00:00 +0800</pubDate>
