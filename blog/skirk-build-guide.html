@@ -12,8 +12,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <link rel="canonical" href="https://genshinwiki.cn/blog/skirk-build-guide.html">
-<title>Skirk Build Guide — Best Weapons, Artifacts & Teams (v6.4)</title>
-<meta name="description" content="Complete Skirk build guide for Genshin Impact v6.4. Best weapons, artifact sets, team compositions, talent priority, and rotation tips.">
+<title>Skirk Build Guide — Mechanics, Equipment &amp; Planning</title>
+<meta name="description" content="A corrected Skirk guide covering skill priorities, equipment conditions, Hydro and Cryo teams, and a practical account-planning checklist.">
 <link rel="icon" type="image/png" href="../favicon.png">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -57,8 +57,8 @@ footer{border-top:1px solid var(--border);padding:28px 16px 20px;text-align:cent
 </nav>
 
 <div class="page-header">
-<h1>❄️ Skirk Build Guide — Best Weapons, Artifacts & Teams (v6.4)</h1>
-<div class="meta">📅 July 21, 2026 · 👤 Wiki · ⏱ 6 min read</div>
+<h1>Skirk Build Guide: Mechanics and Account Planning</h1>
+<div class="meta">Corrected September 5, 2026 · Source-based guide</div>
 </div>
 
 <div class="container">
@@ -66,162 +66,36 @@ footer{border-top:1px solid var(--border);padding:28px 16px 20px;text-align:cent
 <div class="tags">
 <span class="tag">Skirk</span>
 <span class="tag">Build</span>
-<span class="tag">v6.4</span>
+<span class="tag">Build Planning</span>
 <span class="tag">Cryo</span>
 <span class="tag">Guide</span>
 </div>
 <div class="post-content">
 
-<p>After years of waiting, Skirk — Tartaglia's mysterious master — is finally playable in <strong>Version 6.4 "Whispers of Nod-Krai"</strong>. As a <strong>5-star Cryo Sword</strong> main DPS, she brings a unique "Void Blade" mechanic that shreds through enemy defenses. Here's everything you need to build her optimally.</p>
-
-<div class="highlight">
-<strong>TL;DR:</strong> Skirk is a Cryo on-field carry who excels in Freeze and Mono-Cryo teams. Prioritize CRIT > ATK% > ER. Her signature weapon "Void Edge" is her best-in-slot by a wide margin.
-</div>
-
-<h2>🔍 Kit Overview</h2>
-
-<p>Before we dive into builds, here's a quick refresher on Skirk's abilities:</p>
-
-<table>
-<thead>
-<tr><th>Ability</th><th>Description</th></tr>
-</thead>
-<tbody>
-<tr><td><strong>Normal Attack</strong></td><td>5-hit Cryo sword combo. Decent multipliers but not her primary damage source outside of Void Blade state.</td></tr>
-<tr><td><strong>Elemental Skill</strong></td><td>Creates an Abyssal Rift that pulses Cryo DMG over 8s and marks enemies. Marked enemies take 15% increased Cryo DMG from all sources.</td></tr>
-<tr><td><strong>Elemental Burst</strong></td><td>80 energy. Massive AoE Cryo slash, then enters <strong>Void Blade</strong> state for 10s. In this state: normal attacks deal coordinated Cryo DMG, ignore 30% DEF, and apply faster Cryo.</td></tr>
-<tr><td><strong>A1 Passive</strong></td><td>When Skirk triggers a reaction on a marked enemy, she gains 8% CRIT Rate for 8s. Stacks up to 3 times (24% total).</td></tr>
-<tr><td><strong>A4 Passive</strong></td><td>Team gains 15% Cryo DMG Bonus when Skirk is in Void Blade state.</td></tr>
-</tbody>
-</table>
-
-<h2>⚔️ Best Weapons</h2>
-
-<table>
-<thead>
-<tr><th>Weapon</th><th>Rarity</th><th>Notes</th></tr>
-</thead>
-<tbody>
-<tr><td><strong>✨ Void Edge</strong> (Sig)</td><td>5★</td><td>674 Base ATK, 44.1% CRIT DMG. Effect: +20% Cryo DMG. After using Burst, next 3 Normal Attacks deal 60% ATK as additional DMG. <strong>BiS by ~20%.</strong></td></tr>
-<tr><td><strong>Mistsplitter Reforged</strong></td><td>5★</td><td>674 Base ATK, 44.1% CRIT DMG. Great stat stick, but the Elemental DMG bonus only activates fully with Benny/Cryo resonance.</td></tr>
-<tr><td><strong>Primordial Jade Cutter</strong></td><td>5★</td><td>542 Base ATK, 44.1% CRIT Rate. Very consistent. Best option if you need CRIT Rate balance.</td></tr>
-<tr><td><strong>Light of Foliar Incision</strong></td><td>5★</td><td>542 Base ATK, 44.1% CRIT DMG. Works well — the Normal Attack DMG buff helps in Void Blade state.</td></tr>
-<tr><td><strong>The Black Sword</strong></td><td>4★</td><td>BP weapon. CRIT Rate sub, Normal ATK DMG buff, and healing. Solid F2P option.</td></tr>
-<tr><td><strong>Kagotsurube Isshin</strong></td><td>4★</td><td>Kazuha's story sword. Free, decent ATK stat. Viable for early-game.</td></tr>
-</tbody>
-</table>
-
-<div class="highlight">
-<strong>💰 F2P Recommendation:</strong> The Black Sword (BP) or craft <strong>Finale of the Deep</strong> (Fontaine craftable) with the Bond of Life passive — it triggers consistently with her Burst rotation.
-</div>
-
-<h2>🛡️ Best Artifacts</h2>
-
-<h3>❄️ Glacial Dominion (New 6.4 Domain) — BiS</h3>
+<p>Start a Skirk build by choosing how you want to play her and checking which teammates you already own. The decisions below separate basic mechanics from a practical spending checklist.</p>
+<div class="highlight"><strong>Correction — September 5, 2026:</strong> The previous article contained incorrect skill, equipment, and material information. Those sections have been replaced. This is a source-based guide, not a report of our own gameplay tests. The reference guide covers Version 5.7; this page does not claim a current-patch damage ranking.</div>
+<h2>Mechanics that change your build</h2>
+<p>Skirk uses Serpent's Subtlety instead of Energy for her Burst. Energy Recharge therefore does not help charge it. Her Tap Skill enables her on-field attack state; Hold Skill supports a Burst-focused approach. Prioritize Skill levels for on-field play and Burst levels for quickswap. Her enhanced attacks scale with Skill, not the Normal Attack talent.</p>
+<h2>Equipment and team starting points</h2>
+<p>Azurelight is her signature sword. Finale of the Deep is a craftable alternative when healing enables its passive. Finale of the Deep Galleries is a general-purpose artifact option; Marechaussee Hunter depends on maintaining its stacks and suits particular Furina on-field setups. Start with ATK% sands, a Cryo or ATK% goblet, and a CRIT circlet; check total CRIT Rate before replacing pieces.</p>
+<p>Use Hydro and Cryo teammates to support her passives. Escoffier and Furina are notable partners; Furina teams need healing. These mechanics and equipment notes are summarized from <a href="https://keqingmains.com/q/skirk-quickguide/" style="color:var(--gold);">KQM's Skirk Quick Guide and its credited theorycrafting team</a>.</p>
+<h2>Make a plan with your existing account</h2>
+<p>Before farming, write down your intended four-character team, the weapon you can equip today, and the talent you intend to raise next. Leave an empty slot visible if you cannot yet fill a role. This makes the cost of a proposed build easier to judge than copying four portraits from a showcase.</p>
 <ul>
-<li><strong>2-Piece:</strong> Cryo DMG +15%</li>
-<li><strong>4-Piece:</strong> When any party member triggers Freeze or Superconduct, all gain 12% CRIT Rate and 30% CRIT DMG for 10s. Triggers once per 12s.</li>
-<li><strong>Verdict:</strong> Tailor-made for Skirk. The proc lines up perfectly with her Burst window.</li>
+<li><strong>Already own usable equipment?</strong> Save that build as a baseline. Compare a new item against it before spending more materials.</li>
+<li><strong>Considering a new weapon?</strong> List the billets, levels, refinement materials, and teammates it requires. Compare that total commitment with improving the weapon you already have.</li>
+<li><strong>Planning two teams?</strong> Write both rosters side by side. Assign each shared support to one team before deciding that a new damage dealer fills the remaining gap.</li>
 </ul>
-
-<h3>❄️ Blizzard Strayer — Strong Alternative</h3>
+<h2>A practice-session worksheet</h2>
+<p>Choose one encounter you can repeat. Record your team, equipment, talent levels, and whether you finish the attempt. On the next attempt, change only one thing. Note interruptions, missed attacks, and time spent repositioning as well as the result. A single large damage number does not describe how the whole attempt went.</p>
+<p>Use those notes to choose your next upgrade. If the comparison is unclear, keep the current equipment and repeat the same encounter. This worksheet is a suggested way to evaluate your account; no measured results are claimed here.</p>
+<h2>Continue planning</h2>
 <ul>
-<li><strong>2-Piece:</strong> Cryo DMG +15%</li>
-<li><strong>4-Piece:</strong> +40% CRIT Rate against Frozen enemies. Works best in freeze teams.</li>
-<li><strong>Verdict:</strong> If you already have a god-rolled Blizzard set from Ayaka days, it's competitive with Glacial Dominion in freeze teams.</li>
+<li><a href="../characters.html" style="color:var(--gold);">Browse characters</a> to identify the roles available in your roster.</li>
+<li><a href="../guide-character-build-order.html" style="color:var(--gold);">Read the build-order guide</a> before committing to another farming target.</li>
+<li><a href="../build-planner.html" style="color:var(--gold);">Open Build Planner</a> to estimate the materials for your chosen target.</li>
 </ul>
-
-<h3>2-Piece Mixes</h3>
-<p>If you're prefarming: 2x Glacial Dominion / 2x ATK% (Gladiator/Shimenawa).</p>
-
-<table>
-<thead>
-<tr><th>Slot</th><th>Main Stat</th><th>Priority Substats</th></tr>
-</thead>
-<tbody>
-<tr><td>Sands</td><td>ATK%</td><td>CRIT DMG > CRIT Rate > ATK% > ER</td></tr>
-<tr><td>Goblet</td><td>Cryo DMG%</td><td>CRIT DMG > CRIT Rate > ATK% > ER</td></tr>
-<tr><td>Circlet</td><td>CRIT DMG or CRIT Rate</td><td>CRIT Rate/DMG > ATK% > ER</td></tr>
-<tr><td colspan="3"><strong>Recommended stats:</strong> 70-85% CRIT Rate · 200%+ CRIT DMG · 2000+ ATK · 120-130% ER</td></tr>
-</tbody>
-</table>
-
-<div class="highlight">
-<strong>⚡ Energy Note:</strong> Skirk's 80-energy Burst is manageable with one Cryo battery. In a team with Shenhe + Kazuha (fav) you need ~120% ER. Solo Cryo teams should aim for 130-140%.
-</div>
-
-<h2>👥 Best Team Compositions</h2>
-
-<h3>❄️ Premium Freeze — Skirk's Strongest Team</h3>
-<ul>
-<li><strong>Skirk</strong> — Main DPS</li>
-<li><strong>Shenhe</strong> — Cryo battery, quills, Cryo RES shred</li>
-<li><strong>Furina</strong> — Hydro app, team-wide DMG buff, enables freeze</li>
-<li><strong>Xilonen (Cinder City)</strong> — RES shred, healing, 40% Elemental DMG from Scroll set</li>
-</ul>
-<p><em>Rotation:</em> Furina E+Q → Xilonen E+NA+Q → Shenhe E+Q → Skirk E+Q (Void Blade combo)</p>
-
-<h3>💧 Mono-Cryo + Hydro Flex</h3>
-<ul>
-<li><strong>Skirk</strong> — Main DPS</li>
-<li><strong>Kazuha</strong> — VV shred, Cryo DMG bonus, grouping</li>
-<li><strong>Kokomi / Barbara (TTDS)</strong> — Healing, Hydro app, freeze enabler</li>
-<li><strong>Shenhe / Rosaria (C6)</strong> — Battery + Cryo buff</li>
-</ul>
-<p><em>Alternative for F2P: Replace Shenhe with Rosaria or Kaeya (high investment). Replace Furina with Xingqiu.</em></p>
-
-<h3>🔥 Reverse Melt (Fun Budget Option)</h3>
-<ul>
-<li><strong>Skirk</strong> — Main DPS</li>
-<li><strong>Xiangling</strong> — Off-field Pyro app</li>
-<li><strong>Bennett</strong> — ATK buff + Pyro resonance + healing</li>
-<li><strong>Kazuha / Sucrose</strong> — VV shred</li>
-</ul>
-<p><em>Note: Skirk loses her A4 passive in this comp (no freeze), but the raw numbers can still clear Abyss floors 9-11 easily.</em></p>
-
-<h2>🔢 Talent Priority</h2>
-
-<ol>
-<li><strong>Elemental Burst</strong> — Crown (primary damage source + Void Blade state)</li>
-<li><strong>Elemental Skill</strong> — Crown (mark DMG + team buff uptime)</li>
-<li><strong>Normal Attack</strong> — Level 8 (only matters during Void Blade)</li>
-</ol>
-
-<h2>⭐ Constellation Analysis</h2>
-
-<table>
-<thead>
-<tr><th>Constellation</th><th>Effect</th><th>Value</th></tr>
-</thead>
-<tbody>
-<tr><td>C1</td><td>Void Blade lasts +3s (13s total). +15% CRIT DMG during state.</td><td>Strong, worth considering</td></tr>
-<tr><td>C2</td><td>Elemental Skill mark applies to 2 extra enemies. +25% Skill DMG.</td><td>Good for AoE, skip if single-target</td></tr>
-<tr><td>C4</td><td>Using Burst gives team +30% ATK for 12s.</td><td>Nice team buff, C2 is better value</td></tr>
-<tr><td>C6</td><td>Void Blade Normal Attacks now ignore 60% DEF. Burst gets +80% DMG.</td><td>Absolute monster, Whale territory</td></tr>
-</tbody>
-</table>
-
-<p><strong>Verdict:</strong> C0 Skirk is already strong. C1 is the best stopping point for low spenders. C6 is game-breaking.</p>
-
-<h2>✅ Ascension Materials (Pre-Farm Guide)</h2>
-
-<div class="highlight">
-<strong>📋 Pre-Farm List for Level 90:</strong>
-<ul style="margin:8px 0 0 20px;">
-<li>❄️ <strong>Naglafar's Frostshard</strong> (new Nod-Krai boss, drops 3 per run at WL8)</li>
-<li>📜 <strong>Teachings of <em>Equity</em></strong> (Fontaine domain: Pale Forgotten Glory, Wed/Sat/Sun)</li>
-<li>⚔️ <strong>Chaos Gear</strong> / <strong>Chaos Axis</strong> / <strong>Chaos Oculus</strong> (Ruin machines everywhere)</li>
-<li>💎 <strong>Shivada Jade</strong> (Cryo hypostasis, Regisvine, or convert with dust)</li>
-</ul>
-</div>
-
-<h2>💬 Final Thoughts</h2>
-
-<p>Skirk is shaping up to be a <strong>top-tier Cryo carry</strong> who brings something fresh: a DEF-ignoring mechanic that makes her effective even against high-HP bosses. In Freeze teams, she's comfortable and strong. In Mono-Cryo, she outperforms Ayaka in sustained damage, though Ayaka still wins in burst windows.</p>
-
-<p><strong>Should you pull?</strong> If you need a Cryo DPS — absolutely. If you already have Ayaka C2+, she's a sidegrade in freeze but an upgrade everywhere else. Her animations are stunning, her lore payoff is massive, and she's genuinely fun to play.</p>
-
-<p>Save those frosty primogems, Travelers ❄️</p>
+<p>For skill multipliers and detailed rotations, follow the linked KQM reference and compare it with the talent descriptions in your game client. This page deliberately leaves out an unverified pre-farming list and numerical weapon rankings.</p>
 
 </div>
 </div>
